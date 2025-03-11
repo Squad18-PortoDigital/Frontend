@@ -1,0 +1,18 @@
+import { Link } from "react-router-dom";
+
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+  return (
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <button className="close-btn" onClick={onClose}>×</button>
+      <nav>
+        <Link to="/" onClick={onClose}>Home</Link>
+        <Link to="/sobre" onClick={onClose}>Sobre</Link>
+      </nav>
+    </div>
+  );
+}
