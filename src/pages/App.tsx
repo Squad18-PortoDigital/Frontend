@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import Home from "./Home/Home";
 import "../styles/App.css";
 import Sobre from "./Sobre/Sobre";
+import Footer from "../components/Footer";
+import Main from "../components/Main";
 
 export default function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -14,14 +16,16 @@ export default function App() {
       <div className="app-container">
         <div className="content">
           <Header />
-          <button className="menu-btn" onClick={() => setSidebarOpen(true)}>☰</button>
-          <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
-          <main>
+          {/* <button className="menu-btn" onClick={() => setSidebarOpen(true)}>☰</button>
+          <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} /> */}
+          {/* <main>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
             </Routes>
-          </main>
+          </main> */}
+          <Main />
+          <Footer />
         </div>
       </div>
     </Router>
