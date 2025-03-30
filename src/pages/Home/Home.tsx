@@ -1,54 +1,58 @@
 import { useEffect, useState } from "react";
 import ImgMainJnunes from "../../images/logo-header-jotanunes.png";
 import "../../styles/Home.css"
+import "../../styles/Animation-Home.css";
 
 export default function Home() {
   const [rotation, setRotation] = useState(0);
   const [borderRadius, setBorderRadius] = useState("13px");
-  // const [circle, setCircle] = useState("50px");
   const [showImage, setShowImage] = useState(false);
   const [fadeImage, setFadeImage] = useState(false);
+  const [animation, setAnimation] = useState("");
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRotation(90);
+    // const interval = setInterval(() => {
+    //   setAnimation("rotate-scale-down 1s ease-in-out both");
+
+    //   setTimeout(() => {
+    //     setAnimation("bounce-out-top 1.5s both");
+    //   }, 1100);
+
+    //   setTimeout(() => {
+    //     setAnimation("");
+    //   }, 5000);
+    // }, 5500);
+
+    // return () => clearInterval(interval);
+
+    setInterval(() => {
+      setAnimation("rotate-scale-down 1s ease-in-out both");
 
       setTimeout(() => {
-        setBorderRadius("50%");
-      }, 1000);
+        setAnimation("bounce-out-top 1.5s both");
+      }, 1100);
 
       setTimeout(() => {
-        setFadeImage(true);
-      }, 2000);
-
-      setTimeout(() => {
-        setShowImage(true);
-      }, 2500);
-
-      setTimeout(() => {
-        setFadeImage(false);
-      }, 4000);
-
-      setTimeout(() => {
-        setShowImage(false);
-        setRotation(0);
-        setBorderRadius("13px");
+        setAnimation("");
       }, 5000);
-    }, 6000);
-
-    return () => clearInterval(interval);
+    }, 5500);
   }, []);
   
   return (
     <>
       <div className="home-animation">
-        <div className="container">
+        <div className="container" 
+          // style={{animation: animation}}
+        >
           {!showImage ? (
             <div
               className="shape"
               style={{
-                transform: `rotate(${rotation}deg)`,
-                borderRadius: borderRadius,
+                // transform: `rotate(${rotation}deg)`,
+                // borderRadius: borderRadius,
+                // height: circle,
+                // width: circle,
+                animation: animation,
               }}
             ></div>
           ) : (

@@ -10,9 +10,9 @@
   position: relative;
   width: 150px;
   height: 150px;
-
   display: flex;
   justify-content: center;
+  position: absolute;
 }
 
 .shape {
@@ -20,7 +20,7 @@
   height: 100%;
   background: linear-gradient(222.84deg, #890513 3.39%, #DA4431 93.09%);
   position: absolute;
-  transition: transform 1s ease-in-out, border-radius 1s ease-in-out;
+  /* transition: transform 0.5s ease-in-out, border-radius 0.2s ease-in-out; */
   border-radius: 13px;
 }
 
@@ -29,7 +29,7 @@
   height: 20vh;
   position: absolute;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  /* transition: opacity 0.5s ease-in-out; */
 }
 
 .fade-in {
@@ -37,6 +37,10 @@
 }
 
 @media (min-width: 768px) {
+  .container {
+    /* top: calc(100vh * 0.40); */
+  }
+
   .image {
     width: 50vw;
     height: 25vh;
