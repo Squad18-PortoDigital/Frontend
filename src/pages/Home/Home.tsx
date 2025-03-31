@@ -33,8 +33,7 @@ export default function Home() {
     // Inicia toda a animação
     startAnimation();
 
-    setInterval(() => {
-
+    const animation = setInterval(() => {
       setShowImage(false);
       setTimeout(() => {
         setAnimationShape("rotate-scale-down 1s ease-in-out both");
@@ -53,8 +52,12 @@ export default function Home() {
           }, 1600);
         }, 1100);
       }, 500);
-      
+
     }, 5000);
+
+    if (document.hidden) {
+      clearInterval(animation);
+    }
   }, []);
   
   return (
