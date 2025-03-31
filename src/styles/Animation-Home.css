@@ -82,6 +82,7 @@
   display: flex;
   justify-content: center;
   /* position: absolute; */
+  align-items: center;
 }
 
 .shape {
@@ -92,4 +93,35 @@
   border-radius: 13px;
   top: 40%;
   /* animation: rotate-scale-down 1s linear both; */
+}
+
+@keyframes scale-in-ver-bottom {
+  0% {
+    transform: scaleY(0);
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+
+.imageAnimationHome {
+  width: 90vw;
+  height: 20vh;
+  position: absolute;
+  opacity: 1;
+  /* animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+}
+
+@media (min-width: 768px) {
+
+  .imageAnimationHome {
+    width: 50vw;
+    height: 25vh;
+  }
+  
 }
