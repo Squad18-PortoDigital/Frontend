@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ImgMainJnunes from "../../images/logo-header-jotanunes.png";
 import "../../styles/Home.css"
 import "../../styles/Animation-Home.css";
@@ -7,57 +7,103 @@ export default function Home() {
   const [showImage, setShowImage] = useState(false);
   const [animationShape, setAnimationShape] = useState("");
   const [animationImg, setAnimationImg] = useState("");
+  const isMounted = useRef(true);
+  // const [controlAnimation, setControlAnimation] = useState<NodeJS.Timeout>();
 
-  function startAnimation() {
-    setShowImage(false);
-    setTimeout(() => {
-      setAnimationShape("rotate-scale-down 1s ease-in-out both");
+  // function animation() {
+  //   setInterval(() => {
+  //     setShowImage(false);
+  //     setTimeout(() => {
+  //       setAnimationShape("rotate-scale-down 1s ease-in-out both");
 
-      setTimeout(() => {
-        setAnimationShape("bounce-out-top 1.5s both");
-        setTimeout(() => {
-          setAnimationShape("");
-          setShowImage(true);
-          setAnimationImg("scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both");
-  
-          setTimeout(() => {
-            setAnimationImg("");
-          }, 3000);
-  
-        }, 1600);
-      }, 1100);
-    }, 500);
-  }
+  //       setTimeout(() => {
+  //         setAnimationShape("bounce-out-top 1.5s both");
+  //         setTimeout(() => {
+  //           setAnimationShape("");
+  //           setShowImage(true);
+  //           setAnimationImg("scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both");
+
+  //           setTimeout(() => {
+  //             setAnimationImg("");
+  //           }, 2500);
+
+  //         }, 1600);
+  //       }, 1100);
+  //     }, 500);
+  //   }, 5000);
+  // }
+
+  // function startAnimation() {
+  //   setShowImage(false);
+  //   setTimeout(() => {
+  //     setAnimationShape("rotate-scale-down 1s ease-in-out both");
+
+  //     setTimeout(() => {
+  //       setAnimationShape("bounce-out-top 1.5s both");
+  //       setTimeout(() => {
+  //         setAnimationShape("");
+  //         setShowImage(true);
+  //         setAnimationImg("scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both");
+
+  //         setTimeout(() => {
+  //           setAnimationImg("");
+  //         }, 3000);
+
+  //       }, 1600);
+  //     }, 1100);
+
+  //     animation();
+  //   }, 500);
+  // }
 
   useEffect(() => {
-    // Inicia toda a animação
-    startAnimation();
+    isMounted.current = true;
 
-    const animation = setInterval(() => {
+    const animationSequence = async () => {
+      if (!isMounted.current) return;
+
       setShowImage(false);
-      setTimeout(() => {
-        setAnimationShape("rotate-scale-down 1s ease-in-out both");
+      await new Promise(resolve => setTimeout(resolve, 500));
+      setAnimationShape('rotate-scale-down 1s ease-in-out both');
+      if (!isMounted.current) return;
+      await new Promise(resolve => setTimeout(resolve, 1100));
+      setAnimationShape('bounce-out-top 1.5s both');
+      if (!isMounted.current) return;
+      await new Promise(resolve => setTimeout(resolve, 1600));
+      setAnimationShape('');
+      setShowImage(true);
+      setAnimationImg('scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both');
+      if (!isMounted.current) return;
+      await new Promise(resolve => setTimeout(resolve, 2500));
+      setAnimationImg('');
+    };
 
-        setTimeout(() => {
-          setAnimationShape("bounce-out-top 1.5s both");
-          setTimeout(() => {
-            setAnimationShape("");
-            setShowImage(true);
-            setAnimationImg("scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both");
+    var intervalId = setInterval(animationSequence, 5000);
 
-            setTimeout(() => {
-              setAnimationImg("");
-            }, 2500);
+    // setTimeout(animationSequence, 500);
+    animationSequence();
 
-          }, 1600);
-        }, 1100);
-      }, 500);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        isMounted.current = false;
+        setShowImage(false);
+        setAnimationShape("");
+        setAnimationImg("");
+        clearInterval(intervalId);
+      } else {
+        isMounted.current = true;
+        intervalId = setInterval(animationSequence, 5000);
+        animationSequence();
+      }
+    });
 
-    }, 5000);
-
-    if (document.hidden) {
-      clearInterval(animation);
-    }
+    return () => {
+      isMounted.current = false;
+      setShowImage(false);
+      setAnimationShape("");
+      setAnimationImg("");
+      clearInterval(intervalId);
+    };
   }, []);
   
   return (
