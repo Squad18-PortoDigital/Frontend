@@ -9,7 +9,6 @@ interface SidebarProps {
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      {/* <div className="t-r" /> */}
       <button className="close-btn" onClick={onClose}>×</button>
       <nav>
         <Link to="/" onClick={onClose}>Home</Link>

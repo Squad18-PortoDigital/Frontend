@@ -8,53 +8,6 @@ export default function Home() {
   const [animationShape, setAnimationShape] = useState("");
   const [animationImg, setAnimationImg] = useState("");
   const isMounted = useRef(true);
-  // const [controlAnimation, setControlAnimation] = useState<NodeJS.Timeout>();
-
-  // function animation() {
-  //   setInterval(() => {
-  //     setShowImage(false);
-  //     setTimeout(() => {
-  //       setAnimationShape("rotate-scale-down 1s ease-in-out both");
-
-  //       setTimeout(() => {
-  //         setAnimationShape("bounce-out-top 1.5s both");
-  //         setTimeout(() => {
-  //           setAnimationShape("");
-  //           setShowImage(true);
-  //           setAnimationImg("scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both");
-
-  //           setTimeout(() => {
-  //             setAnimationImg("");
-  //           }, 2500);
-
-  //         }, 1600);
-  //       }, 1100);
-  //     }, 500);
-  //   }, 5000);
-  // }
-
-  // function startAnimation() {
-  //   setShowImage(false);
-  //   setTimeout(() => {
-  //     setAnimationShape("rotate-scale-down 1s ease-in-out both");
-
-  //     setTimeout(() => {
-  //       setAnimationShape("bounce-out-top 1.5s both");
-  //       setTimeout(() => {
-  //         setAnimationShape("");
-  //         setShowImage(true);
-  //         setAnimationImg("scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both");
-
-  //         setTimeout(() => {
-  //           setAnimationImg("");
-  //         }, 3000);
-
-  //       }, 1600);
-  //     }, 1100);
-
-  //     animation();
-  //   }, 500);
-  // }
 
   useEffect(() => {
     isMounted.current = true;
