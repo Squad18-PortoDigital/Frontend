@@ -1,0 +1,19 @@
+.home-animation {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    /* top: calc(100vh * 0.40); */
+  }
+
+  /* .image {
+    width: 50vw;
+    height: 25vh;
+  } */
+  
+}
