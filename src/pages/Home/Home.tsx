@@ -58,6 +58,14 @@ export default function Home() {
       clearInterval(intervalId);
     };
   }, []);
+
+  useEffect(() => {
+    const userData: string | null = localStorage.getItem("userData");
+
+    if (userData !== null) {
+      window.location.href = "/dashboard";
+    }
+  }, []);
   
   return (
     <>

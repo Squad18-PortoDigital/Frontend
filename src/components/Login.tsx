@@ -3,6 +3,7 @@ import "../styles/index.css";
 import { useEffect, useState } from 'react';
 import { Box, Typography, Modal, TextField, Button, Grid } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from "react-router-dom";
 
 interface LoginProps {
   isOpenLogin: boolean;
@@ -12,6 +13,8 @@ interface LoginProps {
 export default function Login({ isOpenLogin, onCloseLogin }: LoginProps) {
   const [openLogin, setOpenLogin] = useState(false);
   const [buttonDisable, setButtonDiable] = useState(true);
+
+  const navigate = useNavigate();
 
   // Login
   const [email, setEmail] = useState<string>('');
@@ -33,8 +36,8 @@ export default function Login({ isOpenLogin, onCloseLogin }: LoginProps) {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    let emailError = '';
-    let senhaError = '';
+    let emailError: string = '';
+    let senhaError: string = '';
 
     if (!validateEmail(email)) {
       emailError = 'Email inválido!';
@@ -50,7 +53,18 @@ export default function Login({ isOpenLogin, onCloseLogin }: LoginProps) {
     });
 
     if (!emailError && !senhaError) {
-      alert('Formulário enviado com sucesso!');
+      // alert('Formulário enviado com sucesso!');
+      // window.location.href = "/dashboard";
+
+      const userData: object = {
+        id: 235,
+        nome: "Luan",
+        matricula: 956253,
+      }
+
+      localStorage.setItem("userData", JSON.stringify(userData));
+      navigate("/dashboard/", { replace: true });
+      onCloseLogin();
     }
   };
 
