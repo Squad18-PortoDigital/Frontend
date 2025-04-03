@@ -1,18 +1,41 @@
 import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
+import { useState } from "react";
+import Login from "./Login";
 
 interface SidebarProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpenSidebar: boolean;
+  onCloseSidebar: () => void;
 }
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps) {
+  const [openLogin, setOpenLogin] = useState(false);
+
   return (
-    <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <button className="close-btn" onClick={onClose}>×</button>
+    <div className={`sidebar ${isOpenSidebar ? "open" : ""}`}>
+      <Login isOpenLogin={openLogin} onCloseLogin={() => {setOpenLogin(false)}}/>
+      <button className="close-btn" onClick={onCloseSidebar}>×</button>
       <nav>
-        <Link to="/" onClick={onClose}>Home</Link>
-        <Link to="/sobre" onClick={onClose}>Sobre</Link>
+        <div className="navMobile">
+          <Link to="#" onClick={() => {
+            onCloseSidebar();
+            setOpenLogin(true);
+          }}>Login</Link>
+        </div>
+        <div className="navGeral">
+          <Link to="/" onClick={onCloseSidebar}>Home</Link>
+          <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link>
+        </div>
+        <div className="navDesktop">
+          {/* <Link to="" onClick={() => {
+            onCloseSidebar();
+            setOpenLogin(true);
+          }}>Login</Link> */}
+          <Link to="#" onClick={() => {
+            onCloseSidebar();
+            setOpenLogin(true);
+          }}>Login</Link>
+        </div>
       </nav>
     </div>
   );

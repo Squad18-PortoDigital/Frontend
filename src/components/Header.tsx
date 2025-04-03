@@ -14,7 +14,7 @@ export default function Header() {
           <img className="retangulo" src={RetanguloImgHeader} alt="Retangulo" />
           <img className="icon" src={IconHeaderJnunes} alt="IconJnunes" />
         </div>
-        <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
+        <Sidebar isOpenSidebar={isSidebarOpen} onCloseSidebar={() => setSidebarOpen(false)} />
         <button className="menu-btn" onClick={() => setSidebarOpen(true)}>☰</button>
       </header>
     </>
