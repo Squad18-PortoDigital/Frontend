@@ -1,46 +1,54 @@
 import "../styles/Login.css";
 import { useEffect, useState } from 'react';
-// import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Box from '@mui/material/Box';
+// import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 interface LoginProps {
   isOpenLogin: boolean;
   onCloseLogin: () => void;
 }
 
-export default function Login() {
-  const [modal, setModal] = useState(true);
+export default function Login({isOpenLogin, onCloseLogin}: LoginProps) {
+  const [openLogin, setOpenLogin] = useState(false);
 
-  const toggle = () => setModal(!modal);
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
 
   useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
-
-    // Adiciona o link ao head do documento
-    document.head.appendChild(link);
-
-    // Função de limpeza para remover o link quando o componente for desmontado
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
+    setOpenLogin(isOpenLogin);
+  }, [isOpenLogin]);
 
   return (
     <>
       <div>
-        {/* <Button color="danger" onClick={toggle}>X</Button>
-        <Modal isOpen={modal} toggle={toggle} className="">
-          <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-          <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={toggle}>Cancel</Button>
-          </ModalFooter>
-        </Modal> */}
+        <Modal
+          open={openLogin}
+          onClose={() => {
+            onCloseLogin();
+          }}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Text in a modal
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </Typography>
+          </Box>
+        </Modal>
       </div>
     </>
   );
