@@ -82,12 +82,22 @@
     padding-left: var(--paddingLeft-nav);
   }
 
-  .sidebar nav div {
+  /* .sidebar nav div {
+    display: flex;
+  } */
+
+  .navGeral {
     display: flex;
   }
 
+  .navDesktop {
+    display: block;
+    margin-right: 100px;
+  }
+
   .navMobile {
-    display: none !important;
+    /* display: none !important; */
+    display: none;
   }
 
   /* .navDesktop {

@@ -17,7 +17,7 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
       <button className="close-btn" onClick={onCloseSidebar}>×</button>
       <nav>
         <div className="navMobile">
-          <Link to="" onClick={() => {
+          <Link to="#" onClick={() => {
             onCloseSidebar();
             setOpenLogin(true);
           }}>Login</Link>
@@ -27,7 +27,11 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
           <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link>
         </div>
         <div className="navDesktop">
-          <Link to="" onClick={() => {
+          {/* <Link to="" onClick={() => {
+            onCloseSidebar();
+            setOpenLogin(true);
+          }}>Login</Link> */}
+          <Link to="#" onClick={() => {
             onCloseSidebar();
             setOpenLogin(true);
           }}>Login</Link>
