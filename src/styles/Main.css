@@ -2,3 +2,9 @@ main {
   height: 100%;
   padding: 2%;
 }
+
+@media (min-width: 768px) {
+  main {
+    padding: 12em 2% 2% 2%;
+  }
+}
