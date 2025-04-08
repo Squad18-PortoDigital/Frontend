@@ -1,0 +1,216 @@
+/* main {
+  background: url("../../images/fundoDashboard.png");
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 12em 2% 2% 2%;
+  }
+
+  .header {
+    height: 0;
+  }
+} */
+
+/* .homeDashboard {
+  padding: 2%;
+} */
+
+.topHomeDashboard {
+  background: url("../../images/fundoDashboard.png");
+  background-attachment: fixed;
+  padding: 2%;
+  height: 45rem;
+}
+
+.midHomeDashboard {
+  padding: 2%;
+}
+
+.textJotinha {
+  width: 50%;
+  position: relative;
+  /* top: 5em; */
+  left: 2em;
+}
+
+.jotinhaImg {
+  position: relative;
+  top: -12em;
+  width: 100%;
+}
+
+/* .jotinhaImg img {
+  width: 100%;
+} */
+
+.cardContinue {
+  width: 80%;
+  text-align: center;
+  position: relative;
+  top: -13em;
+  left: 12%;
+}
+
+.midImdDashboard {
+  /* margin-top: 34%; */
+  margin-top: 12em;
+  width: 100%;
+}
+
+/* .midImdDashboard img {
+  width: 100%;
+} */
+
+.textMidDashboard {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.textMidDashboard img {
+  width: 50%;
+  margin: 5% 0;
+}
+
+/* .textMidDashboard p {
+  width: 80%;
+  margin: 0 auto;
+} */
+
+.topicosCategoriaDashboard {
+  background: url("../../images/gradefundo.svg");
+  /* width: 100%; */
+  padding: 1rem 0px;
+}
+
+.headerTextTC {
+  text-align: center;
+}
+
+.headerTextTC h1 {
+  font-size: medium;
+}
+
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.categorias img {
+  width: 40%;
+  margin: 2% 0px;
+}
+
+.footerHomerDashboard {
+  background: linear-gradient(222.84deg, #890513 3.39%, #DA4431 93.09%);
+  height: 30vh;
+  padding: 4% 2%;
+}
+
+.footerHomerDashboard h1 {
+  text-align: center;
+  color: white;
+}
+
+.footerCarrosselHD {
+  text-align: center;
+}
+
+@media (width <= 500px) and (width >= 460px) {
+  .midImdDashboard {
+    margin-top: 22em;
+  }
+}
+
+@media (width <= 460px) and (width >= 410px) {
+  .midImdDashboard {
+    margin-top: 18em;
+  }
+}
+
+@media (min-width: 768px) {
+  .topHomeDashboard {
+    background-size: cover;
+    padding: 8em 2% 0 2%;
+
+    display: flex;
+    height: 100%;
+  }
+
+  .textJotinha {
+    width: 40%;
+    position: relative;
+    top: 15em;
+    left: 0;
+  }
+
+  .jotinhaImg {
+    width: 50%;
+    position: inherit;
+    top: -7em;
+  }
+
+  /* .jotinhaImg img {
+    width: 100%;
+  } */ 
+  
+  .cardContinue {
+    /* width: 100%; */
+    width: 20%;
+    text-align: inherit;
+    position: relative;
+    top: 15em;
+    left: 0;
+  }
+
+  /* .midHomeDashboard {
+    padding: 0 2% 0 2%;
+  } */
+  
+  .midHomeDashboard {
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .midImdDashboard {
+    margin-top: 0;
+    width: 30%;
+  }
+
+  .textMidDashboard {
+    text-align: start;
+    width: 25%;
+    margin: 0 5%;
+  }
+
+  .topicosCategoriaDashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .headerTextTC {
+    text-align: center;
+    margin: 2% 0;
+  }
+  
+  .headerTextTC h1 {
+    font-size: medium;
+  }
+  
+  .categorias {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .categorias img {
+    width: 20%;
+    margin: 3%;
+  }
+}
