@@ -5,6 +5,7 @@ import Joginha from "../../../images/jotinha.svg";
 import continuever from "../../../images/continuever.svg";
 import imghome1 from "../../../images/imghome1.svg";
 import { caixotes } from "../../../images/topicosCategoria";
+import saibaMais from "../../../images/saibaMainDashboard.svg";
 
 export default function HomeDashboard() {
 
@@ -27,31 +28,44 @@ export default function HomeDashboard() {
   return (
     <>
       <div className="homeDashboard">
-        <div className="topHomeDashboard" style={{
-          // background: `url(${fundoDashboard})`
-        }}>
+        <div className="topHomeDashboard">
           <div className="textJotinha">
             <h2>
               Transformando o futuro da construção civil em Sergipe
             </h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incon proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
-          <div className="jotinhaImg">
+          <img className="jotinhaImg" src={Joginha} alt="jotinha" />
+          <img className="cardContinue" src={continuever} alt="conV" />
+          
+          {/* <div className="jotinhaImg">
             <img src={Joginha} alt="jotinha" />
           </div>
           <div className="cardContinue">
             <img src={continuever} alt="conV" />
-          </div>
+          </div> */}
+
         </div>
         <div className="midHomeDashboard">
-          <div className="midImdDashboard">
+          <img className="midImdDashboard" src={imghome1} alt="imghome1" />
+
+          {/* <div className="midImdDashboard">
             <img src={imghome1} alt="imghome1" />
-          </div>
+          </div> */}
+
           <div className="textMidDashboard">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
+            <img src={saibaMais} alt="saibamais" />
           </div>
+
+          {/* <div className="textMidDashboard">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div> */}
+
         </div>
         <div className="topicosCategoriaDashboard">
           <div className="headerTextTC">
