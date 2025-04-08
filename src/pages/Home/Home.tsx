@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import ImgMainJnunes from "../../images/logo-header-jotanunes.png";
 import "../../styles/Home.css"
 import "../../styles/Animation-Home.css";
+import { setIsLogged } from "../../models/Login.model";
 
 export default function Home() {
   const [showImage, setShowImage] = useState(false);
@@ -63,6 +64,7 @@ export default function Home() {
     const userData: string | null = localStorage.getItem("userData");
 
     if (userData !== null) {
+      setIsLogged(true);
       window.location.href = "/dashboard";
     }
   }, []);
