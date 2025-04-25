@@ -26,7 +26,7 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
 
   return (
     <div className={`sidebar ${isOpenSidebar ? "open" : ""}`}>
-      <Login isOpenLogin={openLogin} onCloseLogin={() => {setOpenLogin(false)}}/>
+      {/* <Login isOpenLogin={openLogin} onCloseLogin={() => {setOpenLogin(false)}}/> */}
       <button className="close-btn" onClick={onCloseSidebar}>×</button>
       <nav>
         {isLogged ? (
@@ -49,20 +49,24 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
         ) : (
           <>
             <div className="navMobile">
-              <Link to="#" onClick={() => {
+              {/* <Link to="#" onClick={() => {
                 onCloseSidebar();
                 setOpenLogin(true);
-              }}>Login</Link>
+              }}>Login</Link> */}
+              <Link to="/login" onClick={onCloseSidebar}>Login</Link>
             </div>
             <div className="navGeral">
               <Link to="/" onClick={onCloseSidebar}>Home</Link>
               <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link>
             </div>
-            <div className="navDesktop">
+            {/* <div className="navDesktop">
               <Link to="#" onClick={() => {
                 onCloseSidebar();
                 setOpenLogin(true);
               }}>Login</Link>
+            </div> */}
+            <div className="navDesktop">
+              <Link to="/login">Login</Link>
             </div>
           </>
         )}
