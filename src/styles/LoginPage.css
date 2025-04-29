@@ -32,7 +32,7 @@ form {
   border: 2px solid #333333;
   border-radius: 20px;
   padding: 1rem;
-  height: 20rem;
+  /* height: 20rem; */
   justify-content: center;
   width: 90%;
 }
@@ -54,8 +54,51 @@ form {
   padding-left: 1rem;
 }
 
+.container-btnRecover {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnRecover {
+  color: #D71C26 !important;
+  text-decoration: underline !important;
+}
+
+/* solução para estilizar após os campos estarem satisfeitos */
+
+.btnLogin {
+  border-radius: 10px !important;
+}
+
+.btnLogin:not([disabled]) {
+  background: #333333;
+}
+
+.mascoteJotinha {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .sub-container-login {
     /* padding: 8em 2% 1% 2%; */
+  }
+
+  .FormInputs {
+    width: 30rem;
+    height: 25rem;
+    justify-content: space-evenly;
+    padding: 2rem 5rem;
+  }
+
+  .mascoteJotinha {
+    display: block;
+    position: absolute;
+    left: calc(50% - 29rem);
+    top: calc(50% - 24rem);
+    width: 22rem;
+  }
+
+  .InputsText div {
+    /* width: 90%; */
   }
 }

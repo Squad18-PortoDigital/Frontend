@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
 import { createContext, useContext, useEffect, useState } from "react";
-import Login from "./Login";
+// import Login from "./Login";
 import { StateLogin } from "../models/Login.model";
 
 interface SidebarProps {
@@ -10,7 +10,7 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps) {
-  const [openLogin, setOpenLogin] = useState(false);
+  // const [openLogin, setOpenLogin] = useState(false);
   const [isLogged, setIsLogged] = useState<boolean>(StateLogin.isLogged);
   const isLoggedCheck = useContext<boolean>(createContext<boolean>(StateLogin.isLogged));
 

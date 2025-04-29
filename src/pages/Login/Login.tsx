@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { setIsLogged } from "../../models/Login.model";
 import logoHeaderJN from "../../images/logo-header-jotanunes.png";
+import mascoteJotinha from "../../images/jotinhaMascote.svg";
 import React from "react";
 
 interface State {
@@ -131,6 +132,7 @@ export default function Login() {
     <>
       <div className="container-login">
         <div className="sub-container-login">
+          <img className="mascoteJotinha" src={mascoteJotinha} alt="mascote" />
           <form onSubmit={handleSubmit}>
             <Grid className="FormInputs" container spacing={2}>
               <div className="FormLogo">
@@ -147,7 +149,7 @@ export default function Login() {
                     onChange={(e) => {
                       setEmail(e.target.value);
                       if ((/[^0-9]/.test(e.target.value) === false) && (e.target.value !== "")) {
-                        setMatricula(Number(e.target.value))
+                        setMatricula(Number(e.target.value));
                       } else {
                         setMatricula(null);
                       };
@@ -212,8 +214,12 @@ export default function Login() {
                 </Grid>
               </Grid>
 
+              <Grid className="container-btnRecover">
+                <Button className="btnRecover">Esqueci minha senha</Button>
+              </Grid>
+
               <Grid>
-                <Button type="submit" variant="contained" disabled={buttonDisable} fullWidth>
+                <Button className="btnLogin" type="submit" variant="contained" disabled={buttonDisable} fullWidth>
                   Entrar
                 </Button>
               </Grid>
