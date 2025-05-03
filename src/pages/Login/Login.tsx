@@ -6,10 +6,11 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../../styles/LoginPage.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { setIsLogged } from "../../models/Login.model";
+import { StateLogin } from "../../models/Login.model";
 import logoHeaderJN from "../../images/logo-header-jotanunes.png";
 import mascoteJotinha from "../../images/jotinhaMascote.svg";
 import React from "react";
+import { useAtom } from "jotai";
 
 interface State {
   amount: string;
@@ -22,6 +23,7 @@ interface State {
 export default function Login() {
   // const [openLogin, setOpenLogin] = useState(false);
   const [buttonDisable, setButtonDiable] = useState(true);
+  const [isLogged, setIsLogged] = useAtom(StateLogin);
 
   const navigate = useNavigate();
 
@@ -80,10 +82,6 @@ export default function Login() {
     let emailError: string = '';
     let senhaError: string = '';
 
-    if (!validateEmail(email)) {
-      emailError = 'Email inválido!';
-    }
-
     if (!validateSenha(senha)) {
       senhaError = 'A senha deve ter no mínimo 6 caracteres!';
     }
@@ -94,8 +92,6 @@ export default function Login() {
     });
 
     if (!emailError && !senhaError) {
-      // alert('Formulário enviado com sucesso!');
-      // window.location.href = "/dashboard";
 
       const userData: object = {
         id: 235,
@@ -104,24 +100,14 @@ export default function Login() {
       }
 
       setIsLogged(true);
+      console.log("Login.tsx: " + isLogged);
       localStorage.setItem("userData", JSON.stringify(userData));
-      navigate("/dashboard/", { replace: true });
-      
-      // onCloseLogin();
+      navigate("/dashboard/");
     }
   };
 
-  // useEffect(() => {
-  //   setOpenLogin(isOpenLogin);
-
-  //   // limpeza dos campos
-  //   setEmail("");
-  //   setSenha("");
-  // }, [isOpenLogin]);
-
   useEffect(() => {
     if ((validateEmail(email) || validateMatricula(matricula)) && validateSenha(senha)) {
-    // if (validateEmail(email) && validateSenha(senha)) {
       setButtonDiable(false);
     } else {
       setButtonDiable(true);
@@ -143,7 +129,7 @@ export default function Login() {
                 <Grid>
                   <TextField
                     label="Matrícula ou E-mail"
-                    type="email"
+                    type="text"
                     fullWidth
                     value={email}
                     onChange={(e) => {
@@ -165,7 +151,6 @@ export default function Login() {
                         ),
                       },
                     }}
-                    // placeholder="Matrícula"
                     required
                   />
                 </Grid>
@@ -173,7 +158,6 @@ export default function Login() {
                 <Grid>
                   <TextField
                     label="Senha"
-                    // type="password"
                     type={values.showPassword ? 'text' : 'password'}
                     fullWidth
                     value={senha}
@@ -208,7 +192,6 @@ export default function Login() {
                         ),
                       },
                     }}
-                    // placeholder="Senha"
                     required
                   />
                 </Grid>

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Box, Typography, Modal, TextField, Button, Grid } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from "react-router-dom";
-import { setIsLogged } from "../models/Login.model";
+// import { setIsLogged } from "../models/Login.model";
 
 interface LoginProps {
   isOpenLogin: boolean;
@@ -63,7 +63,7 @@ export default function Login({ isOpenLogin, onCloseLogin }: LoginProps) {
         matricula: 956253,
       }
 
-      setIsLogged(true);
+      // setIsLogged(true);
       localStorage.setItem("userData", JSON.stringify(userData));
       navigate("/dashboard/", { replace: true });
       onCloseLogin();
