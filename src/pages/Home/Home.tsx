@@ -65,6 +65,20 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const mainElement = document.querySelector('main');
+
+    if (mainElement) {
+      mainElement.style.padding = '0';
+    }
+
+    return () => {
+      if (mainElement) {
+        mainElement.style.padding = '';
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const userData: string | null = localStorage.getItem("userData");
 
     if (userData !== null) {

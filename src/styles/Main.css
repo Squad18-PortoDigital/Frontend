@@ -8,6 +8,7 @@ main {
 @media (min-width: 768px) {
   main {
     /* padding: 12em 2% 1% 2%; */
-    padding: 8em 2% 1% 2%;
+    /* padding: 8em 2% 1% 2%; */
+    padding: 5em 2% 1% 2%;
   }
 }
