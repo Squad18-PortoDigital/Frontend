@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
-import { StateLogin } from "../models/Login.model";
+import { StateLogin } from "../utils/Globals.utils";
 import { useAtom } from "jotai";
 
 interface SidebarProps {

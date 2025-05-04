@@ -2,7 +2,7 @@ import { Route, Routes, useNavigate } from "react-router";
 import HomeDashboard from "./Home/Home";
 import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { StateLogin } from "../../models/Login.model";
+import { StateLogin } from "../../utils/Globals.utils";
 
 export default function Dashboard() {
   const [, setIsLogged] = useAtom(StateLogin);
