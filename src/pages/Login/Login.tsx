@@ -6,7 +6,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../../styles/LoginPage.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { StateLogin } from "../../models/Login.model";
+import { StateLogin } from "../../utils/Globals.utils";
 import logoHeaderJN from "../../images/logo-header-jotanunes.png";
 import mascoteJotinha from "../../images/jotinhaMascote.svg";
 import React from "react";

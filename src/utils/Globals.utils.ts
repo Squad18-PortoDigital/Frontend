@@ -1,3 +1,5 @@
+import { atom } from "jotai";
+
 // export interface Login {
 //   id: number;
 //   user: string;
@@ -18,4 +20,4 @@
 //   TesteLogin = !TesteLogin;
 // }
 
-export {}
+export const StateLogin = atom<boolean>(false);
