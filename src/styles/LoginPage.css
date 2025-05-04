@@ -1,0 +1,104 @@
+main {
+  padding: 0;
+}
+
+.container-login {
+  background-image: url("../images/background-loginNoText-gptEdit.png");
+  height: 100%;
+  background-size: cover;
+}
+
+.sub-container-login {
+  height: 100%;
+  /* padding-top: auto; */
+  /* padding-bottom: auto; */
+  padding: 2%
+}
+
+form {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.FormInputs {
+  flex-direction: column !important;
+  display: flex !important;
+  /* height: 100%; */
+  /* background-color: #c4c4c4db; */
+  /* box-shadow: 0px 0px 21px 6px #C4C4C4; */
+  background: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 20px;
+  padding: 1rem;
+  /* height: 20rem; */
+  justify-content: center;
+  width: 90%;
+}
+
+.FormLogo {
+  text-align: center;
+}
+
+.FormLogo img {
+  width: 250px;
+}
+
+.InputsText {
+  flex-direction: column !important;
+}
+
+.visibility-pass-login {
+  border-left: 1px solid black;
+  padding-left: 1rem;
+}
+
+.container-btnRecover {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnRecover {
+  color: #D71C26 !important;
+  text-decoration: underline !important;
+}
+
+/* solução para estilizar após os campos estarem satisfeitos */
+
+.btnLogin {
+  border-radius: 10px !important;
+}
+
+.btnLogin:not([disabled]) {
+  background: #333333;
+}
+
+.mascoteJotinha {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sub-container-login {
+    /* padding: 8em 2% 1% 2%; */
+  }
+
+  .FormInputs {
+    width: 30rem;
+    height: 25rem;
+    justify-content: space-evenly;
+    padding: 2rem 5rem;
+  }
+
+  .mascoteJotinha {
+    display: block;
+    position: absolute;
+    left: calc(50% - 29rem);
+    top: calc(50% - 24rem);
+    width: 22rem;
+  }
+
+  .InputsText div {
+    /* width: 90%; */
+  }
+}

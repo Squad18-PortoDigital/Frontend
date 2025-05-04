@@ -2,13 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import ImgMainJnunes from "../../images/logo-header-jotanunes.png";
 import "../../styles/Home.css"
 import "../../styles/Animation-Home.css";
-import { setIsLogged } from "../../models/Login.model";
+import { StateLogin } from "../../models/Login.model";
+import { useAtom } from "jotai";
+import { useNavigate } from "react-router";
 
 export default function Home() {
   const [showImage, setShowImage] = useState(false);
   const [animationShape, setAnimationShape] = useState("");
   const [animationImg, setAnimationImg] = useState("");
   const isMounted = useRef(true);
+  const [, setIsLogged] = useAtom(StateLogin);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     isMounted.current = true;
@@ -34,7 +39,6 @@ export default function Home() {
 
     var intervalId = setInterval(animationSequence, 5000);
 
-    // setTimeout(animationSequence, 500);
     animationSequence();
 
     document.addEventListener('visibilitychange', () => {
@@ -65,9 +69,9 @@ export default function Home() {
 
     if (userData !== null) {
       setIsLogged(true);
-      window.location.href = "/dashboard";
+      navigate("/dashboard/", { replace: true });
     }
-  }, []);
+  }, [setIsLogged, navigate]);
   
   return (
     <>
@@ -77,7 +81,6 @@ export default function Home() {
             <div className="shape" style={{ animation: animationShape, }} />
           ) : (
             <img
-              // className={`image ${fadeImage ? "fade-in" : ""}`}
               className="imageAnimationHome"
               src={ImgMainJnunes}
               alt="Imagem"
@@ -86,15 +89,6 @@ export default function Home() {
               }}
             />
           )}
-          {/* <img
-              // className={`image ${fadeImage ? "fade-in" : ""}`}
-              className="imageAnimationHome"
-              src={ImgMainJnunes}
-              alt="Imagem"
-              style={{
-                animation: animationImg,
-              }}
-          /> */}
         </div>
       </div>
     </>
