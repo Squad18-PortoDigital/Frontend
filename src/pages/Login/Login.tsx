@@ -113,10 +113,24 @@ export default function Login() {
       setButtonDiable(true);
     }
   }, [email, senha, matricula]);
+
+  useEffect(() => {
+    const mainElement = document.querySelector('main');
+
+    if (mainElement) {
+      mainElement.style.padding = '0';
+    }
+
+    return () => {
+      if (mainElement) {
+        mainElement.style.padding = '';
+      }
+    };
+  }, []);
   
   return (
     <>
-      <div className="container-login">
+      <div className="container-login" >
         <div className="sub-container-login">
           <img className="mascoteJotinha" src={mascoteJotinha} alt="mascote" />
           <form onSubmit={handleSubmit}>
