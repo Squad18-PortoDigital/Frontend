@@ -6,6 +6,7 @@ import continuever from "../../../images/continuever.svg";
 import imghome1 from "../../../images/imghome1.svg";
 import { caixotes } from "../../../images/topicosCategoria";
 import saibaMais from "../../../images/saibaMainDashboard.svg";
+// import '../../../styles/tailwind-out.css';
 
 export default function HomeDashboard() {
 
@@ -29,7 +30,7 @@ export default function HomeDashboard() {
     <>
       <div className="homeDashboard">
         <div className="topHomeDashboard">
-          <div className="textJotinha flex">
+          <div className="textJotinha">
             <h2>
               Transformando o futuro da construção civil em Sergipe
             </h2>
