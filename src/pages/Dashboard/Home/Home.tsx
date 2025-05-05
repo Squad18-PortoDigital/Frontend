@@ -6,7 +6,6 @@ import continuever from "../../../images/continuever.svg";
 import imghome1 from "../../../images/imghome1.svg";
 import { caixotes } from "../../../images/topicosCategoria";
 import saibaMais from "../../../images/saibaMainDashboard.svg";
-// import '../../../styles/tailwind-out.css';
 
 export default function HomeDashboard() {
 
