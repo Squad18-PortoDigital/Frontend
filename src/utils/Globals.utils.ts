@@ -21,3 +21,5 @@ import { atom } from "jotai";
 // }
 
 export const StateLogin = atom<boolean>(false);
+
+export const PerfilUser = atom<number>();
