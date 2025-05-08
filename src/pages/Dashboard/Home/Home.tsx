@@ -29,7 +29,7 @@ export default function HomeDashboard() {
     <>
       <div className="homeDashboard">
         <div className="topHomeDashboard">
-          <div className="textJotinha flex">
+          <div className="textJotinha">
             <h2>
               Transformando o futuro da construção civil em Sergipe
             </h2>

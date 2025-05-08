@@ -14,7 +14,7 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
 
   function logoff() {
     setIsLogged(false);
-    localStorage.removeItem("userData");
+    localStorage.removeItem("token");
     window.location.href = "/";
   }
 
