@@ -6,11 +6,12 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../../styles/LoginPage.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { StateLogin } from "../../models/Login.model";
+import { StateLogin } from "../../utils/Globals.utils";
 import logoHeaderJN from "../../images/logo-header-jotanunes.png";
 import mascoteJotinha from "../../images/jotinhaMascote.svg";
 import React from "react";
 import { useAtom } from "jotai";
+import { LoginModel } from "../../models/Login.model";
 
 interface State {
   amount: string;
@@ -23,7 +24,7 @@ interface State {
 export default function Login() {
   // const [openLogin, setOpenLogin] = useState(false);
   const [buttonDisable, setButtonDiable] = useState(true);
-  const [isLogged, setIsLogged] = useAtom(StateLogin);
+  const [, setIsLogged] = useAtom(StateLogin);
 
   const navigate = useNavigate();
 
@@ -93,15 +94,23 @@ export default function Login() {
 
     if (!emailError && !senhaError) {
 
-      const userData: object = {
-        id: 235,
-        nome: "Luan",
-        matricula: 956253,
+      // sofrerá modificação futura
+
+      // const userData: UserModel = {
+      //   id: 235,
+      //   nome: "Luan",
+      //   matricula: 956253,
+      //   perfil: 1,
+      // }
+
+      const token: LoginModel = {
+        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM1LCJub21lIjoiTHVhbiIsIm1hdHJpY3VsYSI6OTU2MjUzLCJwZXJmaWwiOjF9.KGrdBcYJteyuvLF5OG-5TyGC1tftlpMijnxmeN4gu_M",
       }
+      
+      // sofrerá modificação futura
 
       setIsLogged(true);
-      console.log("Login.tsx: " + isLogged);
-      localStorage.setItem("userData", JSON.stringify(userData));
+      localStorage.setItem("token", JSON.stringify(token.token));
       navigate("/dashboard/");
     }
   };
@@ -113,10 +122,24 @@ export default function Login() {
       setButtonDiable(true);
     }
   }, [email, senha, matricula]);
+
+  useEffect(() => {
+    const mainElement = document.querySelector('main');
+
+    if (mainElement) {
+      mainElement.style.padding = '0';
+    }
+
+    return () => {
+      if (mainElement) {
+        mainElement.style.padding = '';
+      }
+    };
+  }, []);
   
   return (
     <>
-      <div className="container-login">
+      <div className="container-login" >
         <div className="sub-container-login">
           <img className="mascoteJotinha" src={mascoteJotinha} alt="mascote" />
           <form onSubmit={handleSubmit}>

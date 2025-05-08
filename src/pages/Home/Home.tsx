@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import ImgMainJnunes from "../../images/logo-header-jotanunes.png";
 import "../../styles/Home.css"
 import "../../styles/Animation-Home.css";
-import { StateLogin } from "../../models/Login.model";
+import { StateLogin } from "../../utils/Globals.utils";
 import { useAtom } from "jotai";
 import { useNavigate } from "react-router";
 
@@ -65,7 +65,21 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const userData: string | null = localStorage.getItem("userData");
+    const mainElement = document.querySelector('main');
+
+    if (mainElement) {
+      mainElement.style.padding = '0';
+    }
+
+    return () => {
+      if (mainElement) {
+        mainElement.style.padding = '';
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const userData: string | null = localStorage.getItem("token");
 
     if (userData !== null) {
       setIsLogged(true);

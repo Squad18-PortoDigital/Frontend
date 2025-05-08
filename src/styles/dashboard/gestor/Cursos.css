@@ -1,0 +1,182 @@
+.trianguloCursos {
+  position: absolute;
+  right: 0px;
+  width: 20rem;
+}
+
+.container-cursos {
+  font-weight: 600;
+}
+
+.container-welcome {
+  /* z-index: 1; */
+}
+
+/* .container-top {
+  z-index: 1;
+} */
+
+.cursosWelcomeIMG {
+  width: 20rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.container-welcome p {
+  /* font-weight: 600;
+  width: 60%;
+  margin-bottom: 3rem; */
+
+  width: 20rem;
+  margin-bottom: 3rem;
+  padding-left: 4rem;
+  padding-right: 2.8rem;
+}
+
+.container-welcome button {
+  width: 15em;
+  height: 3em;
+  border-radius: 50px;
+  background: #333333;
+  color: white;
+  font-weight: 600;
+  /* line-height: 168%; */
+}
+
+.container-imgs-cursos {
+  z-index: 1;
+  /* margin: 3rem 0; */
+}
+
+.container-imgs-cursos img.retangulo-cursos {
+  width: 18em;
+}
+
+.sublinhado-cursos {
+  width: 22em;
+}
+
+.container-carrosselCursos {}
+
+.expressaoCursos {
+  position: absolute;
+  left: calc(100% - 3em);
+  bottom: calc(100% - 0em);
+  width: 5em;
+}
+
+.carrosselCursos {
+  padding: 0 2.5em;
+}
+
+.carrosselCursos img.retangulo-cursos {
+  width: 18em;
+}
+
+.text-carrosselCursos {}
+
+.btn-carrosselCursos {
+  background: #F0100A;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  width: 11em;
+  height: 3em;
+  border: none;
+
+  position: absolute;
+  right: calc(0% - 1.3em);
+  top: calc(0% - 2em);
+}
+
+@media (width > 768px) {
+  .trianguloCursos {
+    position: absolute;
+    right: 0px;
+    top: calc(0% - 12rem);
+    width: 60rem;
+  }
+
+  .container-cursos {
+    /* flex-direction: row !important; */
+  }
+
+  .container-top {
+    /* flex-direction: row !important; */
+  }
+
+  .box-container-top {
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+
+  .cursosWelcomeIMG {
+    width: 30rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+
+  .container-welcome p {
+    /* font-weight: 600;
+    width: 60%;
+    margin-bottom: 3rem; */
+
+    width: 20rem;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 3.8rem;
+    font-size: larger;
+  }
+
+  .container-welcome button {
+    width: 15em;
+    height: 3em;
+    border-radius: 50px;
+    background: #333333;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    /* line-height: 168%; */
+  }
+
+  .container-carrosselCursos {
+    margin-top: 6rem !important;
+  }
+
+  .container-imgs-cursos img.retangulo-cursos {
+    width: 25em;
+  }
+
+  .carrosselCursos img.retangulo-cursos {
+    width: 20em;
+  }
+
+  .sublinhado-cursos {
+    width: 30em;
+  }
+
+  /* .btn-carrosselCursos {
+    right: calc(0% - 1.3em);
+    top: calc(0% - 2em);
+  } */
+}
+
+@media (width > 1580px) {
+  .carrosselCursos img.retangulo-cursos {
+    width: 25em;
+  }
+
+  .carrosselCursos {
+    padding: 0 2.8em;
+  }
+}
+
+@media (width < 400px) {
+  .carrosselCursos img.retangulo-cursos {
+    width: 15em;
+  }
+
+  .carrosselCursos {
+    padding: 0 2em 32px;
+  }
+}
