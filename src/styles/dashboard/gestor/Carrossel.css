@@ -1,0 +1,83 @@
+/* .container-carrossel {
+  width: 80%;
+  margin: auto;
+  padding: 20px 0;
+} */
+
+/* .arrow {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  padding: 0 15px;
+}
+
+.next {
+  right: -40px;
+  display: none;
+}
+
+.prev {
+  left: -40px;
+  display: none;
+} */
+
+/* @media (max-width: 768px) {
+  .arrow {
+      display: none;
+  }
+} */
+
+/* .slick-arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+} */
+
+.slick-next {
+  right: -40px;
+  display: none !important;
+}
+
+.slick-prev {
+  left: -40px;
+  display: none !important;
+}
+
+.slick-slide {
+  /* padding: 0 3.5em; */
+}
+
+.teste {
+  
+}
+
+/* @media (width <= 500px) and (width >= 460px) {
+  .midImdDashboard {
+    margin-top: 22em;
+  }
+}
+
+@media (width <= 460px) and (width >= 410px) {
+  .midImdDashboard {
+    margin-top: 18em;
+  }
+} */
+
+@media (width > 768px) {
+  .slick-next {
+    right: -40px;
+    display: block !important;
+  }
+  
+  .slick-prev {
+    left: -40px;
+    display: block !important;
+  }
+}
