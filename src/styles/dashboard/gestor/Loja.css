@@ -1,0 +1,63 @@
+.container-loja {
+  min-height: 100%;
+}
+
+.sidebar-loja {
+  display: none;
+}
+
+.main-loja {
+  background: url("../../../images/backgroundLoja.svg");
+  background-attachment: fixed;
+}
+
+.item-loja {
+
+}
+
+@media (min-width: 768px) {
+  .sidebar-loja {
+    display: block;
+    width: 25rem;
+    padding-top: 5em;
+  }
+
+  .main-loja {
+    width: 100%;
+    background-size: cover;
+    padding: 5em 4% 1% 4%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .item-loja {
+    width: 12em;
+    height: 18em;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0px 5em;
+  }
+
+  .item-loja .item-loja-top {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item-loja .item-loja-bottom {
+    background: #333333;
+    height: 30%;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .item-loja .item-loja-bottom p {
+    margin: 2%;
+  }
+}
