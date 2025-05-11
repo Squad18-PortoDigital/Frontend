@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import "../../../styles/dashboard/Home.css";
 // import fundoDashboard from "../../../images/fundoDashboard.png";
-import Joginha from "../../../images/jotinha.svg";
+// import Joginha from "../../../images/jotinha.svg";
 import continuever from "../../../images/continuever.svg";
 import imghome1 from "../../../images/imghome1.svg";
 import { caixotes } from "../../../images/topicosCategoria";
 import saibaMais from "../../../images/saibaMainDashboard.svg";
+import { jotinha } from "../../../images";
 
 export default function HomeDashboard() {
 
@@ -35,7 +36,7 @@ export default function HomeDashboard() {
             </h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incon proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
-          <img className="jotinhaImg" src={Joginha} alt="jotinha" />
+          <img className="jotinhaImg" src={jotinha} alt="jotinha" />
           <img className="cardContinue" src={continuever} alt="conV" />
           
           {/* <div className="jotinhaImg">
