@@ -1,8 +1,21 @@
 import { Route, Routes } from "react-router";
 import Cursos from "./Cursos/Cursos";
 import Loja from "./Loja/Loja";
+import { useEffect } from "react";
+import { useAtom } from "jotai";
+import { SidebarGestorSet } from "../../../utils/Globals.utils";
 
 export default function Gestor() {
+  const [, setSidebarGestor] = useAtom(SidebarGestorSet);
+
+  useEffect(() => {
+      setSidebarGestor(true);
+      
+      return () => {
+        setSidebarGestor(false);
+      };
+    }, [setSidebarGestor]);
+    
   return (
     <>
     <Routes>
