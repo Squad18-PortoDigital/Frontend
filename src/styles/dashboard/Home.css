@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+
+
 /* main {
   background: url("../../images/fundoDashboard.png");
 }
@@ -16,201 +20,178 @@
   padding: 2%;
 } */
 
-.topHomeDashboard {
+/*.topHomeDashboard {
   background: url("../../images/fundoDashboard.png");
   background-attachment: fixed;
   padding: 2%;
   height: 45rem;
-}
+}*/
 
-.midHomeDashboard {
-  padding: 2%;
-}
+.topHomeDashboard{
+  margin-top: 230px;
+  margin-left: 230px;
 
-.textJotinha {
-  width: 50%;
-  position: relative;
-  /* top: 5em; */
-  left: 2em;
-}
+  width: 380px;
+  height: 300px;
 
-.jotinhaImg {
-  position: relative;
-  top: -12em;
-  width: 100%;
-}
-
-/* .jotinhaImg img {
-  width: 100%;
-} */
-
-.cardContinue {
-  width: 80%;
-  text-align: center;
-  position: relative;
-  top: -13em;
-  left: 12%;
-}
-
-.midImdDashboard {
-  /* margin-top: 34%; */
-  margin-top: 12em;
-  width: 100%;
-}
-
-/* .midImdDashboard img {
-  width: 100%;
-} */
-
-.textMidDashboard {
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.textMidDashboard img {
-  width: 50%;
-  margin: 5% 0;
-}
-
-/* .textMidDashboard p {
-  width: 80%;
-  margin: 0 auto;
-} */
-
-.topicosCategoriaDashboard {
-  background: url("../../images/gradefundo.svg");
-  /* width: 100%; */
-  padding: 1rem 0px;
-}
-
-.headerTextTC {
-  text-align: center;
-}
-
-.headerTextTC h1 {
-  font-size: medium;
-}
-
-.categorias {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.categorias img {
-  width: 40%;
-  margin: 2% 0px;
-}
-
-.footerHomerDashboard {
-  background: linear-gradient(222.84deg, #890513 3.39%, #DA4431 93.09%);
-  height: 30vh;
-  padding: 4% 2%;
-}
-
-.footerHomerDashboard h1 {
-  text-align: center;
-  color: white;
-}
-
-.footerCarrosselHD {
-  text-align: center;
-}
-
-@media (width <= 500px) and (width >= 460px) {
-  .midImdDashboard {
-    margin-top: 22em;
-  }
-}
-
-@media (width <= 460px) and (width >= 410px) {
-  .midImdDashboard {
-    margin-top: 18em;
-  }
-}
-
-@media (min-width: 768px) {
-  .topHomeDashboard {
-    background-size: cover;
-    padding: 8em 2% 0 2%;
-
-    display: flex;
-    height: 100%;
-  }
-
-  .textJotinha {
-    width: 40%;
-    position: relative;
-    top: 15em;
-    left: 0;
-  }
-
-  .jotinhaImg {
-    width: 50%;
-    position: inherit;
-    top: -7em;
-  }
-
-  /* .jotinhaImg img {
-    width: 100%;
-  } */ 
   
-  .cardContinue {
-    /* width: 100%; */
-    width: 20%;
-    text-align: inherit;
-    position: relative;
-    top: 15em;
-    left: 0;
-  }
 
-  /* .midHomeDashboard {
-    padding: 0 2% 0 2%;
-  } */
-  
-  .midHomeDashboard {
-    padding: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .midImdDashboard {
-    margin-top: 0;
-    width: 30%;
-  }
-
-  .textMidDashboard {
-    text-align: start;
-    width: 25%;
-    margin: 0 5%;
-  }
-
-  .topicosCategoriaDashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .headerTextTC {
-    text-align: center;
-    margin: 2% 0;
-  }
-  
-  .headerTextTC h1 {
-    font-size: medium;
-  }
-  
-  .categorias {
-    display: flex;
-    width: 70%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .categorias img {
-    width: 20%;
-    margin: 3%;
-  }
 }
+
+.tituloJotinha {
+  display: flex;
+  width: 471px;
+  height: 173px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800; /* ExtraBold */
+  line-height: 133%; /* 63.84px */
+
+}
+
+.paragrafoJotinha {
+  width: 365px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 171%; /* 41.04px */
+  margin-top: 20px;
+}
+
+.botaoSaibaMais {
+  margin-top: 60px;
+  width: 331.932px;
+  height: 72px;
+  flex-shrink: 0;
+
+  border-radius: 50px;
+  border: 2px solid #DC3545;
+  background: #FFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Poppins, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #DC3545;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+}
+
+.botaoSaibaMais:hover {
+  background: #FF3B22;
+
+  font-family: Poppins, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #FFF;
+
+}
+
+.botaoSaibaMais:active {
+  background: #FF3B22;
+
+  font-family: Poppins, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #FFF;
+
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+/*.Pintura {
+  width: 1829.089px;
+  height: 1804.372px;
+  flex-shrink: 0;
+  transform: rotate(-146.725deg);
+
+  top: 1429.37px;
+  left: 1486.85px;
+
+}*/
+
+.Relativ-Circulo{
+  position: relative;
+}
+
+.Circulo-Laranja {
+  position: absolute;
+  top: -360px;
+  left: 798px;
+  transform: translateX(-50%);
+
+  width: 1039px;
+  height: 992px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #FF3B22;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+.PinturaRedonda {
+  position: relative;
+  width: 1700px;
+  height: 1700px;
+
+  bottom: 700px;
+  right: 80px;
+  
+  z-index: 2;
+
+}
+
+.Traco {
+  position: relative;
+  width: 380px;
+  height: 380px;
+
+  bottom: 2400px;
+  right: 665px;
+
+  transform: rotate(-3deg);
+  
+  z-index: 3;
+}
+
+.Traco2 {
+  position: relative;
+  width: 380px;
+  height: 380px;
+
+  bottom: 2460px;
+  right: 1035px;
+
+  transform: rotate(-1deg);
+  
+  z-index: 3;
+}
+
+.PC {
+  position: relative;
+  width: 800px;
+  height: 800px;
+
+  top: -1940px;
+  left: 360px;
+  
+  z-index: 1;
+
+}
+
