@@ -13,6 +13,7 @@ import React from "react";
 import { useAtom } from "jotai";
 import { LoginModel } from "../../models/Login.model";
 import { jotinhaMascote } from "../../images";
+import { app } from "../../config/Axios.config";
 
 interface State {
   amount: string;
@@ -31,11 +32,10 @@ export default function Login() {
   const navigate = useNavigate();
 
   // Login
-  const [email, setEmail] = useState<string>('');
-  const [matricula, setMatricula] = useState<number | null>(null);
+  const [matricula, setMatricula] = useState<string>('');
   const [senha, setSenha] = useState<string>('');
-  const [errors, setErrors] = useState<{ email: string; senha: string }>({
-    email: '',
+  const [errors, setErrors] = useState<{ matricula: string; senha: string }>({
+    matricula: '',
     senha: '',
   });
   const [values, setValues] = useState<State>({
@@ -62,17 +62,16 @@ export default function Login() {
     event.preventDefault();
   };
 
-  const validateEmail = (email: string) => {
-    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return regex.test(email);
-  };
+  // const validateMatricula = (matricula: number | null) => {
+  //   if (matricula !== null) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // };
 
-  const validateMatricula = (matricula: number | null) => {
-    if (matricula !== null) {
-      return true;
-    } else {
-      return false;
-    }
+  const validateMatricula = (matricula: string) => {
+    return matricula.length >= 10;
   };
 
   const validateSenha = (senha: string) => {
@@ -82,19 +81,23 @@ export default function Login() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    let emailError: string = '';
+    let matriculaError: string = '';
     let senhaError: string = '';
 
     if (!validateSenha(senha)) {
       senhaError = 'A senha deve ter no mínimo 6 caracteres!';
     }
 
+    if (!validateMatricula(matricula)) {
+      matriculaError = 'A matricula deve ter no mímino 10 números!';
+    }
+
     setErrors({
-      email: emailError,
+      matricula: matriculaError,
       senha: senhaError,
     });
 
-    if (!emailError && !senhaError) {
+    if (!matriculaError && !senhaError) {
 
       // sofrerá modificação futura
 
@@ -105,7 +108,7 @@ export default function Login() {
       //   perfil: 1,
       // }
 
-      const token: LoginModel = {
+      const token = {
         token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM1LCJub21lIjoiTHVhbiIsIm1hdHJpY3VsYSI6OTU2MjUzLCJwZXJmaWwiOjF9.KGrdBcYJteyuvLF5OG-5TyGC1tftlpMijnxmeN4gu_M",
       }
       
@@ -114,16 +117,27 @@ export default function Login() {
       setIsLogged(true);
       localStorage.setItem("token", JSON.stringify(token.token));
       navigate("/dashboard/");
+
+      // const login: LoginModel = {
+      //   matricula: matricula,
+      //   password: senha,
+      // }
+
+      // app.post("/api/login/", {
+      //   ...login
+      // }).catch(result => {
+      //   console.log(result);
+      // })
     }
   };
 
   useEffect(() => {
-    if ((validateEmail(email) || validateMatricula(matricula)) && validateSenha(senha)) {
+    if (validateMatricula(matricula) && validateSenha(senha)) {
       setButtonDiable(false);
     } else {
       setButtonDiable(true);
     }
-  }, [email, senha, matricula]);
+  }, [senha, matricula]);
 
   useEffect(() => {
     setRouterHome(false);
@@ -155,20 +169,20 @@ export default function Login() {
               <Grid className="InputsText" container>
                 <Grid>
                   <TextField
-                    label="Matrícula ou E-mail"
+                    label="Matrícula"
                     type="text"
                     fullWidth
-                    value={email}
+                    value={matricula}
                     onChange={(e) => {
-                      setEmail(e.target.value);
-                      if ((/[^0-9]/.test(e.target.value) === false) && (e.target.value !== "")) {
-                        setMatricula(Number(e.target.value));
-                      } else {
-                        setMatricula(null);
-                      };
+                      // if ((/[^0-9]/.test(e.target.value) === false) && (e.target.value !== "")) {
+                      //   setMatricula(Number(e.target.value));
+                      // } else {
+                      //   setMatricula(null);
+                      // };
+                      setMatricula(e.target.value);
                     }}
-                    error={!!errors.email}
-                    helperText={errors.email}
+                    error={!!errors.matricula}
+                    helperText={errors.matricula}
                     slotProps={{
                       input: {
                         startAdornment: (

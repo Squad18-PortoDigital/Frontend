@@ -1,3 +1,4 @@
 export interface LoginModel{
-  token: string;
+  matricula: string;
+  password: string;
 }
