@@ -9,19 +9,19 @@ export default function Gestor() {
   const [, setSidebarGestor] = useAtom(SidebarGestorSet);
 
   useEffect(() => {
-      setSidebarGestor(true);
-      
-      return () => {
-        setSidebarGestor(false);
-      };
-    }, [setSidebarGestor]);
-    
+    setSidebarGestor(true);
+
+    return () => {
+      setSidebarGestor(false);
+    };
+  }, [setSidebarGestor]);
+
   return (
     <>
-    <Routes>
-      <Route path="/cursos" element={<Cursos />} />
-      <Route path="/loja" element={<Loja />} />
-    </Routes>
+      <Routes>
+        <Route path="/cursos" element={<Cursos />} />
+        <Route path="/loja" element={<Loja />} />
+      </Routes>
     </>
   );
 }

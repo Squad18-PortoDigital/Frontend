@@ -1,5 +1,5 @@
 .container-loja {
-  min-height: 100%;
+  /* min-height: 100%; */
 }
 
 /* .sidebar-loja {
@@ -50,6 +50,10 @@
 }
 
 @media (min-width: 768px) {
+  .container-loja {
+    height: 100%;
+  }
+
   /* .sidebar-loja {
     display: block;
     width: 25rem;
@@ -64,6 +68,7 @@
     align-items: start;
     flex-wrap: wrap;
     justify-content: flex-start;
+    overflow: auto;
   }
 
   .item-loja {
@@ -72,7 +77,8 @@
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
-    margin: 0px 5em;
+    /* margin: 0px 5em; */
+    margin: 0px 5em 2em 5em;
   }
 
   .item-loja .item-loja-top {
@@ -95,5 +101,12 @@
 
   .item-loja .item-loja-bottom p {
     margin: 2%;
+  }
+}
+
+@media (width < 480px) {
+  .item-loja {
+    width: 10em;
+    height: 15em;
   }
 }

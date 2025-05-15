@@ -5,7 +5,7 @@ import SidebarGestor from "../../../../components/SidebarGestor";
 
 
 export default function Loja() {
-  const [count, ] = useState<Array<any>>([0, 1, 2, 3 ,4 , 5, 6]);
+  const [count,] = useState<Array<any>>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
   useEffect(() => {
 
@@ -26,13 +26,10 @@ export default function Loja() {
       document.head.removeChild(style);
     };
   }, []);
-  
+
   return (
     <>
       <div className="container-loja flex">
-        {/* <div className="sidebar-loja">
-
-        </div> */}
         <SidebarGestor />
         <div className="main-loja">
           {count.map((element, index) => {

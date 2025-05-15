@@ -2,6 +2,8 @@ import { LinearProgress } from "@mui/material";
 import { imageSidebarGestor } from "../images";
 import "../styles/dashboard/gestor/SidebarGestor.css";
 import { useEffect, useState } from "react";
+import { useAtom } from "jotai";
+import { OpenSidebarGestor } from "../utils/Globals.utils";
 
 /*
 Quando o backend estiver pronto concluir a sidebar
@@ -10,9 +12,17 @@ Adicionar cores relativas para bara de XP
 
 */
 
+// interface SidebarProps {
+//   isOpenSidebarGestor?: boolean;
+//   onCloseSidebarGestor?: () => void;
+// }
+
+/* { isOpenSidebarGestor, onCloseSidebarGestor }: SidebarProps */
+
 export default function SidebarGestor() {
   const [progress, setProgress] = useState<number>(0);
   // const [barColor, setBarColor] = useState<string>("");
+  const [openSidebarGestor, setOpenSidebarGestor] = useAtom(OpenSidebarGestor);
 
   useEffect(() => {
     // const timer = setInterval(() => {
@@ -27,7 +37,9 @@ export default function SidebarGestor() {
 
   return (
     <>
-      <div className="sidebar-loja">
+      {/* <div className="sidebar-loja"> */}
+      <div className={`sidebar-loja ${openSidebarGestor ? "open" : ""}`}>
+        <button className="close-btn" onClick={() => {setOpenSidebarGestor(false)}}>×</button>
         <div className="sidebar-loja-top" />
         <div className="sidebar-loja-img relative">
           <img src={imageSidebarGestor} alt="imgGestor" />

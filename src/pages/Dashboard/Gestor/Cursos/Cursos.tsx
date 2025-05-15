@@ -10,10 +10,14 @@ import setaEsquerda from "../../../../images/setaEsquerda.svg";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useAtom } from "jotai";
+import { SidebarGestorSet } from "../../../../utils/Globals.utils";
+import { useEffect } from "react";
 
 const generateItems = (count: number) => Array.from({ length: count }, (_, i) => `Item ${i + 1}`);
 
 export default function Cursos() {
+  const [, setSidebarGestor] = useAtom(SidebarGestorSet);
   const items = generateItems(10);
   const settings = {
     dots: true,
@@ -36,6 +40,14 @@ export default function Cursos() {
     nextArrow: <img src={setaDireita} alt="seta" className="arrow next" />,
     prevArrow: <img src={setaEsquerda} alt="seta" className="arrow prev" />,
   };
+
+  // lógica para mudar a sidebar para a padrão (a que não é do gestor)
+  useEffect(() => {
+    setTimeout(() => {
+      setSidebarGestor(false);
+    }, 1000);
+
+  }, [setSidebarGestor]);
 
   return (
     <>
