@@ -2,7 +2,7 @@ import { Route, Routes, useNavigate } from "react-router";
 import HomeDashboard from "./Home/Home";
 import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { PerfilUser, StateLogin } from "../../utils/Globals.utils";
+import { PerfilUser, StateLogin, RouterHomeLogoff } from "../../utils/Globals.utils";
 import { UserModel } from "../../models/User.model";
 import { jwtDecode } from "jwt-decode";
 import Gestor from "./Gestor/Gestor";
@@ -10,6 +10,7 @@ import Gestor from "./Gestor/Gestor";
 export default function Dashboard() {
   const [, setIsLogged] = useAtom(StateLogin);
   const [, setPerfilUser] = useAtom(PerfilUser);
+  const [RouterHome, setRouterHome] = useAtom(RouterHomeLogoff);
 
   const navigate = useNavigate();
   
@@ -19,7 +20,8 @@ export default function Dashboard() {
     if (userData === null) {
       setIsLogged(false);
       localStorage.removeItem("token");
-      window.location.href = "/";
+      // window.location.href = "/";
+      navigate('/', { replace: true });
     } else {
       setIsLogged(true);
       // Aqui vai ficar o check do usuário após o login ou caso já tenha logado ele é redirecionado na Home direto para cá
@@ -30,11 +32,19 @@ export default function Dashboard() {
         localStorage.removeItem("token");
         setIsLogged(false);
         alert("Tem algo de errado com seu perfil, entre em contato com o suporte.");
-        window.location.href = "/";
+        // window.location.href = "/";
+        navigate('/', { replace: true });
       }
     }
 
-  }, [setIsLogged, navigate, setPerfilUser]);
+  }, [setIsLogged, setPerfilUser, navigate]);
+
+  useEffect(() => {
+    console.log("RouterHome: " + RouterHome);
+    if (RouterHome) {
+      navigate('/', { replace: true });
+    }
+  }, [RouterHome, setRouterHome, navigate]);
 
   return (
     <Routes>

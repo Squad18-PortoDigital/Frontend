@@ -6,12 +6,13 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../../styles/LoginPage.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { StateLogin } from "../../utils/Globals.utils";
+import { StateLogin, RouterHomeLogoff } from "../../utils/Globals.utils";
 import logoHeaderJN from "../../images/logo-header-jotanunes.png";
-import mascoteJotinha from "../../images/jotinhaMascote.svg";
+// import mascoteJotinha from "../../images/jotinhaMascote.svg";
 import React from "react";
 import { useAtom } from "jotai";
 import { LoginModel } from "../../models/Login.model";
+import { jotinhaMascote } from "../../images";
 
 interface State {
   amount: string;
@@ -25,6 +26,7 @@ export default function Login() {
   // const [openLogin, setOpenLogin] = useState(false);
   const [buttonDisable, setButtonDiable] = useState(true);
   const [, setIsLogged] = useAtom(StateLogin);
+  const [, setRouterHome] = useAtom(RouterHomeLogoff);
 
   const navigate = useNavigate();
 
@@ -124,6 +126,8 @@ export default function Login() {
   }, [email, senha, matricula]);
 
   useEffect(() => {
+    setRouterHome(false);
+
     const mainElement = document.querySelector('main');
 
     if (mainElement) {
@@ -135,13 +139,13 @@ export default function Login() {
         mainElement.style.padding = '';
       }
     };
-  }, []);
+  }, [setRouterHome]);
   
   return (
     <>
       <div className="container-login" >
         <div className="sub-container-login">
-          <img className="mascoteJotinha" src={mascoteJotinha} alt="mascote" />
+          <img className="mascoteJotinha" src={jotinhaMascote} alt="mascote" />
           <form onSubmit={handleSubmit}>
             <Grid className="FormInputs" container spacing={2}>
               <div className="FormLogo">
