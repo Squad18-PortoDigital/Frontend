@@ -123,7 +123,7 @@ export default function Login() {
         password: senha,
       }
 
-      app.post("/api/login/", {
+      app.post("/login/", {
         ...login
       }).then(result => {
         console.log(result);
