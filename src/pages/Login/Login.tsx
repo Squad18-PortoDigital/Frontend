@@ -108,26 +108,26 @@ export default function Login() {
       //   perfil: 1,
       // }
 
-      const token = {
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM1LCJub21lIjoiTHVhbiIsIm1hdHJpY3VsYSI6OTU2MjUzLCJwZXJmaWwiOjF9.KGrdBcYJteyuvLF5OG-5TyGC1tftlpMijnxmeN4gu_M",
-      }
+      // const token = {
+      //   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM1LCJub21lIjoiTHVhbiIsIm1hdHJpY3VsYSI6OTU2MjUzLCJwZXJmaWwiOjF9.KGrdBcYJteyuvLF5OG-5TyGC1tftlpMijnxmeN4gu_M",
+      // }
       
       // sofrerá modificação futura
 
-      setIsLogged(true);
-      localStorage.setItem("token", JSON.stringify(token.token));
-      navigate("/dashboard/");
+      // setIsLogged(true);
+      // localStorage.setItem("token", JSON.stringify(token.token));
+      // navigate("/dashboard/");
 
-      // const login: LoginModel = {
-      //   matricula: matricula,
-      //   password: senha,
-      // }
+      const login: LoginModel = {
+        matricula: matricula,
+        password: senha,
+      }
 
-      // app.post("/api/login/", {
-      //   ...login
-      // }).catch(result => {
-      //   console.log(result);
-      // })
+      app.post("/api/login/", {
+        ...login
+      }).then(result => {
+        console.log(result);
+      });
     }
   };
 
