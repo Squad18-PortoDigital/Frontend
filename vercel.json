@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "http://31.97.17.191/:path*"
+      "destination": "/api/proxy.js"
     }
   ]
 }
