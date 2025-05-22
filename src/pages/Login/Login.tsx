@@ -108,26 +108,26 @@ export default function Login() {
       //   perfil: 1,
       // }
 
-      // const token = {
-      //   token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM1LCJub21lIjoiTHVhbiIsIm1hdHJpY3VsYSI6OTU2MjUzLCJwZXJmaWwiOjF9.KGrdBcYJteyuvLF5OG-5TyGC1tftlpMijnxmeN4gu_M",
-      // }
+      const token = {
+        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM1LCJub21lIjoiTHVhbiIsIm1hdHJpY3VsYSI6OTU2MjUzLCJwZXJmaWwiOjF9.KGrdBcYJteyuvLF5OG-5TyGC1tftlpMijnxmeN4gu_M",
+      }                           //ao descomentar linhas 111 a 113 libera para login local ou seja sem fazer requisição no server
       
       // sofrerá modificação futura
 
-      // setIsLogged(true);
-      // localStorage.setItem("token", JSON.stringify(token.token));
-      // navigate("/dashboard/");
+      setIsLogged(true);
+      localStorage.setItem("token", JSON.stringify(token.token));
+      navigate("/dashboard/");    //ao descomentar linhas 17 a 119 libera para login local ou seja sem fazer requisição no server
 
-      const login: LoginModel = {
-        matricula: matricula,
-        password: senha,
-      }
+      // const login: LoginModel = {      //ao comentar linhas 121 a 130 libera para login local ou seja sem fazer requisição no server
+      //   matricula: matricula,
+      //   password: senha,
+      // }
 
-      app.post("/login/", {
-        ...login
-      }).then(result => {
-        console.log(result);
-      });
+      // app.post("/login/", {
+      //   ...login
+      // }).then(result => {
+      //   console.log(result);
+      // });
     }
   };
 

@@ -13,6 +13,7 @@ import Estrela from "../../../images/Estrela.svg";
 import Estrela2 from "../../../images/Estrela2.svg";
 import video from "../../../images/video.mp4";
 import pinguinhos2 from "../../../images/pinguinhos2.svg";
+import grafico from "../../../images/grafico.svg";
 
 export default function HomeDashboard() {
 
@@ -67,14 +68,42 @@ export default function HomeDashboard() {
           </div>
 
           <div className="Relativ-Circulo">
-              <div className="Circulo-Laranja-2-sobreposto"></div>
-              <img className="Estrela" src={Estrela} alt="Estrela" />
-              <div className="Caixote1"></div>
-              <div className="Caixote2"></div>
-              <div className="Caixote3"></div>
-              <div className="Caixote4"></div>
-              <div className="Caixote5"></div>
-              <div className="Caixote6"></div>
+
+            <div className="Circulo-Laranja-2-sobreposto"></div>
+            <img className="Estrela" src={Estrela} alt="Estrela" />
+            <div className="Caixote1"></div>
+            <div className="Caixote2"></div>
+            <div className="Caixote3"></div>
+            <div className="Caixote4"></div>
+            <div className="Caixote5"></div>
+            <div className="Caixote6"></div>
+
+          </div>
+
+          <div className="Relativ-Img-Parte2">
+
+            <p className="Text-Caixote">
+              Lorem ipsum
+            </p>
+
+            <img className="Grafico" src={grafico} alt="grafico" />
+
+            <div className="Retangulo-G"></div>
+            <div className="Retangulo-Amarelo1"></div>
+
+          </div>
+
+          <div className="Relativ-Img2-Parte2">
+
+            <p className="Text-Caixote">
+              Lorem ipsum
+            </p>
+
+            <img className="Grafico" src={grafico} alt="grafico" />
+
+            <div className="Retangulo-G"></div>
+            <div className="Retangulo-Amarelo1"></div>
+
           </div>
 
           <div className="Parte-2">
