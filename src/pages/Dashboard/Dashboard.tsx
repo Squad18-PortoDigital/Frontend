@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { useAtom } from "jotai";
 import { PerfilUser, StateLogin, RouterHomeLogoff } from "../../utils/Globals.utils";
 import { UserModel } from "../../models/User.model";
-import { jwtDecode } from "jwt-decode";
+// import { jwtDecode } from "jwt-decode";
 import Gestor from "./Gestor/Gestor";
+import Aluno from "./Alunos/Alunos";
 
 export default function Dashboard() {
   const [, setIsLogged] = useAtom(StateLogin);
@@ -15,25 +16,35 @@ export default function Dashboard() {
   const navigate = useNavigate();
   
   useEffect(() => {
-    const userData: string | null = localStorage.getItem("token");
+    const userData: string | null = localStorage.getItem("user");
 
     if (userData === null) {
       setIsLogged(false);
-      localStorage.removeItem("token");
+      localStorage.removeItem("user");
       // window.location.href = "/";
       navigate('/', { replace: true });
     } else {
       setIsLogged(true);
       // Aqui vai ficar o check do usuário após o login ou caso já tenha logado ele é redirecionado na Home direto para cá
-      const checkUser: UserModel = jwtDecode(userData);
-      if (checkUser.perfil === 1) {
-        setPerfilUser(checkUser.perfil);
-      } else {
-        localStorage.removeItem("token");
-        setIsLogged(false);
-        alert("Tem algo de errado com seu perfil, entre em contato com o suporte.");
-        // window.location.href = "/";
-        navigate('/', { replace: true });
+      const checkUser: UserModel = JSON.parse(userData);
+      switch (checkUser.nivel) {
+        case "gestor":
+          setPerfilUser(checkUser.nivel);
+          break;
+        case "instrutor":
+          setPerfilUser(checkUser.nivel);
+          break;
+        case "aluno":
+          setPerfilUser(checkUser.nivel);
+          break;
+        default:
+          localStorage.removeItem("user");
+          setIsLogged(false);
+          alert("Tem algo de errado com seu perfil...");
+          alert("Tente fazer login novamente ou entre em contato com o suporte.")
+          // window.location.href = "/";
+          navigate('/', { replace: true });
+          break;
       }
     }
 
@@ -50,6 +61,7 @@ export default function Dashboard() {
     <Routes>
       <Route path="/" element={<HomeDashboard />} />
       <Route path="/gestor/*" element={<Gestor />} />
+      <Route path="/alunos/*" element={<Aluno />} />
     </Routes>
   );
 }

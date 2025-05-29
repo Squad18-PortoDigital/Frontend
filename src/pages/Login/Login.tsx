@@ -11,9 +11,9 @@ import logoHeaderJN from "../../images/logo-header-jotanunes.png";
 // import mascoteJotinha from "../../images/jotinhaMascote.svg";
 import React from "react";
 import { useAtom } from "jotai";
-import { LoginModel } from "../../models/Login.model";
+// import { LoginModel } from "../../models/Login.model";
 import { jotinhaMascote } from "../../images";
-import { app } from "../../config/Axios.config";
+// import { app } from "../../config/Axios.config";
 
 interface State {
   amount: string;
@@ -99,26 +99,56 @@ export default function Login() {
 
     if (!matriculaError && !senhaError) {
 
-      // sofrerá modificação futura
+      // metodo login temporario
+      interface usuarios {
+        matricula: string;
+        refresh: string;
+        token: string;
+        id_usuario: number;
+        nome: string;
+        nivel: string;
+      }
 
-      // const userData: UserModel = {
-      //   id: 235,
-      //   nome: "Luan",
-      //   matricula: 956253,
-      //   perfil: 1,
-      // }
 
-      const token = {
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM1LCJub21lIjoiTHVhbiIsIm1hdHJpY3VsYSI6OTU2MjUzLCJwZXJmaWwiOjF9.KGrdBcYJteyuvLF5OG-5TyGC1tftlpMijnxmeN4gu_M",
-      }                           //ao descomentar linhas 111 a 113 libera para login local ou seja sem fazer requisição no server
-      
-      // sofrerá modificação futura
+      const acessos: usuarios[] = [
+        {
+          matricula: "1231103318",
+          refresh: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0ODYyMzg1NywiaWF0IjoxNzQ4NTM3NDU3LCJqdGkiOiJhZTZhZjA5NmNkYTY0NGFjYjM4YWY5NDA5ZWI5ZmYzNiIsInVzZXJfaWQiOjE2fQ.0FCvFfgXfKVYUcL_cAH-3XB2rrsgNKOImTz_GpyFsCQ",
+          token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4NTQyODU3LCJpYXQiOjE3NDg1Mzc0NTcsImp0aSI6IjZiMTQ2MDYxNmNiYjRiYTk4MGZjNWRhOTEyZmNmMjI2IiwidXNlcl9pZCI6MTZ9.baoWdJcPRVsdlUpj1cpd5DtDPn_p6i6RcMmPDYdt9tk",
+          id_usuario: 16,
+          nome: "hugo",
+          nivel: "instrutor",
+        },
+        {
+          matricula: "1231103319",
+          refresh: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0ODYyMzg1NywiaWF0IjoxNzQ4NTM3NDU3LCJqdGkiOiJhZTZhZjA5NmNkYTY0NGFjYjM4YWY5NDA5ZWI5ZmYzNiIsInVzZXJfaWQiOjE2fQ.0FCvFfgXfKVYUcL_cAH-3XB2rrsgNKOImTz_GpyFsCQ",
+          token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4NTQyODU3LCJpYXQiOjE3NDg1Mzc0NTcsImp0aSI6IjZiMTQ2MDYxNmNiYjRiYTk4MGZjNWRhOTEyZmNmMjI2IiwidXNlcl9pZCI6MTZ9.baoWdJcPRVsdlUpj1cpd5DtDPn_p6i6RcMmPDYdt9tk",
+          id_usuario: 17,
+          nome: "hugo",
+          nivel: "aluno",
+        },
+        {
+          matricula: "1231103320",
+          refresh: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0ODYyMzg1NywiaWF0IjoxNzQ4NTM3NDU3LCJqdGkiOiJhZTZhZjA5NmNkYTY0NGFjYjM4YWY5NDA5ZWI5ZmYzNiIsInVzZXJfaWQiOjE2fQ.0FCvFfgXfKVYUcL_cAH-3XB2rrsgNKOImTz_GpyFsCQ",
+          token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4NTQyODU3LCJpYXQiOjE3NDg1Mzc0NTcsImp0aSI6IjZiMTQ2MDYxNmNiYjRiYTk4MGZjNWRhOTEyZmNmMjI2IiwidXNlcl9pZCI6MTZ9.baoWdJcPRVsdlUpj1cpd5DtDPn_p6i6RcMmPDYdt9tk",
+          id_usuario: 18,
+          nome: "hugo",
+          nivel: "gestor",
+        }
+      ]
 
-      setIsLogged(true);
-      localStorage.setItem("token", JSON.stringify(token.token));
-      navigate("/dashboard/");    //ao descomentar linhas 17 a 119 libera para login local ou seja sem fazer requisição no server
+      acessos.forEach(val => {
 
-      // const login: LoginModel = {      //ao comentar linhas 121 a 130 libera para login local ou seja sem fazer requisição no server
+        if (val.matricula === matricula) {
+          setIsLogged(true);
+          localStorage.setItem("user", JSON.stringify(val));
+          navigate("/dashboard/");
+        }
+
+      });
+      // metodo login temporario
+
+      // const login: LoginModel = {
       //   matricula: matricula,
       //   password: senha,
       // }
