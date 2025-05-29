@@ -79,7 +79,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const userData: string | null = localStorage.getItem("token");
+    const userData: string | null = localStorage.getItem("user");
 
     if (userData !== null) {
       setIsLogged(true);
