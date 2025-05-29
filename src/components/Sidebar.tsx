@@ -28,7 +28,7 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
           {isLogged ? (
             <>
               {/* 1 é gestor e 2 é aluno, temporariamente ficará assim atṕe unir com o backend */}
-              {Perfil === 1 ? (
+              {Perfil === "gestor" ? (
                 <>
                   {/* 1 */}
                   <div className="navGeral">
@@ -53,13 +53,36 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
                     }}>Sair</Link>
                   </div>
                 </>
-              ) : Perfil === 2 ? (
+              ) : Perfil === "instrutor" ? (
                 <>
                   {/* 2 */}
                   <div className="navGeral">
                     <Link to="/dashboard" onClick={onCloseSidebar}>Inicio</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Cursos</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Trilhos</Link>
+                    <Link to="/dashboard" onClick={onCloseSidebar}>Loja</Link>
+                    <Link to="/dashboard" onClick={onCloseSidebar}>Certificados</Link>
+                    <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link>
+                    <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link>
+                  </div>
+                  <div className="navMobile">
+                    <Link to="#" onClick={() => {
+                      logoff();
+                    }}>Sair</Link>
+                  </div>
+                  <div className="navDesktop">
+                    <Link to="#" onClick={() => {
+                      logoff();
+                    }}>Sair</Link>
+                  </div>
+                </>
+              ) : Perfil === "aluno" ? (
+                <>
+                  {/* 2 */}
+                  <div className="navGeral">
+                    <Link to="/dashboard" onClick={onCloseSidebar}>Inicio</Link>
+                    <Link to="/dashboard" onClick={onCloseSidebar}>Cursos</Link>
+                    <Link to="/dashboard/alunos/minhastrilhas" onClick={onCloseSidebar}>Trilhas</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Loja</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Certificados</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link>
