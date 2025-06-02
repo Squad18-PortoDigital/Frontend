@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e44331;
-  width: 100%;
-  height: 100vh;
+  /* background-color: #e44331; */
+  /* width: 100%; */
+  /* height: 100vh; */
   padding: 20px;
   box-sizing: border-box;
 }
