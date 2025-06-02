@@ -9,3 +9,5 @@ export const SidebarGestorSet = atom<boolean>(false);
 export const OpenSidebarGestor = atom<boolean>(false);
 
 export const RouterHomeLogoff = atom<boolean>(false);
+
+export const ModalRecuperacaoLogin = atom<boolean>(false);

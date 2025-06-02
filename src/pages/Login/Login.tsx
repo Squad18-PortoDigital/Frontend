@@ -6,7 +6,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "../../styles/LoginPage.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { StateLogin, RouterHomeLogoff } from "../../utils/Globals.utils";
+import { StateLogin, RouterHomeLogoff, ModalRecuperacaoLogin } from "../../utils/Globals.utils";
 import logoHeaderJN from "../../images/logo-header-jotanunes.png";
 // import mascoteJotinha from "../../images/jotinhaMascote.svg";
 import React from "react";
@@ -16,6 +16,7 @@ import { jotinhaMascote } from "../../images";
 import { app } from "../../config/Axios.config";
 import { AxiosResponse } from "axios";
 import { UserModel } from "../../models/User.model";
+import EsqueciSenha from "./Recuperacao/Recuperacao";
 
 interface State {
   amount: string;
@@ -30,6 +31,7 @@ export default function Login() {
   const [buttonDisable, setButtonDiable] = useState(true);
   const [, setIsLogged] = useAtom(StateLogin);
   const [, setRouterHome] = useAtom(RouterHomeLogoff);
+  const [, setModalRecuperacao] = useAtom(ModalRecuperacaoLogin);
 
   const navigate = useNavigate();
 
@@ -194,6 +196,7 @@ export default function Login() {
   
   return (
     <>
+      <EsqueciSenha />
       <div className="container-login" >
         <div className="sub-container-login">
           <img className="mascoteJotinha" src={jotinhaMascote} alt="mascote" />
@@ -276,7 +279,7 @@ export default function Login() {
               </Grid>
 
               <Grid className="container-btnRecover">
-                <Button className="btnRecover">Esqueci minha senha</Button>
+                <Button className="btnRecover" onClick={() => {setModalRecuperacao(true)}}>Esqueci minha senha</Button>
               </Grid>
 
               <Grid>
