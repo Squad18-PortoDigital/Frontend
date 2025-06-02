@@ -1,5 +1,5 @@
 main {
-  padding: 0;
+  padding: 0px;
 }
 
 @media (width > 768px) {
@@ -20,7 +20,7 @@ main {
     background-repeat: no-repeat;
     height: 90vh;
     width: 100%;
-    padding: 100px 100px 20px 100px;
+    padding: 20px 100px;
     display: flex;
     flex-direction: column;
   }
