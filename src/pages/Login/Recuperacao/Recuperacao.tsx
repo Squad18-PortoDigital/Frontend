@@ -13,7 +13,7 @@ export default function EsqueciSenha() {
               alf******u99@gmail.com
             </p>
             <p>
-              Se este for o seu e-mail, clique em <strong>CONFIRMAR</strong>{" "}
+              Se este for o seu e-mail, clique em <strong>CONFIRMAR</strong>
               para que o e-mail de recuperação de senha seja enviado.
             </p>
             <button>Voltar</button>
