@@ -1,3 +1,4 @@
+import { NotebookPen, NotebookText } from "lucide-react";
 import "../../../../../styles/dashboard/aluno/Aula.css";
 
 export default function Aula() {
@@ -6,21 +7,27 @@ export default function Aula() {
       <div className="container-aula">
         <div className="container-lateral-aula">
           <div className="modulo-aula">
-            <p>Segurança do Trabalho: Mólulo 1 - [40HS]</p>
+            <div className="nome-modulo-aula">
+              <NotebookPen size={35} />
+              Segurança do Trabalho: Mólulo 1 - [40HS]
+            </div>
           </div>
           <div className="aulas">
             <div>
-              <p>[ ]Introdução a Segurança do Trabalho</p>
+              <p>[ ] Introdução a Segurança do Trabalho</p>
             </div>
             <div>
-              <p>[ ]Normas e Segurança do Trabalho</p>
+              <p>[ ] Normas e Segurança do Trabalho</p>
             </div>
             <div>
-              <p>[ ]Prevenção e Controle de Sinistros</p>
+              <p>[ ] Prevenção e Controle de Sinistros</p>
             </div>
           </div>
           <div className="quiz-aula">
-            <p>Quiz - Segurança do Trabalho: Módulo 01</p>
+            <div className="titulo-quiz-aula">
+              <NotebookText size={35} />
+              Quiz - Segurança do Trabalho: Módulo 01
+            </div>
           </div>
         </div>
         <div className="container-video-aula">

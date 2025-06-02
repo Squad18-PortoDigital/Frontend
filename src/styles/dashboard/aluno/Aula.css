@@ -8,11 +8,44 @@ main {
     flex-direction: row;
     align-items: center;
   }
+
   .container-lateral-aula {
-    background-color: antiquewhite;
     height: 90vh;
     width: 25rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
   }
+  .modulo-aula {
+    height: 15%;
+    background-color: #da4431;
+    display: flex;
+    align-items: end;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    justify-content: center;
+  }
+  .nome-modulo-aula,
+  .titulo-quiz-aula {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .aulas {
+    height: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .quiz-aula {
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid black;
+    height: 8%;
+  }
+
   .container-video-aula {
     background-image: url("../../../images/fundoAula.png");
     background-size: cover;
@@ -24,7 +57,6 @@ main {
     display: flex;
     flex-direction: column;
   }
-
   .informacao-aula,
   .descricao-aula {
     width: 60%;
@@ -51,7 +83,6 @@ main {
     display: block;
     margin: auto;
   }
-
   .video-aula iframe {
     position: absolute;
     top: 0;
@@ -60,7 +91,6 @@ main {
     height: 100%;
     border: 0;
   }
-
   .navegacao-aula {
     display: flex;
     justify-content: space-between;
