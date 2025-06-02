@@ -1,7 +1,21 @@
 import { NotebookPen, NotebookText } from "lucide-react";
 import "../../../../../styles/dashboard/aluno/Aula.css";
+import { useEffect } from "react";
 
 export default function Aula() {
+  useEffect(() => {
+    const mainElement = document.querySelector("main");
+
+    if (mainElement) {
+      mainElement.style.padding = "0";
+    }
+
+    return () => {
+      if (mainElement) {
+        mainElement.style.padding = "";
+      }
+    };
+  }, []);
   return (
     <>
       <div className="container-aula">
@@ -44,6 +58,7 @@ export default function Aula() {
               src="https://www.youtube.com/embed/sIjEzqbD2jg?si=sX2Cu-sRRQlPhYp7"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              /* full screen - falta implementar */
             ></iframe>
           </div>
           <div className="descricao-aula">
