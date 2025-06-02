@@ -1,2 +1,22 @@
 @media (width > 768px) {
+  .container-aula {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .container-lateral-aula {
+    background-color: antiquewhite;
+    height: 90vh;
+    width: 25rem;
+  }
+
+  .container-video-aula {
+    background-image: url("../../../images/fundoAula.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: 100%;
+  }
 }
