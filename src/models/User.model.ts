@@ -15,8 +15,8 @@
 // }
 
 export interface UserModel {
-  refresh: string;
   access: string;
+  refresh: string;
   id_usuario: number;
   nome: string;
   nivel: string;
