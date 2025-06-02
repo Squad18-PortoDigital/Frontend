@@ -25,8 +25,10 @@ export default function Aula() {
         </div>
         <div className="container-video-aula">
           <div className="informacao-aula">
-            <h1>Introdução</h1>
-            <p>Segurança do Trabalho: Módulo 01 [40 HORAS] Introdução</p>
+            <h1 className="titulo-informacao-aula">Introdução</h1>
+            <p className="descricao-informacao-aula">
+              Segurança do Trabalho: Módulo 01 [40 HORAS] Introdução
+            </p>
           </div>
           <div className="video-aula">
             <iframe

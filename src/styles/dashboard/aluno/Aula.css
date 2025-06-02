@@ -1,16 +1,18 @@
+main {
+  padding: 0;
+}
+
 @media (width > 768px) {
   .container-aula {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-
   .container-lateral-aula {
     background-color: antiquewhite;
     height: 90vh;
     width: 25rem;
   }
-
   .container-video-aula {
     background-image: url("../../../images/fundoAula.png");
     background-size: cover;
@@ -18,5 +20,56 @@
     background-repeat: no-repeat;
     height: 90vh;
     width: 100%;
+    padding: 100px 100px 20px 100px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .informacao-aula,
+  .descricao-aula {
+    width: 60%;
+    margin: auto;
+    padding: 15px;
+  }
+  .titulo-informacao-aula {
+    padding: 20px;
+    font-weight: 100;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #da4431;
+  }
+  .descricao-informacao-aula {
+    padding: 10px;
+    font-weight: 600;
+  }
+  .video-aula {
+    position: relative;
+    padding-bottom: 33.25%;
+    width: 60%;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+  }
+
+  .video-aula iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .navegacao-aula {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    gap: 20px;
+
+    color: #da4431;
+    font-weight: 600;
+    text-decoration: underline;
   }
 }
