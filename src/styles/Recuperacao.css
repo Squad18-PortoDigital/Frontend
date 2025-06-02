@@ -1,0 +1,114 @@
+.esqueci-senha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e44331;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.recuperacao-container {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.recuperacao-matricula {
+  display: flex;
+  flex-direction: column;
+}
+.recuperacao-matricula h1 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.recuperacao-matricula-container {
+  border: 1px solid black;
+  border-radius: 8px;
+}
+.recuperacao-matricula-container h2 {
+  font-size: 18px;
+  margin: 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+.recuperacao-matricula-container p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.recuperacao-matricula-container p > strong {
+  color: #cf1500;
+}
+.recuperacao-matricula-container button {
+  padding: 6px 16px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.recuperacao-matricula-container button:hover {
+  background-color: #f1f1f1;
+}
+.recuperacao-detalhamento {
+  display: flex;
+  flex-direction: column;
+}
+.recuperacao-detalhamento h1 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.recuperacao-detalhamento p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.recuperacao-jotanunes-logo {
+  max-width: 150px;
+  height: auto;
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  .recuperacao-container {
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1000px;
+    padding: 30px;
+  }
+  .recuperacao-matricula,
+  .recuperacao-detalhamento {
+    width: 50%;
+  }
+  .recuperacao-detalhamento {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+  }
+  .recuperacao-matricula-container button {
+    font-size: 16px;
+  }
+  .recuperacao-matricula h1,
+  .recuperacao-detalhamento h1 {
+    font-size: 30px;
+  }
+  .recuperacao-matricula-container h2 {
+    font-size: 24px;
+    padding: 10px;
+  }
+  .recuperacao-matricula-container p,
+  .recuperacao-detalhamento p {
+    font-size: 20px;
+  }
+  .recuperacao-jotanunes-logo {
+    max-width: 200px;
+  }
+}
