@@ -1,6 +1,8 @@
 import "../../../styles/Recuperacao.css";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 import { useAtom } from "jotai";
 import { ModalRecuperacaoLogin } from "../../../utils/Globals.utils";
 import logoRecuperacao from "../../../images/logo-recuperacao-jotanunes.png";
@@ -16,10 +18,17 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: "max-content",
 };
 
 export default function EsqueciSenha() {
+  const [ModalRecuperacao, setModalRecuperacao] = useAtom(
+    ModalRecuperacaoLogin
+  );
   const [ModalRecuperacao, setModalRecuperacao] = useAtom(
     ModalRecuperacaoLogin
   );
@@ -83,6 +92,7 @@ export default function EsqueciSenha() {
               </p>
               <img
                 className="recuperacao-jotanunes-logo"
+                src={logoRecuperacao}
                 src={logoRecuperacao}
                 alt="JotaNunes-Logo"
               />
