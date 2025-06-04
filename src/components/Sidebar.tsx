@@ -27,8 +27,8 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
         <nav>
           {isLogged ? (
             <>
-              {/* 1 é gestor e 2 é aluno, temporariamente ficará assim atṕe unir com o backend */}
-              {Perfil === "gestor" ? (
+              {/*admin é o gestor, não irei trocar nomeclatura*/}
+              {Perfil === "admin" ? (
                 <>
                   {/* 1 */}
                   <div className="navGeral">
