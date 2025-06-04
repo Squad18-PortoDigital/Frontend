@@ -1,0 +1,45 @@
+.container-trilhas {
+
+}
+
+.top-trilhas {
+  width: 100%;
+}
+
+.top-trilhas .elements-top-trilhas .text-top-trilhas p {
+  color: #D41D26;
+  font-weight: 600;
+}
+
+/* .top-trilhas .elements-top-trilhas .btns-top-trilhas img {
+  cursor: pointer;
+} */
+
+.elements-top-trilhas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-trilhas {
+  display: flex;
+}
+
+.trilha-box {
+  width: 315px;
+  height: 217px;
+  border-radius: 8px;
+  background: #D9D9D9;
+  margin: 1%;
+}
+
+.trilha-box-top {
+  height: 100px;
+  border-radius: 8px 8px 0px 0px;
+  background: #696969;
+}
+
+.trilha-box-main p {
+  color: #000;
+  font-weight: 600;
+}

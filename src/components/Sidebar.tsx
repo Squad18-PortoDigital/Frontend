@@ -34,11 +34,11 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
                   <div className="navGeral">
                     <Link to="/dashboard" onClick={onCloseSidebar}>Inicio</Link>
                     <Link to="/dashboard/gestor/cursos" onClick={onCloseSidebar}>Cursos</Link>
-                    <Link to="/dashboard" onClick={onCloseSidebar}>Trilhos</Link>
+                    <Link to="/dashboard/gestor/trilhas" onClick={onCloseSidebar}>Trilhas</Link>
                     <Link to="/dashboard/gestor/loja" onClick={onCloseSidebar}>Loja</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Certificados</Link>
-                    <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link>
-                    <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link>
+                    {/* <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link> */}
+                    {/* <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link> */}
                   </div>
                   <div className="navMobile">
                     <Link to="#" onClick={() => {
@@ -62,8 +62,8 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
                     <Link to="/dashboard" onClick={onCloseSidebar}>Trilhos</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Loja</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Certificados</Link>
-                    <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link>
-                    <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link>
+                    {/* <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link> */}
+                    {/* <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link> */}
                   </div>
                   <div className="navMobile">
                     <Link to="#" onClick={() => {
@@ -85,8 +85,8 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
                     <Link to="/dashboard/alunos/minhastrilhas" onClick={onCloseSidebar}>Trilhas</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Loja</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Certificados</Link>
-                    <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link>
-                    <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link>
+                    {/* <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link> */}
+                    {/* <Link to="/sobre" onClick={onCloseSidebar}>Sobre</Link> */}
                   </div>
                   <div className="navMobile">
                     <Link to="#" onClick={() => {
