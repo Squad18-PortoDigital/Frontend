@@ -28,7 +28,7 @@ export default function Dashboard() {
       // Aqui vai ficar o check do usuário após o login ou caso já tenha logado ele é redirecionado na Home direto para cá
       const checkUser: UserModel = JSON.parse(userData);
       switch (checkUser.nivel) {
-        case "gestor":
+        case "admin":
           setPerfilUser(checkUser.nivel);
           break;
         case "instrutor":
