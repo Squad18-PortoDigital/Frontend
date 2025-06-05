@@ -20,6 +20,9 @@ import triangulo from "./triangulo.svg";
 import backgroundLoja from "./backgroundLoja.svg";
 import imageExemploLoja from "./imagemExemploLoja.svg";
 import imageSidebarGestor from "./imageSidebarGestor.svg";
+import IconRelogioTrilhas from "./IconRelogioTrilhas.svg";
+import IconJcoinTrilhas from "./IconJcoinTrilhas.svg";
+import IconBoxTopTrilhas from "./IconBoxTopTrilhas.svg";
 
 export {
   backgroundloginNoTextgptEdit,
@@ -44,4 +47,7 @@ export {
   backgroundLoja,
   imageExemploLoja,
   imageSidebarGestor,
+  IconJcoinTrilhas,
+  IconRelogioTrilhas,
+  IconBoxTopTrilhas,
 }

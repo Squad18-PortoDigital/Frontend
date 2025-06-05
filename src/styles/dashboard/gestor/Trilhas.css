@@ -1,5 +1,5 @@
 .container-trilhas {
-
+  /* height: 100%; */
 }
 
 .top-trilhas {
@@ -23,6 +23,12 @@
 
 .main-trilhas {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .trilha-box {
@@ -34,12 +40,23 @@
 }
 
 .trilha-box-top {
-  height: 100px;
+  height: 45%;
   border-radius: 8px 8px 0px 0px;
   background: #696969;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.trilha-box-main p {
+.trilha-box-main {
   color: #000;
-  font-weight: 600;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 55%;
+}
+
+.btns-top-trilhas img {
+  cursor: pointer;
 }

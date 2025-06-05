@@ -1,6 +1,6 @@
 // Trilha.tsx
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import backgroundTrilha from "./backgroundTrilha.png";
 import prancheta from "./prancheta.svg";
 import Capacete from "./Capacete.png";
