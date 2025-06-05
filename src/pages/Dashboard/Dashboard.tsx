@@ -69,7 +69,7 @@ export default function Dashboard() {
     <Routes>
       <Route path="/" element={<HomeDashboard />} />
       <Route path="/gestor/*" element={<Gestor />} />
-      <Route path="/alunos/*" element={<Aluno />} />
+      <Route path="/aluno/*" element={<Aluno />} />
     </Routes>
   );
 }

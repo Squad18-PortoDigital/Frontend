@@ -82,7 +82,7 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
                   <div className="navGeral">
                     <Link to="/dashboard" onClick={onCloseSidebar}>Inicio</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Cursos</Link>
-                    <Link to="/dashboard/alunos/minhastrilhas" onClick={onCloseSidebar}>Trilhas</Link>
+                    <Link to="/dashboard/aluno/minhastrilhas" onClick={onCloseSidebar}>Trilhas</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Loja</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Certificados</Link>
                     {/* <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link> */}
