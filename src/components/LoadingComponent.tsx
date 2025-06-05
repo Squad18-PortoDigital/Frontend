@@ -1,10 +1,10 @@
 import Button from "@mui/material/Button";
 
-interface LoadingComponent {
+interface loadingComponent {
   text: string;
 }
 
-export default function LoadingComponent({text}: LoadingComponent) {
+export default function LoadingComponent({text}: loadingComponent) {
   return (
     <Button
       loading
