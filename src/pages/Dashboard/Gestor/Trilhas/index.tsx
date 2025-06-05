@@ -3,7 +3,6 @@ import Trilhas from "./Trilhas";
 import { useEffect } from "react";
 import SidebarGestor from "../../../../components/SidebarGestor";
 import "../../../../styles/dashboard/gestor/MainTrilhas.css";
-import NovaTrilha from "./NovaTrilha";
 
 
 export default function MainTrilhas() {
@@ -31,7 +30,6 @@ export default function MainTrilhas() {
         <div className="p-20 w-full">
           <Routes>
             <Route path="/" element={<Trilhas />} />
-            <Route path="/novatrilha" element={<NovaTrilha />} />
           </Routes>
         </div>
       </div>

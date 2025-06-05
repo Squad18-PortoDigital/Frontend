@@ -11,3 +11,7 @@ export const OpenSidebarGestor = atom<boolean>(false);
 export const RouterHomeLogoff = atom<boolean>(false);
 
 export const ModalRecuperacaoLogin = atom<boolean>(false);
+
+export const AccessToken = atom<string>("");
+
+export const NomeUser = atom<string>("");

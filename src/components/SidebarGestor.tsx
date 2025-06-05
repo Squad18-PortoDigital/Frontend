@@ -1,9 +1,9 @@
-import { LinearProgress } from "@mui/material";
+// import { LinearProgress } from "@mui/material";
 import { imageSidebarGestor } from "../images";
 import "../styles/dashboard/gestor/SidebarGestor.css";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
-import { OpenSidebarGestor } from "../utils/Globals.utils";
+import { NomeUser, OpenSidebarGestor } from "../utils/Globals.utils";
 
 /*
 Quando o backend estiver pronto concluir a sidebar
@@ -20,20 +20,21 @@ Adicionar cores relativas para bara de XP
 /* { isOpenSidebarGestor, onCloseSidebarGestor }: SidebarProps */
 
 export default function SidebarGestor() {
-  const [progress, setProgress] = useState<number>(0);
+  // const [progress, setProgress] = useState<number>(0);
   // const [barColor, setBarColor] = useState<string>("");
   const [openSidebarGestor, setOpenSidebarGestor] = useAtom(OpenSidebarGestor);
+  const [nomeUser, ] = useAtom(NomeUser);
 
-  useEffect(() => {
-    // const timer = setInterval(() => {
-    //   setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-    // }, 100);
+  // useEffect(() => {
+  //   // const timer = setInterval(() => {
+  //   //   setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
+  //   // }, 100);
 
-    // return () => {
-    //   clearInterval(timer);
-    // };
-    setProgress(10);
-  }, [progress]);
+  //   // return () => {
+  //   //   clearInterval(timer);
+  //   // };
+  //   setProgress(10);
+  // }, [progress]);
 
   return (
     <>
@@ -45,8 +46,9 @@ export default function SidebarGestor() {
           <img src={imageSidebarGestor} alt="imgGestor" />
         </div>
         <div className="sidebar-loja-bottom">
-          <p className="sidebar-loja-nome">João Eduardo</p>
-          <div className="sidebar-nivel">
+          <p className="sidebar-loja-nome">{nomeUser}</p>
+          {/* <p className="sidebar-loja-nome">João Eduardo</p> */}
+          {/* <div className="sidebar-nivel">
             <p className="sidebar-nivel-txt">Nível 1</p>
             <div className="sidebar-barra-nivel">
               <LinearProgress variant="determinate" color="inherit" value={progress} sx={{
@@ -63,7 +65,7 @@ export default function SidebarGestor() {
             <div className="sidebar-dados-coins flex items-center text-center">
               <p className="w-full">40 JCoins</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
