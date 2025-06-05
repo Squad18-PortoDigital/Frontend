@@ -1,0 +1,341 @@
+.section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;       /**** Para que o h1 e o quadrado fiquem empilhados */
+  width: 105%;
+  min-height: 114%;             
+  background-color: rgb(148, 148, 148);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /*****/
+  background-attachment: fixed; /* Fixa o fundo ao rolar */
+  bottom: 11%;
+  right: 2.1%;
+  
+}
+
+
+.quadradoPrincipal{
+  position: absolute;      
+  top: 0;
+  left: 0;                
+  width: 338px;
+  min-height: 100%;        
+  border-right: 1px solid #000;
+  background: #FFF;
+
+}
+
+.HeaderQuadrado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 20px;
+  margin-top: 60px;
+  width: 338px;
+  height: 88px;
+  flex-shrink: 0;
+  background: #BC1F1B;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-right: 1px solid #000;
+}
+
+.LetraHeader{
+  color: #FFF;
+  text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.25);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 131.25% */
+  padding-left: 10px;
+  
+}
+
+.MiniQuadrados{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  margin-top: 40px;
+  margin-right: 70%;
+}
+
+.Mini1, .Mini2, .Mini3, .Mini4, .Mini5{
+  display: flex;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  margin-bottom: 60px;
+  border: 3px solid #000;
+}
+
+.LetraMINI{
+  width: 230px;
+  flex-shrink: 0;
+
+  color: #000;
+  text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.25);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 150% */
+
+  margin-left: 40px;
+}
+
+.LetraMINI:active {
+  background: #DA4431;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFF;
+}
+
+
+.Mini1.ativo,
+.Mini2.ativo,
+.Mini3.ativo {
+  background: #DA4431;
+  font-size: 26px;
+  font-weight: 600;
+  color: #FFF;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+
+/*-------------------------- Parte 2 --------------------------*/
+
+.Margin{
+  margin-top:100px;
+  margin-left: 150px;
+}
+
+.QuadradoTrilha{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 954px;
+  height: 120px;
+  flex-shrink: 0;
+
+  border-radius: 15px;
+  background: #FFF;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+
+  bottom: 120px ;
+  left: 150px;
+
+}
+
+.CirculoCapaceteBlack{
+  width: 81px;
+  height: 81px;
+  flex-shrink: 0;
+
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 83%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.CirculoCapaceteWhite{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+
+  background-color: #ffffff;
+  border-radius: 50%;
+
+}
+
+.Capacete{
+  margin-top: 5px;
+  margin-left: 330px;
+  width: 55px;
+  height: 40px;
+}
+
+.LetraTrilha{
+  white-space: nowrap;
+
+  color: #BC1F1B;
+  text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.25);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px; /* 105% */ 
+  padding-left: 30px;
+
+
+}
+
+.Linhas{
+  position: relative;
+  width: auto;
+  height: auto;
+
+  bottom: 155px;
+  left: 208px;
+}
+
+.Plataforma1{
+  width: auto;
+  position: relative;
+
+  bottom: 10px;
+}
+
+.Boneco{
+  width: auto;
+  position: relative;
+
+  bottom: 30px;
+  right: 40px;
+}
+
+.LinhaM{ 
+  position: relative;
+  bottom: 23px;
+  right: 30px;
+}
+
+.Plataforma2{
+  width: auto;
+  position: relative;
+
+  bottom: 10px;
+  right: 10px;
+}
+
+.LinhaM2{ 
+  position: relative;
+  bottom: 23px;
+
+}
+
+.PlacaPare{
+  position: relative;
+
+  bottom: 35px;
+  right: 90px;
+}
+
+.MensagemPare{
+  position: relative;
+
+  bottom: 110px;
+  right: 150px;
+}
+
+.Plataforma3{
+  width: auto;
+  position: relative;
+
+  bottom: 10px;
+  right: 170px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+.LinhaM3{ 
+  position: relative;
+
+  top: 60px;
+  right: 320px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+  transform: rotate(130deg);
+
+}
+
+.Linhas2{
+  position: relative;
+  
+  top: 10px;
+  left: 320px;
+}
+
+.Plataforma4{
+  width: auto;
+  position: relative;
+
+  top: 60px;
+  left: 300px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+.LinhaM4{ 
+  position: relative;
+  bottom: 30px;
+  left: 20px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+.Plataforma5{
+  width: auto;
+  position: relative;
+
+  top: 60px;
+  right: 260px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+.LinhaM5{ 
+  position: relative;
+  bottom: 30px;
+  right: 530px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+.Certificado{
+  width: auto;
+  position: relative;
+
+  top: 40px;
+  right: 870px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+/* .Certificado:active {  EM TESTE aparecer pop-up
+  width: auto;
+  position: relative;
+
+  top: 40px;
+  right: 870px;
+
+  opacity: 0.7;
+  filter: blur(1px);
+
+} */
