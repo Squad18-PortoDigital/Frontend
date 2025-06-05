@@ -1,18 +1,20 @@
-/*footer {
+footer {
   background: #D22B2B;
   color: white;
-  /*já tava como comentario font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
-  /*font-weight: 700;
+
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;  */
+  font-weight: 400;
   padding: 2%;
-  text-align: center;*/
+  text-align: center;
+}
 
   /* já tava como comentario position: fixed;
   width: 100%;
   bottom: 0; 
 }*/
 
-/*@media (min-width: 768px) {
+@media (min-width: 768px) {
   footer {
     padding: 1%;
   }
-}  */
+}  
