@@ -2,7 +2,7 @@ import { Route, Routes, useNavigate } from "react-router";
 import HomeDashboard from "./Home/Home";
 import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { PerfilUser, StateLogin, RouterHomeLogoff } from "../../utils/Globals.utils";
+import { PerfilUser, StateLogin, RouterHomeLogoff, AccessToken, NomeUser } from "../../utils/Globals.utils";
 import { UserModel } from "../../models/User.model";
 // import { jwtDecode } from "jwt-decode";
 import Gestor from "./Gestor/Gestor";
@@ -11,6 +11,8 @@ import Aluno from "./Alunos/Alunos";
 export default function Dashboard() {
   const [, setIsLogged] = useAtom(StateLogin);
   const [, setPerfilUser] = useAtom(PerfilUser);
+  const [, setAccessToken] = useAtom(AccessToken);
+  const [, setNomeUser] = useAtom(NomeUser);
   const [RouterHome, setRouterHome] = useAtom(RouterHomeLogoff);
 
   const navigate = useNavigate();
@@ -30,12 +32,18 @@ export default function Dashboard() {
       switch (checkUser.nivel) {
         case "admin":
           setPerfilUser(checkUser.nivel);
+          setAccessToken(checkUser.access);
+          setNomeUser(checkUser.nome);
           break;
         case "instrutor":
           setPerfilUser(checkUser.nivel);
+          setAccessToken(checkUser.access);
+          setNomeUser(checkUser.nome);
           break;
         case "aluno":
           setPerfilUser(checkUser.nivel);
+          setAccessToken(checkUser.access);
+          setNomeUser(checkUser.nome);
           break;
         default:
           localStorage.removeItem("user");
@@ -48,7 +56,7 @@ export default function Dashboard() {
       }
     }
 
-  }, [setIsLogged, setPerfilUser, navigate]);
+  }, [setIsLogged, setPerfilUser, navigate, setAccessToken, setNomeUser]);
 
   useEffect(() => {
     console.log("RouterHome: " + RouterHome);
