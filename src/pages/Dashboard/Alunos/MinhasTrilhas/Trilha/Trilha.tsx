@@ -17,6 +17,7 @@ import Plataforma5 from "./Plataforma5.png";
 import Certificado from "./Certificado.png";
 
 import "./Trilha.css";
+import { Link } from "react-router";
 
 export default function Trilha() {
   const [ativo, setAtivo] = useState<number | null>(null);
@@ -40,7 +41,8 @@ export default function Trilha() {
             className={`Mini1 ${ativo === 1 ? "ativo" : ""}`}
             onClick={() => setAtivo(1)}
           >
-            <h1 className="LetraMINI">Modulo 1: Introdução à Segurança do Trabalho</h1>
+            {/* <h1 className="LetraMINI">Modulo 1: Introdução à Segurança do Trabalho</h1> */}
+            <Link to="/dashboard/aluno/minhastrilhas/trilha/aula" className="LetraMINI">Modulo 1: Introdução à Segurança do Trabalho</Link>
           </div>
 
           <div
