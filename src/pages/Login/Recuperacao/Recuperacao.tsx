@@ -46,7 +46,12 @@ export default function EsqueciSenha() {
                   Se este for o seu e-mail, clique em <strong>CONFIRMAR</strong>
                   para que o e-mail de recuperação de senha seja enviado.
                 </p>
-                <button onClick={handleClose}>Voltar</button>
+                <div className="recuperacao-buttons">
+                  <button onClick={handleClose}>Voltar</button>
+                  <button onClick={handleClose}>
+                    <strong>Confirmar</strong>
+                  </button>
+                </div>
               </div>
             </div>
             <hr />

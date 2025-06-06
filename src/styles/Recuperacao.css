@@ -88,6 +88,12 @@
   .recuperacao-detalhamento {
     width: 50%;
   }
+
+  .recuperacao-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
   .recuperacao-detalhamento {
     height: 350px;
     align-items: center;
