@@ -33,11 +33,16 @@
   border: 1px solid black;
   border-radius: 8px;
 }
+.recuperacao-matricula-form {
+  width: 80%;
+  margin: auto;
+}
 .recuperacao-matricula-container h2 {
   font-size: 18px;
   margin: 0px;
   padding-bottom: 10px;
   border-bottom: 1px solid #000;
+  text-indent: 10px;
 }
 .recuperacao-matricula-container p {
   font-size: 14px;
@@ -83,24 +88,36 @@
     gap: 40px;
     max-width: 1000px;
     padding: 30px;
+    align-items: center;
   }
   .recuperacao-matricula,
   .recuperacao-detalhamento {
     width: 50%;
   }
-
+  hr {
+    height: 350px;
+    opacity: 30%;
+  }
+  .recuperacao-matricula-form {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+  }
   .recuperacao-buttons {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.137);
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
   .recuperacao-detalhamento {
-    height: 350px;
+    height: 250px;
     align-items: center;
     justify-content: center;
   }
   .recuperacao-matricula-container button {
     font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.253);
   }
   .recuperacao-matricula h1,
   .recuperacao-detalhamento h1 {
@@ -112,7 +129,8 @@
   }
   .recuperacao-matricula-container p,
   .recuperacao-detalhamento p {
-    font-size: 20px;
+    margin: auto;
+    font-size: 16px;
   }
   .recuperacao-jotanunes-logo {
     max-width: 200px;
