@@ -108,18 +108,18 @@ const Cadastro: React.FC = () => {
                   />
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="matricula">Matrícula</label>
-                  <input
-                    type="text"
-                    id="matricula"
-                    name="matricula"
-                    value={formData.matricula}
-                    onChange={handleChange}
-                    placeholder="Digite a matrícula"
-                  />
-                </div>
-              </div>
+                      <div className="form-group">
+                        <label htmlFor="matricula">Matrícula</label>
+                        <input
+                          type="text"
+                          id="matricula"
+                          name="matricula"
+                          value={formData.matricula}
+                          onChange={handleChange}
+                          placeholder="Digite a matrícula"
+                        />
+                      </div>
+                    </div>
 
               <div className="form-row">
                 <div className="form-column">
@@ -151,29 +151,29 @@ const Cadastro: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="photo-upload-container">
-                  <div className="photo-upload-section">
-                    <label className="photo-upload-label-text">
-                      Adicionar foto de perfil <span className="text-xs text-red-500">*opcional</span>
-                    </label>
-                    <label htmlFor="profilePhotoInput" className="photo-preview-box">
-                      {photoPreviewUrl ? (
-                        <img src={photoPreviewUrl} alt="Pré-visualização da foto de perfil" />
-                      ) : (
-                        <span className="plus-icon-centered"></span>
-                      )}
-                      <input
-                        type="file"
-                        id="profilePhotoInput"
-                        name="foto"
-                        accept="image/*"
-                        onChange={handleChange}
-                        style={{ display: 'none' }}
-                      />
-                    </label>
+                    <div className="photo-upload-container">
+                      <div className="photo-upload-section">
+                        <label className="photo-upload-label-text">
+                          Adicionar foto de perfil <span className="text-xs text-red-500">*opcional</span>
+                        </label>
+                        <label htmlFor="profilePhotoInput" className="photo-preview-box">
+                          {photoPreviewUrl ? (
+                            <img src={photoPreviewUrl} alt="Pré-visualização da foto de perfil" />
+                          ) : (
+                            <span className="plus-icon-centered"></span>
+                          )}
+                          <input
+                            type="file"
+                            id="profilePhotoInput"
+                            name="foto"
+                            accept="image/*"
+                            onChange={handleChange}
+                            style={{ display: 'none' }}
+                          />
+                        </label>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
 
 
 
