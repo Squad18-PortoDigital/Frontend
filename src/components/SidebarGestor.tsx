@@ -4,6 +4,12 @@ import "../styles/dashboard/gestor/SidebarGestor.css";
 // import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import { NomeUser, OpenSidebarGestor } from "../utils/Globals.utils";
+import {
+  BookOpenCheck,
+  ChartLine,
+  LibraryBig,
+  ShoppingCart,
+} from "lucide-react";
 
 /*
 Quando o backend estiver pronto concluir a sidebar
@@ -23,7 +29,7 @@ export default function SidebarGestor() {
   // const [progress, setProgress] = useState<number>(0);
   // const [barColor, setBarColor] = useState<string>("");
   const [openSidebarGestor, setOpenSidebarGestor] = useAtom(OpenSidebarGestor);
-  const [nomeUser, ] = useAtom(NomeUser);
+  const [nomeUser] = useAtom(NomeUser);
 
   // useEffect(() => {
   //   // const timer = setInterval(() => {
@@ -40,13 +46,39 @@ export default function SidebarGestor() {
     <>
       {/* <div className="sidebar-loja"> */}
       <div className={`sidebar-loja ${openSidebarGestor ? "open" : ""}`}>
-        <button className="close-btn" onClick={() => {setOpenSidebarGestor(false)}}>×</button>
+        <button
+          className="close-btn"
+          onClick={() => {
+            setOpenSidebarGestor(false);
+          }}
+        >
+          ×
+        </button>
         <div className="sidebar-loja-top" />
         <div className="sidebar-loja-img relative">
           <img src={imageSidebarGestor} alt="imgGestor" />
         </div>
         <div className="sidebar-loja-bottom">
           <p className="sidebar-loja-nome">{nomeUser}</p>
+          <div className="sidebar-loja-options">
+            <div className="sidebar-loja-item">
+              <LibraryBig />
+              <p>Cursos</p>
+            </div>
+            <div className="sidebar-loja-item">
+              <BookOpenCheck />
+              <p>Quiz</p>
+            </div>
+            <div className="sidebar-loja-item">
+              <ShoppingCart />
+              <p>Loja</p>
+            </div>
+            <div className="sidebar-loja-item">
+              <ChartLine />
+              <p>Relatórios</p>
+            </div>
+          </div>
+
           {/* <p className="sidebar-loja-nome">João Eduardo</p> */}
           {/* <div className="sidebar-nivel">
             <p className="sidebar-nivel-txt">Nível 1</p>
@@ -69,5 +101,5 @@ export default function SidebarGestor() {
         </div>
       </div>
     </>
-  )
+  );
 }
