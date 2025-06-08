@@ -13,6 +13,7 @@
   text-align: start;
   color: black;
 }
+
 /* tela de sidebargestor */
 
 .icon-jnunes img {
@@ -35,6 +36,8 @@
     /* height: 10rem; */
     /* height: 0; */
     /* text-align: start; */
+    position: fixed;
+    z-index: 93;
   }
 
   .icon-jnunes {
