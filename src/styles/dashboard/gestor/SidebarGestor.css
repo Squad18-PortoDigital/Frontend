@@ -132,21 +132,6 @@
     font-weight: 700;
     margin: 1em 0px;
   }
-  .sidebar-loja-options {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .sidebar-loja-item {
-    background-color: #da4431;
-    border-radius: 15px;
-    padding: 12px;
-    gap: 5px;
-    display: flex;
-
-    color: #fff;
-    font-weight: 600;
-  }
 
   .sidebar-nivel {
     margin: 1em 0px;
@@ -176,6 +161,33 @@
     width: 45%;
     height: 40%;
     border-radius: 12px;
+  }
+
+  .sidebar-loja-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .sidebar-loja-item {
+    background-color: transparent;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+    padding: 12px;
+    gap: 5px;
+    display: flex;
+
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .sidebar-loja-item:hover {
+    background-color: #d9d9d9;
+  }
+
+  .sidebar-loja-item.active {
+    color: #fff;
+    background-color: #da4431;
   }
 
   .close-btn {
