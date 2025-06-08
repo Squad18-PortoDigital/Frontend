@@ -14,6 +14,6 @@ export interface NovaTrilha {
   icone?: null;
   created_at: string;
   updated_at: string;
-  duracao_total: number,
-  jcoins: number,
+  duracao_total?: number,
+  jcoins?: number,
 }
