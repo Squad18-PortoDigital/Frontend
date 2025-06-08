@@ -60,25 +60,6 @@ export default function SidebarGestor() {
         </div>
         <div className="sidebar-loja-bottom">
           <p className="sidebar-loja-nome">{nomeUser}</p>
-          <div className="sidebar-loja-options">
-            <div className="sidebar-loja-item">
-              <LibraryBig />
-              <p>Cursos</p>
-            </div>
-            <div className="sidebar-loja-item">
-              <BookOpenCheck />
-              <p>Quiz</p>
-            </div>
-            <div className="sidebar-loja-item">
-              <ShoppingCart />
-              <p>Loja</p>
-            </div>
-            <div className="sidebar-loja-item">
-              <ChartLine />
-              <p>Relatórios</p>
-            </div>
-          </div>
-
           {/* <p className="sidebar-loja-nome">João Eduardo</p> */}
           {/* <div className="sidebar-nivel">
             <p className="sidebar-nivel-txt">Nível 1</p>
@@ -98,6 +79,24 @@ export default function SidebarGestor() {
               <p className="w-full">40 JCoins</p>
             </div>
           </div> */}
+          <div className="sidebar-loja-options">
+            <div className="sidebar-loja-item">
+              <LibraryBig />
+              <p>Cursos</p>
+            </div>
+            <div className="sidebar-loja-item">
+              <BookOpenCheck />
+              <p>Quiz</p>
+            </div>
+            <div className="sidebar-loja-item">
+              <ShoppingCart />
+              <p>Loja</p>
+            </div>
+            <div className="sidebar-loja-item">
+              <ChartLine />
+              <p>Relatórios</p>
+            </div>
+          </div>
         </div>
       </div>
     </>
