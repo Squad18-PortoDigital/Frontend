@@ -132,6 +132,21 @@
     font-weight: 700;
     margin: 1em 0px;
   }
+  .sidebar-loja-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .sidebar-loja-item {
+    background-color: #da4431;
+    border-radius: 15px;
+    padding: 12px;
+    gap: 5px;
+    display: flex;
+
+    color: #fff;
+    font-weight: 600;
+  }
 
   .sidebar-nivel {
     margin: 1em 0px;
