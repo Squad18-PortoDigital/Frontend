@@ -10,6 +10,7 @@ import {
   LibraryBig,
   ShoppingCart,
 } from "lucide-react";
+import { NavLink } from "react-router";
 
 /*
 Quando o backend estiver pronto concluir a sidebar
@@ -80,22 +81,42 @@ export default function SidebarGestor() {
             </div>
           </div> */}
           <div className="sidebar-loja-options">
-            <div className="sidebar-loja-item">
+            <NavLink
+              to="/dashboard/gestor/trilhas"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
               <LibraryBig />
               <p>Cursos</p>
-            </div>
-            <div className="sidebar-loja-item">
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/quiz"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
               <BookOpenCheck />
               <p>Quiz</p>
-            </div>
-            <div className="sidebar-loja-item">
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/loja"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
               <ShoppingCart />
               <p>Loja</p>
-            </div>
-            <div className="sidebar-loja-item">
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/relatorios"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
               <ChartLine />
               <p>Relatórios</p>
-            </div>
+            </NavLink>
           </div>
         </div>
       </div>
