@@ -1,4 +1,5 @@
 import { NotebookPen, NotebookText } from "lucide-react";
+import { Link } from "react-router-dom";
 import "../../../../../styles/dashboard/aluno/Aula.css";
 import { useEffect } from "react";
 
@@ -16,6 +17,7 @@ export default function Aula() {
       }
     };
   }, []);
+
   return (
     <>
       <div className="container-aula">
@@ -38,10 +40,10 @@ export default function Aula() {
             </div>
           </div>
           <div className="quiz-aula">
-            <div className="titulo-quiz-aula">
+            <Link to="/dashboard/aluno/minhastrilhas/trilha/quiz" className="titulo-quiz-aula">
               <NotebookText size={35} />
               Quiz - Segurança do Trabalho: Módulo 01
-            </div>
+            </Link>
           </div>
         </div>
         <div className="container-video-aula">
