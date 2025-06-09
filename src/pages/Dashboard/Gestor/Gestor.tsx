@@ -21,7 +21,7 @@ export default function Gestor() {
   return (
     <>
       <Routes>
-        <Route path="/cursos" element={<Cursos />} />
+        {/* <Route path="/cursos" element={<Cursos />} /> */}
         <Route path="/loja" element={<Loja />} />
         <Route path="/trilhas/*" element={<Trilhas />} />
         <Route path="/cadastro" element={<Cadastro />} />
