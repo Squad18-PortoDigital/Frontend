@@ -88,7 +88,7 @@ export default function SidebarGestor() {
               }
             >
               <LibraryBig />
-              <p>Cursos</p>
+              <p>Trilhas</p>
             </NavLink>
             <NavLink
               to="/dashboard/gestor/quiz"
@@ -116,6 +116,15 @@ export default function SidebarGestor() {
             >
               <ChartLine />
               <p>Relatórios</p>
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/cadastro"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
+              <ChartLine />
+              <p>Cadastro de Usuários</p>
             </NavLink>
           </div>
         </div>

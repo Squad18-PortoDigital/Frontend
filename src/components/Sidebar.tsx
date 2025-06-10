@@ -56,6 +56,7 @@ export default function Sidebar({
                     >
                       Trilhas
                     </Link>
+                    <Link to="/dashboard/gestor/cadastro" onClick={onCloseSidebar}>Cadastro de Usuários</Link>
                     <Link to="/dashboard/gestor/loja" onClick={onCloseSidebar}>
                       Loja
                     </Link>
