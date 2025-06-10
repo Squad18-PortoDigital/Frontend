@@ -9,6 +9,7 @@ import {
   ChartLine,
   LibraryBig,
   ShoppingCart,
+  User
 } from "lucide-react";
 import { NavLink } from "react-router";
 
@@ -123,7 +124,7 @@ export default function SidebarGestor() {
                 isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
               }
             >
-              <ChartLine />
+              <User />
               <p>Cadastro de Usuários</p>
             </NavLink>
           </div>
