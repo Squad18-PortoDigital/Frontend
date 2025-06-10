@@ -1,23 +1,28 @@
 import "../../../styles/Recuperacao.css";
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 import { useAtom } from "jotai";
 import { ModalRecuperacaoLogin } from "../../../utils/Globals.utils";
+import logoRecuperacao from "../../../images/logo-recuperacao-jotanunes.png";
+import { InputAdornment, TextField } from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
 
 // interface Recuperacao {
 
 // }
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: "max-content",
 };
 
 export default function EsqueciSenha() {
-  const [ModalRecuperacao, setModalRecuperacao] = useAtom(ModalRecuperacaoLogin);
+  const [ModalRecuperacao, setModalRecuperacao] = useAtom(
+    ModalRecuperacaoLogin
+  );
 
   const handleClose = () => setModalRecuperacao(false);
 
@@ -35,15 +40,36 @@ export default function EsqueciSenha() {
               <h1>Minha Matricula</h1>
               <div className="recuperacao-matricula-container">
                 <h2>Recuperação de Senha</h2>
-                <p>
-                  O e-mail de recuperação de senha será enviado para:
-                  alf******u99@gmail.com
-                </p>
-                <p>
-                  Se este for o seu e-mail, clique em <strong>CONFIRMAR</strong>
-                  para que o e-mail de recuperação de senha seja enviado.
-                </p>
-                <button onClick={handleClose}>Voltar</button>
+                <div className="recuperacao-matricula-form-container">
+                  <p>
+                    Após informar sua matrícula, clique em{" "}
+                    <strong>CONFIRMAR</strong> para que seja iniciado o processo
+                    de redefinição de senha.
+                  </p>
+                  <div className="recuperacao-matricula-form">
+                    <TextField
+                      label="Matrícula"
+                      type="text"
+                      fullWidth
+                      slotProps={{
+                        input: {
+                          startAdornment: (
+                            <InputAdornment position="start">
+                              <PersonIcon />
+                            </InputAdornment>
+                          ),
+                        },
+                      }}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="recuperacao-buttons">
+                  <button onClick={handleClose}>Voltar</button>
+                  <button className="bnt-confirmar" onClick={handleClose}>
+                    Confirmar
+                  </button>
+                </div>
               </div>
             </div>
             <hr />
@@ -52,12 +78,12 @@ export default function EsqueciSenha() {
                 <strong>Recuperação de Senha</strong>
               </h1>
               <p>
-                Caso não se lembre, ou não possua mais acesso a este e-mail, favor
-                entrar em contato com a coordenação da escola para alterá-lo.
+                Caso não se lembre, ou não possua mais acesso a sua matricula,
+                favor entrar em contato com a administração para alterá-la.
               </p>
               <img
                 className="recuperacao-jotanunes-logo"
-                src="/jotanunes-logo.png"
+                src={logoRecuperacao}
                 alt="JotaNunes-Logo"
               />
             </div>
@@ -65,6 +91,5 @@ export default function EsqueciSenha() {
         </div>
       </Box>
     </Modal>
-
   );
 }
