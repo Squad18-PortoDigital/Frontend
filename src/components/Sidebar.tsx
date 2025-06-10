@@ -44,12 +44,12 @@ export default function Sidebar({
                     <Link to="/dashboard" onClick={onCloseSidebar}>
                       Inicio
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/dashboard/gestor/cursos"
                       onClick={onCloseSidebar}
                     >
                       Cursos
-                    </Link>
+                    </Link> */}
                     <Link
                       to="/dashboard/gestor/trilhas"
                       onClick={onCloseSidebar}
@@ -93,9 +93,9 @@ export default function Sidebar({
                     <Link to="/dashboard" onClick={onCloseSidebar}>
                       Inicio
                     </Link>
-                    <Link to="/dashboard" onClick={onCloseSidebar}>
+                    {/* <Link to="/dashboard" onClick={onCloseSidebar}>
                       Cursos
-                    </Link>
+                    </Link> */}
                     <Link to="/dashboard" onClick={onCloseSidebar}>
                       Trilhas
                     </Link>
@@ -134,9 +134,9 @@ export default function Sidebar({
                     <Link to="/dashboard" onClick={onCloseSidebar}>
                       Inicio
                     </Link>
-                    <Link to="/dashboard" onClick={onCloseSidebar}>
+                    {/* <Link to="/dashboard" onClick={onCloseSidebar}>
                       Cursos
-                    </Link>
+                    </Link> */}
                     <Link
                       to="/dashboard/aluno/minhastrilhas"
                       onClick={onCloseSidebar}
