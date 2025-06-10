@@ -4,6 +4,13 @@ import "../styles/dashboard/gestor/SidebarGestor.css";
 // import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import { NomeUser, OpenSidebarGestor } from "../utils/Globals.utils";
+import {
+  BookOpenCheck,
+  ChartLine,
+  LibraryBig,
+  ShoppingCart,
+} from "lucide-react";
+import { NavLink } from "react-router";
 
 /*
 Quando o backend estiver pronto concluir a sidebar
@@ -23,7 +30,7 @@ export default function SidebarGestor() {
   // const [progress, setProgress] = useState<number>(0);
   // const [barColor, setBarColor] = useState<string>("");
   const [openSidebarGestor, setOpenSidebarGestor] = useAtom(OpenSidebarGestor);
-  const [nomeUser, ] = useAtom(NomeUser);
+  const [nomeUser] = useAtom(NomeUser);
 
   // useEffect(() => {
   //   // const timer = setInterval(() => {
@@ -40,7 +47,14 @@ export default function SidebarGestor() {
     <>
       {/* <div className="sidebar-loja"> */}
       <div className={`sidebar-loja ${openSidebarGestor ? "open" : ""}`}>
-        <button className="close-btn" onClick={() => {setOpenSidebarGestor(false)}}>×</button>
+        <button
+          className="close-btn"
+          onClick={() => {
+            setOpenSidebarGestor(false);
+          }}
+        >
+          ×
+        </button>
         <div className="sidebar-loja-top" />
         <div className="sidebar-loja-img relative">
           <img src={imageSidebarGestor} alt="imgGestor" />
@@ -66,8 +80,46 @@ export default function SidebarGestor() {
               <p className="w-full">40 JCoins</p>
             </div>
           </div> */}
+          <div className="sidebar-loja-options">
+            <NavLink
+              to="/dashboard/gestor/trilhas"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
+              <LibraryBig />
+              <p>Cursos</p>
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/quiz"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
+              <BookOpenCheck />
+              <p>Quiz</p>
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/loja"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
+              <ShoppingCart />
+              <p>Loja</p>
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/relatorios"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
+              <ChartLine />
+              <p>Relatórios</p>
+            </NavLink>
+          </div>
         </div>
       </div>
     </>
-  )
+  );
 }
