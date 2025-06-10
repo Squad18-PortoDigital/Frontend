@@ -9,6 +9,7 @@ import {
   ChartLine,
   LibraryBig,
   ShoppingCart,
+  User
 } from "lucide-react";
 import { NavLink } from "react-router";
 
@@ -88,7 +89,7 @@ export default function SidebarGestor() {
               }
             >
               <LibraryBig />
-              <p>Cursos</p>
+              <p>Trilhas</p>
             </NavLink>
             <NavLink
               to="/dashboard/gestor/quiz"
@@ -116,6 +117,15 @@ export default function SidebarGestor() {
             >
               <ChartLine />
               <p>Relatórios</p>
+            </NavLink>
+            <NavLink
+              to="/dashboard/gestor/cadastro"
+              className={({ isActive }) =>
+                isActive ? "sidebar-loja-item active" : "sidebar-loja-item"
+              }
+            >
+              <User />
+              <p>Cadastro de Usuários</p>
             </NavLink>
           </div>
         </div>
