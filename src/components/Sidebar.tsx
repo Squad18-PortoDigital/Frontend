@@ -35,6 +35,7 @@ export default function Sidebar({ isOpenSidebar, onCloseSidebar }: SidebarProps)
                     <Link to="/dashboard" onClick={onCloseSidebar}>Inicio</Link>
                     <Link to="/dashboard/gestor/cursos" onClick={onCloseSidebar}>Cursos</Link>
                     <Link to="/dashboard/gestor/trilhas" onClick={onCloseSidebar}>Trilhas</Link>
+                    <Link to="/dashboard/gestor/cadastro" onClick={onCloseSidebar}>Cadastro de Usuário</Link>
                     <Link to="/dashboard/gestor/loja" onClick={onCloseSidebar}>Loja</Link>
                     <Link to="/dashboard" onClick={onCloseSidebar}>Certificados</Link>
                     {/* <Link to="/dashboard" onClick={onCloseSidebar}>Conquistas</Link> */}
