@@ -46,9 +46,6 @@ export default function HomeDashboard() {
               Capacite-se com a plataforma de treinamento da Jotanunes. Desenvolvemos nossos colaboradores com conteúdos especializados para cada área de atuação. Juntos, construímos mais que sonhos - construímos carreiras sólidas.
             </p>
 
-            <button className="botaoSaibaMais">
-              Saiba mais!!
-            </button>
           </div>
 
           <div className="hero-visual">
@@ -106,9 +103,6 @@ export default function HomeDashboard() {
             </div>
           </div>
 
-          <button className="botaoSaibaMais">
-            Saiba mais!!
-          </button>
         </section>
 
         {/* Trust Section */}
@@ -123,9 +117,6 @@ export default function HomeDashboard() {
                 Desde 1987, a Jotanunes forma profissionais de excelência que constroem sonhos em Sergipe, Bahia e Pernambuco. Com mais de 26.000 lares entregues e presença em 13 cidades, nossa plataforma de treinamento reflete o compromisso com a qualidade que sempre nos guiou. Invista no seu desenvolvimento profissional com quem entende de construir o futuro.
               </p>
 
-              <button className="botaoSaibaMais">
-                Saiba mais!!
-              </button>
             </div>
 
             <div className="video-container">
