@@ -39,11 +39,11 @@ export default function HomeDashboard() {
             </div>
             
             <h1 className="tituloJotinha">
-              An impactful headline about our software.
+              Transformando conhecimento em excelência na construção civil.
             </h1>
             
             <p className="paragrafoJotinha">
-              Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit.
+              Capacite-se com a plataforma de treinamento da Jotanunes. Desenvolvemos nossos colaboradores com conteúdos especializados para cada área de atuação. Juntos, construímos mais que sonhos - construímos carreiras sólidas.
             </p>
 
             <button className="botaoSaibaMais">
@@ -87,21 +87,21 @@ export default function HomeDashboard() {
             <div className="feature-item">
               <img className="feature-icon" src={ImgArco} alt="ImgArco" />
               <div className="feature-text">
-                <p>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit.</p>
+                <p>Treinamentos direcionados para cada área de atuação da construtora, garantindo aprendizado eficiente e prático.</p>
               </div>
             </div>
 
             <div className="feature-item">
               <img className="feature-icon" src={ImgCertificado} alt="ImgCertificado" />
               <div className="feature-text">
-                <p>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit.</p>
+                <p>Metodologias inovadoras de ensino que conectam teoria e prática do dia a dia na construção civil.</p>
               </div>
             </div>
 
             <div className="feature-item">
               <img className="feature-icon" src={ImgUni} alt="ImgUni" />
               <div className="feature-text">
-                <p>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit.</p>
+                <p>Plataforma que une todos os colaboradores em um ambiente de aprendizado colaborativo e crescimento profissional.</p>
               </div>
             </div>
           </div>
@@ -117,13 +117,10 @@ export default function HomeDashboard() {
           
           <div className="trust-content">
             <div className="trust-text">
-              <h2>Trusted by the best names in finance.</h2>
+              <h2>Confiança construída em 38 anos de história.</h2>
               
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Desde 1987, a Jotanunes forma profissionais de excelência que constroem sonhos em Sergipe, Bahia e Pernambuco. Com mais de 26.000 lares entregues e presença em 13 cidades, nossa plataforma de treinamento reflete o compromisso com a qualidade que sempre nos guiou. Invista no seu desenvolvimento profissional com quem entende de construir o futuro.
               </p>
 
               <button className="botaoSaibaMais">
