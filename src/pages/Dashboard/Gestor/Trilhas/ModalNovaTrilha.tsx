@@ -38,8 +38,7 @@ export default function ModalNovaTrilha({ openModal, setOpenModal, getTrilhas }:
     titulo: "",
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
-    duracao_total: 0,
-    jcoins: 0,
+    descricao: "",
   });
   const [btnNovaTrilha, setBtnNovaTrilha] = useState<boolean>(true);
   const [TokenUser, ] = useAtom(AccessToken);
@@ -133,7 +132,13 @@ export default function ModalNovaTrilha({ openModal, setOpenModal, getTrilhas }:
                         name="descricaoTrilha" 
                         rows={5} 
                         cols={33} 
-                        placeholder="Digite a descrição da Trilha..." 
+                        placeholder="Digite a descrição da Trilha..."
+                        onChange={e => {
+                          setNovaTrilha(prevState => ({
+                            ...prevState,
+                            descricao: e.target.value,
+                          }));
+                        }}
                       />
                     </div>
                     <div>

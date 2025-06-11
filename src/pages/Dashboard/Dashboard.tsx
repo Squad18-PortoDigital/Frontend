@@ -48,6 +48,7 @@ export default function Dashboard() {
         default:
           localStorage.removeItem("user");
           setIsLogged(false);
+          setPerfilUser("");
           alert("Tem algo de errado com seu perfil...");
           alert("Tente fazer login novamente ou entre em contato com o suporte.")
           // window.location.href = "/";

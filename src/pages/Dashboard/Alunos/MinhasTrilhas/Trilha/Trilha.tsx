@@ -16,7 +16,10 @@ import Plataforma4 from "./Plataforma4.png";
 import Plataforma5 from "./Plataforma5.png";
 import Certificado from "./Certificado.png";
 
-import "./Trilha.css";
+
+import "../../../../../styles/dashboard/aluno/Trilha.css";
+
+
 import { Link } from "react-router";
 
 export default function Trilha() {
