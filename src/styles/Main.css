@@ -5,6 +5,23 @@ main {
   overflow-x: hidden;
 }
 
+.chatbot-disabled {
+  display: none;
+}
+
+.chatbot-enabled {
+  position: fixed;
+  /* height: 80%;
+  width: 80%;
+  right: 0px; */
+  z-index: 1001;
+}
+
+/* .chatbot-enabled iframe {
+  height: 100%;
+  width: 100%;
+} */
+
 @media (min-width: 768px) {
   main {
     /* padding: 12em 2% 1% 2%; */
