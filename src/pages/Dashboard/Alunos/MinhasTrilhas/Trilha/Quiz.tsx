@@ -1,5 +1,5 @@
 import "../../../../../styles/dashboard/aluno/Quiz.css";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import prancheta from "./prancheta.svg";
 
 // Tipos para melhor tipagem
@@ -20,6 +20,19 @@ interface LoadingState {
   error: string | null;
 }
 
+// Mock data - substitua por dados reais da API
+const mockQuestion: QuizQuestion = {
+  id: 1,
+  question: "Qual é o principal objetivo dos Equipamentos de Proteção Individual (EPIs)?",
+  answers: [
+    { id: 1, text: "Melhorar o conforto do trabalhador" },
+    { id: 2, text: "Proteger a integridade física do trabalhador" },
+    { id: 3, text: "Facilitar a execução das tarefas" },
+    { id: 4, text: "Reduzir os custos da empresa" }
+  ],
+  correctAnswer: 2
+};
+
 const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [expandedModules, setExpandedModules] = useState<{[key: string]: boolean}>({});
@@ -30,19 +43,6 @@ const Quiz = () => {
   });
   const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion | null>(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false);
-
-  // Mock data - substitua por dados reais da API
-  const mockQuestion: QuizQuestion = {
-    id: 1,
-    question: "Qual é o principal objetivo dos Equipamentos de Proteção Individual (EPIs)?",
-    answers: [
-      { id: 1, text: "Melhorar o conforto do trabalhador" },
-      { id: 2, text: "Proteger a integridade física do trabalhador" },
-      { id: 3, text: "Facilitar a execução das tarefas" },
-      { id: 4, text: "Reduzir os custos da empresa" }
-    ],
-    correctAnswer: 2
-  };
 
   const handleAnswerClick = (answerIndex: number) => {
     if (loadingState.isLoading) return;

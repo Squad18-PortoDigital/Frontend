@@ -17,7 +17,7 @@ export default function Sidebar({
   onCloseSidebar,
 }: SidebarProps) {
   const [isLogged, setIsLogged] = useAtom(StateLogin);
-  const [Perfil] = useAtom(PerfilUser);
+  const [Perfil, setPerfilUser] = useAtom(PerfilUser);
   const [, setRouterHome] = useAtom(RouterHomeLogoff);
 
   function logoff() {
@@ -25,6 +25,7 @@ export default function Sidebar({
     localStorage.removeItem("user");
     // window.location.href = "/";
     setRouterHome(true);
+    setPerfilUser("");
   }
 
   return (
