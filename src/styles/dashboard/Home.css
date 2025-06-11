@@ -1,657 +1,462 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
-
-
-
-/* main {
-  background: url("../../images/fundoDashboard.png");
+/* Reset e configurações base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-  main {
-    padding: 12em 2% 2% 2%;
-  }
+.homeDashboard {
+  width: 100%;
+  overflow-x: hidden;
+}
 
-  .header {
-    height: 0;
-  }
-} */
+/* Seção Principal - Hero */
+.topHomeDashboard {
+  width: 100%;
+}
 
-/* .homeDashboard {
-  padding: 2%;
-} */
-
-/*.topHomeDashboard {
-  background: url("../../images/fundoDashboard.png");
-  background-attachment: fixed;
-  padding: 2%;
-  height: 45rem;
-}*/
-
-.topHomeDashboard{
-  margin-top: 230px;
-  margin-left: 230px;
-
-  width: 380px;
-  height: 300px;
-
+/* Hero Section */
+.hero-section {
   display: flex;
-  
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
 
+.textJotinha {
+  flex: 1;
+  max-width: 500px;
+  z-index: 2;
 }
 
 .RelativPinguinhos {
-
-  position: relative;
-
+  margin-bottom: 20px;
 }
 
-.pinguinhos {
-  position: absolute;
-
-  transform: rotate(-80deg);
-
-  right: 450px;
-  top: -180px;
-
+.RelativPinguinhos img {
+  width: 60px;
+  height: auto;
 }
 
 .tituloJotinha {
-  display: flex;
-  width: 471px;
-  height: 173px;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-
-  color: #000;
-  font-family: 'Poppins', sans-serif;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 800; /* ExtraBold */
-  line-height: 133%; /* 63.84px */
-
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .paragrafoJotinha {
-  width: 365px;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 171%; /* 41.04px */
-  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #6c757d;
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .botaoSaibaMais {
-  margin-top: 60px;
-  width: 331.932px;
-  height: 72px;
-  flex-shrink: 0;
-
-  border-radius: 50px;
-  border: 2px solid #DA4431;
-  background: #FFF;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: Poppins, sans-serif;
-  font-size: 26px;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #DA4431;
-
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
 }
 
 .botaoSaibaMais:hover {
-  background: #DA4431;
-
-  font-family: Poppins, sans-serif;
-  font-size: 26px;
-  font-weight: 600;
-  color: #FFF;
-
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
 }
 
-.botaoSaibaMais:active {
-  background: #DA4431;
-
-  font-family: Poppins, sans-serif;
-  font-size: 26px;
-  font-weight: 600;
-  color: #FFF;
-
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-
-/*.Pintura {
-  width: 1829.089px;
-  height: 1804.372px;
-  flex-shrink: 0;
-  transform: rotate(-146.725deg);
-
-  top: 1429.37px;
-  left: 1486.85px;
-
-}*/
-
-.Relativ-Circulo{
+/* Hero Visual */
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  min-height: 500px;
 }
 
-.Circulo-Laranja {
-  position: absolute;
-  top: -360px;
-  left: 798px;
-  transform: translateX(-50%);
-
-  width: 1039px;
-  height: 992px;
-  flex-shrink: 0;
-
+.main-circle {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
   border-radius: 50%;
-  background: #DA4431; /*#FF3B22;*/
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(231, 76, 60, 0.3);
 }
 
-.PinturaRedonda {
+.devices-container {
   position: relative;
-  width: 1700px;
-  height: 1700px;
+  transform: scale(0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  bottom: 700px;
-  right: 80px;
-  
+
+
+
+.desktop {
+  width: 140px;
+  height: 90px;
+  top: -45px;
+  left: -70px;
+  z-index: 3;
+}
+
+.tablet {
+  width: 100px;
+  height: 130px;
+  top: -65px;
+  left: 20px;
   z-index: 2;
-
+  border-radius: 12px;
 }
 
-.Traco {
-  position: relative;
-  width: 380px;
-  height: 380px;
-
-  bottom: 2400px;
-  right: 665px;
-
-  transform: rotate(-3deg);
-  
-  z-index: 3;
-}
-
-.Traco2 {
-  position: relative;
-  width: 380px;
-  height: 380px;
-
-  bottom: 2460px;
-  right: 1035px;
-
-  transform: rotate(-1deg);
-  
-  z-index: 3;
-}
-
-.PC {
-  position: relative;
-  width: 800px;
-  height: 800px;
-
-  top: -1940px;
-  left: 360px;
-  
+.mobile {
+  width: 50px;
+  height: 90px;
+  top: -45px;
+  left: 90px;
   z-index: 1;
-
-}
-
-
-.Circulo-Laranja-2-sobreposto {
-  position: absolute;
-  top: 850px;
-  right: 1400px;
-  transform: translateX(-50%);
-
-  width: 850px;
-  height: 850px;
-  flex-shrink: 0;
-
-  border-radius: 50%;
-  background: #DA4431;/*#FF3B22;*/
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 0;
-
-}
-
-.Estrela {
-  position: absolute;
-  top: 730px;
-  right: 1680px;
-}
-
-/*--------------------------------------------*/
-.Relativ-Img-Parte2 {  /* Div Relativo as imagens com os graficos que ficam dentro dos Caixotes da parte 2 */
-  position: relative;
-
-  top: 850px;
-  right: 2145px;
-}
-
-.Text-Caixote {
-  display: flex;
-  width: 91.073px;
-  height: 34px;
-  transform: rotate(-35deg);
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 161%; /* 22.54px */
-
-  position: absolute;
-
-
-  z-index: 0;
-}
-
-.Grafico {
-  position: absolute;
-
-  left: -25px;
-  bottom: 130px;
-
-  z-index: 1;
-
-}
-
-.Retangulo-G {
-  position: absolute;
-
-  width: 148.94px;
-  height: 23.366px;
-  transform: rotate(-35deg);
-  flex-shrink: 0;
-
-  border-radius: 8px;
-  background: #333;
-
-  margin-top: 135px;
-  margin-left: 60px;
-}
-
-.Retangulo-Amarelo1 {
-  position: absolute;
-
-  width: 96.924px;
-  height: 24px;
-  transform: rotate(-35deg);
-  flex-shrink: 0;
-
-  border-radius: 8px;
-  background: #F4B400;
-
-  margin-top: 150px;
-  margin-left: 64px;
-}
-
-.Relativ-Img2-Parte2 {
-    
-  position: relative;
-
-  top: 1480px;
-  right: 2125px;
-}
-
-/* Fim do Div Relativo as imagens com os graficos que ficam dentro dos Caixotes da parte 2 */
-/*--------------------------------------------*/
-
-.Caixote1, .Caixote2, .Caixote3, .Caixote4, .Caixote5, .Caixote6 {
-  position: absolute;
-  width: 279.007px;
-  height: 260px;
-  transform: rotate(-35deg);
-  flex-shrink: 0;
-
-  border-radius: 30px;
-  background: #EEE;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  
-
-}
-
-.Caixote1 {      /* Caixote Central */
-  top: 1180px;
-  right: 2070px;
-
-}
-
-.Caixote2 {      /* Caixote abaixo a direita */
-  top: 1050px;
-  right: 1750px;
-
-}
-
-.Caixote3 {      /* Caixote acima a direita */
-  top: 800px;
-  right: 1920px;
-
-}
-
-.Caixote4 {       /* Caixote acima do central */
-  top: 930px;   /* Quanto mais eu aumento mais pra baixo eu vou */
-  right: 2240px; /* Quanto mais eu aumento mais pra esquerda eu vou */
-
-}
-
-.Caixote5 {       /* Caixote abaixo do central */
-  top: 1430px;   
-  right: 1895px; 
-
-}
-
-.Caixote6 {      /* Caixote lado esquerdo do central */
-  top: 1450px;
-  right: 2296px;
-
-}
-
-/* -------------------------------------------------------------------------- */
-
-/* Começo da Parte 2 */
-
-.Parte-2 {
-  position: relative;
-
-  width: 600px;
-  height: 100px;
-
-  justify-items: center;
-
-  top: 900px;
-  right: 1300px;
-}
-
-.Acompanhe {
-  display: flex;
-  width: 580px;
-  height: 173px;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-
-  color: #000;
-  font-family: 'Poppins', sans-serif;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 800; /* ExtraBold */
-  line-height: 133%; /* 63.84px */
-
-}
-
-.Pp {
-  display: flex;
-  margin-left: 10px;
-}
-
-.ImgArco {
-  position: relative;
-  margin-right: 20px;
-
-}
-
-.paragrafo-Arco {
-  width: 550px;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 171%; /* 41.04px */
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.ImgCertificado {
-  position: relative;
-  margin-right: 20px;
-}
-
-.paragrafo-Certificado {
-  width: 550px;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 171%; /* 41.04px */
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.ImgUni {
-  position: relative;
-  margin-right: 20px;
-}
-
-.paragrafo-Uni {
-  width: 550px;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 171%; /* 41.04px */
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.Estrela2 {
-  position: absolute;
-
-  margin-top: 100px;
-  left: 400px;
-
-}
-
-.Estrela3 {
-  position: absolute;
-
-  margin-top: 130px;
-  right:  1660px;
-  transform: rotate(-55deg);
-
-}
-
-/* Fim da Parte 2 */
-
-/* ------------------------------------------------------------------------- */
-
-/* Inicio Parte 3 */
-
-.Parte-3 {
-  position: relative;
-
-  justify-items: center;
-
-  top: 1900px;
-  right: 1090px;
-}
-
-.Onda {
-  position: absolute;
-
-  margin-top: 130px;
-  right:  0px;
-
-  z-index: 0;
-}
-
-.TracoOnda {
-  position: absolute;
-
-  margin-top: 218px;
-  right: 400px;
-
-  z-index: 1;
-}
-
-.TracoOnda2 {
-  position: absolute;
-
-  margin-top: 95px;
-  right: 1350px;
-
-  transform: rotate(180deg);
-
-  z-index: 1;
-}
-
-.Paragrafos-Parte-3 { 
-  position: absolute;
-
-  top: 330px;
-  right: 1100px;
-
-  z-index: 3;
-
-  color: #FFF;
-  font-family: Poppins;
-  
-
-}
-
-.Titulo-Parte-3 {
-  
-  display: flex;
-  width: 580px;
-  height: 173px;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-
-  font-family: 'Poppins', sans-serif;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 800; /* ExtraBold */
-  line-height: 133%; /* 63.84px */
-
-}
-
-.paragrafo-Parte-3 {
-  font-size: 20px;
-
-  margin-top: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 171%; /* 41.04px */
-
-}
-
-.VideoDiv{
-  position: absolute;   /*sugestão de video Conheça a estrutura e o funcionamento do curso*/
-                        /* se eu colocar uma cor tenho como saber o posicionamento do div */
-  top: 30px;
-  left: 800px;
-
-  width: 631px;
-  height: 392px;
-  flex-shrink: 0;
-
   border-radius: 15px;
+}
 
+/* Floating Elements */
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+.floating-box {
+  position: absolute;
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: float 8s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-box.chart1 {
+  top: 10%;
+  left: -15%;
+  width: 160px;
+  height: 120px;
+  animation-delay: 0s;
+  --rotation: -15deg;
+  transform: rotate(-15deg);
+}
+
+.floating-box.chart2 {
+  bottom: 15%;
+  right: -15%;
+  width: 180px;
+  height: 130px;
+  animation-delay: 3s;
+  --rotation: 10deg;
+  transform: rotate(10deg);
+}
+
+.floating-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(var(--rotation, 0deg)); 
+  }
+  50% { 
+    transform: translateY(-25px) rotate(var(--rotation, 0deg)); 
+  }
+}
+
+/* Features Section */
+.features-section {
+  padding: 100px 5%;
+  background: white;
+  text-align: center;
+}
+
+.features-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 60px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  padding: 20px;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Trust Section */
+.trust-section {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trust-text h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.trust-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.video-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .video123 {
-  margin-top: 30px;
-  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: 4px;
+  margin-bottom: 8px;
 }
 
-.Titulo-video {
+.video-title {
+  margin-top: 20px;
+  margin-left: 8px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.carousel-dots {
   display: flex;
-  width: 580px;
-  height: 173px;
-  flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
-
-  font-family: 'Poppins', sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 800; /* ExtraBold */
-  line-height: 133%; /* 63.84px */
-
-  margin-left: 30px;
+  gap: 10px;
+  margin-top: 30px;
 }
 
-.carrosel1, .carrosel2, .carrosel3, .carrosel4, .carrosel5 {
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background: white;
+}
+
+/* Decorative Stars */
+.star-decoration {
   position: absolute;
+  opacity: 0.6;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.star-decoration.star1 {
+  top: 15%;
+  right: 20%;
+  width: 25px;
+  animation-delay: 0s;
+}
+
+.star-decoration.star2 {
+  bottom: 20%;
+  left: 10%;
+  width: 30px;
+  animation-delay: 2s;
+}
+
+.star-decoration.star3 {
+  top: 70%;
+  right: 5%;
+  width: 20px;
+  animation-delay: 1s;
+}
+
+.PC {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tituloJotinha {
+    font-size: 3rem;
+  }
   
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  background-color: #FFF;
-  border-radius: 15px;
+  .main-circle {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .trust-content {
+    gap: 40px;
+  }
 
-  z-index: 4;
+  .PC {
+    max-width: 300px;
+  }
 }
 
-.carrosel1 {
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+  
+  .textJotinha {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .tituloJotinha {
+    font-size: 2.5rem;
+  }
+  
+  .main-circle {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .trust-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .trust-text {
+    text-align: center;
+  }
+  
+  .features-title,
+  .trust-text h2 {
+    font-size: 2.2rem;
+  }
+  
+  .floating-box {
+    display: none;
+  }
 
-  left: 1500px;
-  bottom: 350px;
-
+  .PC {
+    max-width: 250px;
+  }
 }
 
-.carrosel2 {
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 5%;
+  }
+  
+  .tituloJotinha {
+    font-size: 2rem;
+  }
+  
+  .paragrafoJotinha {
+    font-size: 1.1rem;
+  }
+  
+  .main-circle {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .features-section,
+  .trust-section {
+    padding: 60px 5%;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .feature-icon {
+    margin: 0 auto 15px;
+  }
 
-  left: 1500px;
-  bottom: 320px;
-
-  background-color: #000;
-
+  .PC {
+    max-width: 200px;
+  }
 }
-
-.carrosel3 {
-
-  left: 1500px;
-  bottom: 290px;
-
-}
-
-.carrosel4 {
-
-  left: 1500px;
-  bottom: 260px;
-
-}
-
-.carrosel5 {
-
-  left: 1500px;
-  bottom: 230px;
-
-}
-
-.pinguinhos2 {
-  position: absolute;
-
-  left: 1430px;
-  bottom: 450px;
-
-}
-
-/* Fim da Parte 3 */
