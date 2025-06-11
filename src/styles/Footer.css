@@ -2,19 +2,19 @@ footer {
   background: #D22B2B;
   color: white;
 
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;  */
   font-weight: 400;
   padding: 2%;
   text-align: center;
-}
 
-  /* já tava como comentario position: fixed;
-  width: 100%;
-  bottom: 0; 
-}*/
+  position: fixed; /* deixa fixo */
+  width: 100%;     /* ocupa toda a largura */
+  bottom: 0;       /* fixa no rodapé */
+  left: 0;         /* alinhado à esquerda */
+  z-index: 1000;   /* para garantir que fique acima de outros elementos */
+}
 
 @media (min-width: 768px) {
   footer {
     padding: 1%;
   }
-}  
+}
