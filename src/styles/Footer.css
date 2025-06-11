@@ -6,7 +6,7 @@ footer {
   padding: 2%;
   text-align: center;
 
-  position: fixed; /* deixa fixo */
+  position: relative; /* deixa fixo */
   width: 100%;     /* ocupa toda a largura */
   bottom: 0;       /* fixa no rodapé */
   left: 0;         /* alinhado à esquerda */
