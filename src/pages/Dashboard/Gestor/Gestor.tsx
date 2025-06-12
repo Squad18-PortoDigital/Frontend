@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import Cursos from "./Cursos/Cursos";
+// import Cursos from "./Cursos/Cursos";
 import Loja from "./Loja/Loja";
 import { useEffect } from "react";
 import { useAtom } from "jotai";

@@ -14,7 +14,7 @@ const Cadastro: React.FC = () => {
     foto: null as File | null,
   });
   const [photoPreviewUrl, setPhotoPreviewUrl] = useState<string | null>(null);
-  const [TokenUser, ] = useAtom(AccessToken);
+  const [TokenUser,] = useAtom(AccessToken);
   const [ButtonDisabled, setButtonDisabled] = useState<boolean>(true);
 
   const handleChange = (
@@ -87,12 +87,12 @@ const Cadastro: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen app-layout">
-      <div className="flex flex-1 content-wrapper">
+    <>
+      <div className="flex h-full">
         <SidebarGestor />
 
         <div className="content-area-wrapper">
-          <main className="cadastro-container">
+          <div className="cadastro-container">
             <h2 className="cadastro-titulo">Cadastro</h2>
             <form onSubmit={handleSubmit} className="cadastro-formulario">
               <div className="form-row">
@@ -108,18 +108,18 @@ const Cadastro: React.FC = () => {
                   />
                 </div>
 
-                      <div className="form-group">
-                        <label htmlFor="matricula">Matrícula</label>
-                        <input
-                          type="text"
-                          id="matricula"
-                          name="matricula"
-                          value={formData.matricula}
-                          onChange={handleChange}
-                          placeholder="Digite a matrícula"
-                        />
-                      </div>
-                    </div>
+                <div className="form-group">
+                  <label htmlFor="matricula">Matrícula</label>
+                  <input
+                    type="text"
+                    id="matricula"
+                    name="matricula"
+                    value={formData.matricula}
+                    onChange={handleChange}
+                    placeholder="Digite a matrícula"
+                  />
+                </div>
+              </div>
 
               <div className="form-row">
                 <div className="form-column">
@@ -151,29 +151,29 @@ const Cadastro: React.FC = () => {
                   </div>
                 </div>
 
-                    <div className="photo-upload-container">
-                      <div className="photo-upload-section">
-                        <label className="photo-upload-label-text">
-                          Adicionar foto de perfil <span className="text-xs text-red-500">*opcional</span>
-                        </label>
-                        <label htmlFor="profilePhotoInput" className="photo-preview-box">
-                          {photoPreviewUrl ? (
-                            <img src={photoPreviewUrl} alt="Pré-visualização da foto de perfil" />
-                          ) : (
-                            <span className="plus-icon-centered"></span>
-                          )}
-                          <input
-                            type="file"
-                            id="profilePhotoInput"
-                            name="foto"
-                            accept="image/*"
-                            onChange={handleChange}
-                            style={{ display: 'none' }}
-                          />
-                        </label>
-                      </div>
-                    </div>
+                <div className="photo-upload-container">
+                  <div className="photo-upload-section">
+                    <label className="photo-upload-label-text">
+                      Adicionar foto de perfil <span className="text-xs text-red-500">*opcional</span>
+                    </label>
+                    <label htmlFor="profilePhotoInput" className="photo-preview-box">
+                      {photoPreviewUrl ? (
+                        <img src={photoPreviewUrl} alt="Pré-visualização da foto de perfil" />
+                      ) : (
+                        <span className="plus-icon-centered"></span>
+                      )}
+                      <input
+                        type="file"
+                        id="profilePhotoInput"
+                        name="foto"
+                        accept="image/*"
+                        onChange={handleChange}
+                        style={{ display: 'none' }}
+                      />
+                    </label>
                   </div>
+                </div>
+              </div>
 
 
 
@@ -181,10 +181,10 @@ const Cadastro: React.FC = () => {
                 Salvar
               </button>
             </form>
-          </main>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
