@@ -8,9 +8,9 @@ import Estrela from "../../../images/Estrela.svg";
 import Estrela2 from "../../../images/Estrela2.svg";
 import video from "../../../images/video.mp4";
 import pinguinhos2 from "../../../images/pinguinhos2.svg";
-import grafico from "../../../images/grafico.svg";
+// import grafico from "../../../images/grafico.svg";
 import PC from "../../../images/PC.svg";
-import PinturaRedonda from "../../../images/PinturaRedonda.svg";
+// import PinturaRedonda from "../../../images/PinturaRedonda.svg";
 
 export default function HomeDashboard() {
   useEffect(() => {
