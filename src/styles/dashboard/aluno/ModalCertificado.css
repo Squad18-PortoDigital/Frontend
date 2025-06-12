@@ -1,0 +1,330 @@
+.container-modalCertificado {
+  width: 45rem;
+  height: 35rem;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  z-index: 10;
+}
+
+.coins-container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.coin {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(145deg, #ffd700, #ffb300);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+  animation: coinFloat 2s ease-in-out infinite;
+  font-size: 24px;
+}
+
+.coin:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.coin:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes coinFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.congratulations-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.congratulations-text {
+  color: #666;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 80%;
+}
+
+.collect-button {
+  background: #ff3333;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3);
+  transition: all 0.3s ease;
+}
+
+.collect-button:hover {
+  background: #e62e2e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 51, 51, 0.4);
+}
+
+.download-icon {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.download-icon:hover {
+  transform: scale(1.1);
+}
+
+.download-icon:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.download-icon:disabled:hover {
+  transform: none;
+}
+
+/* Telas extra grandes - 1536px e acima - Mantém o mesmo layout */
+@media (min-width: 1536px) {
+  .container-modalCertificado {
+    width: 50rem;
+    height: 38rem;
+  }
+  
+  .congratulations-title {
+    font-size: 3.5rem;
+  }
+  
+  .coin {
+    width: 90px;
+    height: 90px;
+    font-size: 28px;
+  }
+}
+
+/* Telas grandes - 1280px e acima - Layout original da imagem */
+@media (max-width: 1535px) and (min-width: 1280px) {
+  .container-modalCertificado {
+    width: 45rem;
+    height: 35rem;
+  }
+}
+
+/* Desktop e telas médias - 1024px e acima */
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .container-modalCertificado {
+    width: 40rem;
+    height: 30rem;
+    padding: 1.5rem;
+  }
+  
+  .congratulations-title {
+    font-size: 2.5rem;
+  }
+  
+  .coin {
+    width: 70px;
+    height: 70px;
+    font-size: 20px;
+  }
+  
+  .congratulations-text {
+    font-size: 0.9rem;
+    max-width: 85%;
+  }
+  
+  .collect-button {
+    padding: 12px 35px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablets e telas pequenas - 640px e acima */
+@media (max-width: 1023px) and (min-width: 640px) {
+  .container-modalCertificado {
+    width: 35rem;
+    height: 28rem;
+    padding: 1.5rem;
+    border-radius: 30px;
+  }
+  
+  .congratulations-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .coin {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+  
+  .coins-container {
+    margin-bottom: 1.5rem;
+    gap: 15px;
+  }
+  
+  .congratulations-text {
+    font-size: 0.85rem;
+    max-width: 90%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .collect-button {
+    padding: 10px 30px;
+    font-size: 0.95rem;
+  }
+  
+  .close-button {
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+  }
+  
+  .download-icon {
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile - Menos de 640px */
+@media (max-width: 639px) {
+  .container-modalCertificado {
+    width: 90vw;
+    height: auto;
+    min-height: 25rem;
+    max-height: 85vh;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+  
+  .congratulations-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .coin {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+  }
+  
+  .coins-container {
+    margin-bottom: 1rem;
+    gap: 10px;
+  }
+  
+  .congratulations-text {
+    font-size: 0.8rem;
+    max-width: 95%;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .collect-button {
+    padding: 8px 25px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+  }
+  
+  .close-button {
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+  }
+  
+  .download-icon {
+    bottom: 15px;
+    right: 15px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile muito pequeno - Menos de 480px */
+@media (max-width: 479px) {
+  .container-modalCertificado {
+    width: 95vw;
+    height: auto;
+    min-height: 22rem;
+    padding: 0.8rem;
+  }
+  
+  .congratulations-title {
+    font-size: 1.5rem;
+  }
+  
+  .coin {
+    width: 45px;
+    height: 45px;
+    font-size: 12px;
+  }
+  
+  .congratulations-text {
+    font-size: 0.75rem;
+  }
+  
+  .collect-button {
+    padding: 6px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ajustes para orientação landscape em mobile */
+@media (max-width: 639px) and (orientation: landscape) {
+  .container-modalCertificado {
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .congratulations-title {
+    font-size: 1.6rem;
+  }
+  
+  .coins-container {
+    margin-bottom: 0.8rem;
+  }
+  
+  .congratulations-text {
+    margin-bottom: 0.8rem;
+  }
+}

@@ -1,103 +1,339 @@
-/*  Remover essa config  */
+/* CSS Variables para altura da viewport (fix iOS Safari) */
+:root {
+  --vh: 1vh;
+}
 
-@media (width > 768px) {
-  .container-aula {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+/* Container principal da Aula */
+.aula-container {
+  display: flex;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background: #f3f4f6;
+  position: relative;
+  overflow-x: hidden;
+}
 
-  .container-lateral-aula {
-    height: 90vh;
-    width: 25rem;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid black;
-  }
-  .modulo-aula {
-    height: 15%;
-    background-color: #da4431;
-    display: flex;
-    align-items: end;
-    color: #fff;
-    font-weight: 600;
-    padding: 10px;
-    justify-content: center;
-  }
-  .nome-modulo-aula,
-  .titulo-quiz-aula {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .aulas {
-    height: 80%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .quiz-aula {
-    background-color: #fff;
-    padding: 10px;
-    border-top: 1px solid black;
-    height: 8%;
-  }
+/* Aula Background Responsivo */
+.aula-background,
+.main-content {
+  background-image: url("../../../images/fundoAula.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
 
-  .container-video-aula {
-    background-image: url("../../../images/fundoAula.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 90vh;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    flex-direction: column;
+/* Main Content com transições responsivas */
+.main-content {
+  flex: 1;
+  transition: margin-left 0.3s ease-in-out;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling no iOS */
+}
+
+.main-content.expanded {
+  margin-left: 0;
+}
+
+.main-content.collapsed {
+  margin-left: 0;
+}
+
+@media (min-width: 1024px) {
+  .main-content.expanded {
+    margin-left: 16rem;
   }
+  
+  .main-content.collapsed {
+    margin-left: 0;
+  }
+}
+
+/* Sidebar responsiva */
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  z-index: 40;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidebar-container.collapsed {
+  width: 0;
+  transform: translateX(-100%);
+}
+
+.sidebar-container.expanded {
+  width: 18rem;
+  transform: translateX(0);
+}
+
+@media (min-width: 1024px) {
+  .sidebar-container {
+    position: fixed;
+  }
+  
+  .sidebar-container.collapsed {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar-container.expanded {
+    transform: translateX(0);
+  }
+}
+
+/* Sidebar content com fade effect */
+.sidebar-content {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-content.collapsed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-content.expanded {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-toggle:hover {
+  background-color: #b91c1c;
+}
+
+@media (min-width: 1024px) {
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+/* Scrollbar customizada */
+.sidebar-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Main content scrollbar */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* ======= ESTILOS ESPECÍFICOS DA AULA ======= */
+
+/* Container principal do vídeo da aula */
+.container-video-aula {
+  background-image: url("../../../images/fundoAula.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* Informações da aula */
+.informacao-aula,
+.descricao-aula {
+  width: 100%;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
   .informacao-aula,
   .descricao-aula {
-    width: 60%;
-    margin: auto;
+    max-width: 90%;
+    padding: 10px;
+  }
+}
+
+.titulo-informacao-aula {
+  padding: 0px;
+  font-weight: 100;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #da4431;
+  text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.25);
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .titulo-informacao-aula {
+    font-size: 2rem;
     padding: 15px;
   }
-  .titulo-informacao-aula {
-    padding: 20px;
-    font-weight: 100;
-    font-size: 2.5rem;
-    text-align: center;
-    color: #da4431;
-  }
-  .descricao-informacao-aula {
-    padding: 10px;
-    font-weight: 600;
-  }
-  .video-aula {
-    position: relative;
-    padding-bottom: 33.25%;
-    width: 60%;
-    height: 0;
-    overflow: hidden;
-    display: block;
-    margin: auto;
-  }
-  .video-aula iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  .navegacao-aula {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 8vh;
-    gap: 20px;
+}
 
-    color: #da4431;
-    font-weight: 600;
-    text-decoration: underline;
+.descricao-informacao-aula {
+  padding: 5px;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container do vídeo responsivo */
+.video-aula {
+  position: relative;
+  padding-bottom: 30%;
+  width: 100%;
+  max-width: 60%;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .video-aula {
+    max-width: 90%;
+    padding-bottom: 50%;
+  }
+}
+
+.video-aula iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Descrição da aula */
+.descricao-aula p {
+  line-height: 1.6;
+  text-align: justify;
+  color: #374151;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navegação da aula */
+.navegacao-aula {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  color: #da4431;
+  font-weight: 600;
+  text-decoration: underline;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navegacao-aula p {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.navegacao-aula p:hover {
+  color: #b91c1c;
+}
+
+@media (max-width: 640px) {
+  .navegacao-aula {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* Focus states para acessibilidade */
+button:focus,
+a:focus {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* Melhorias para performance */
+.aula-background,
+.main-content {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Reduzir animações se preferido pelo usuário */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Fix específico para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .aula-container {
+    min-height: -webkit-fill-available;
+  }
+  
+  .main-content,
+  .sidebar-container {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Melhorias para modo escuro */
+@media (prefers-color-scheme: dark) {
+  .aula-background,
+  .main-content {
+    filter: brightness(0.9);
   }
 }
