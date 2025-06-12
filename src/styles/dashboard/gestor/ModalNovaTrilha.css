@@ -144,6 +144,7 @@
   border: 1px solid #EEE;
   border-radius: 8px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .subBox-main-conteudoTrilha-left-listaCursos{
@@ -160,6 +161,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .input-nome-novoCurso {
@@ -188,4 +190,4 @@
   width: 20em;
   height: 2em;
   margin-bottom: 1em;
-}
+} 

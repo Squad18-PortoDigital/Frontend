@@ -7,33 +7,31 @@ import { Trilhas as TrilhasModel } from "../../../../models/Trilhas.model";
 import { IconBoxTopTrilhas, IconJcoinTrilhas, IconRelogioTrilhas } from "../../../../images";
 import LoadingComponent from "../../../../components/LoadingComponent";
 import ModalNovaTrilha from "./ModalNovaTrilha";
+import { Cursos } from "../../../../models/Cursos.model";
 
 export default function Trilhas() {
   const [trilhas, setTrilhas] = useState<[TrilhasModel]>();
   const [erroGetTrilhas, setErroGetTrilhas] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [openNovaTrilha, setOpenNovaTrilha] = useState<boolean>(false);
+  const [cursos, setCursos] = useState<[Cursos]>();
+  const [LoadingModalNovaTrilha, setLoadingModalNovaTrilha] = useState<boolean>(false);
 
   const getTrilhas = async () => {
     return app.get("/trilhas").then((res: AxiosResponse<[TrilhasModel]>) => {
       setTrilhas(res.data);
+    }).finally(() => {
+      setLoading(false);
     });
   }
 
-  useEffect(() => {
-    // app.get("/trilhas").then((res: AxiosResponse<[TrilhasModel]>) => {
-    //   setTrilhas(res.data);
-    // }).catch(() => {
-    //   setErroGetTrilhas(true);
-    //   setLoading(false);
-    // }).finally(() => {
-    //   setLoading(false);
-    // });
+  const getCursosTrilha = async (trilhaId: number) => {
+    return app.get(`/trilhas/${trilhaId}/cursos/`);
+  }
 
+  useEffect(() => {
     getTrilhas().catch(() => {
       setErroGetTrilhas(true);
-      setLoading(false);
-    }).finally(() => {
       setLoading(false);
     });
   }, []);
@@ -60,18 +58,35 @@ export default function Trilhas() {
             openModal={openNovaTrilha}
             setOpenModal={setOpenNovaTrilha}
             getTrilhas={getTrilhas}
+            setLoading={setLoading}
+            cursos={cursos}
+            loadingModalNovaTrilha={LoadingModalNovaTrilha}
           />
           {erroGetTrilhas ? (
             <p>Erro ao buscar trilhas, se perssistir contate um administrador</p>
           ) : (
             <>
               {loading ? (
-                <LoadingComponent text="Carregando" />
+                <LoadingComponent text="Carregando..." />
               ) : (
                 <>
-                  {trilhas?.map((val) => {
+                  {trilhas?.map((val, index) => {
                     return (
-                      <div className="trilha-box" key={val.id}>
+                      <div 
+                        className="trilha-box" 
+                        key={index}
+                        onClick={() => {
+                          setLoadingModalNovaTrilha(true);
+                          setOpenNovaTrilha(true);
+                          getCursosTrilha(val.id).then((res: AxiosResponse<[Cursos]>) => {
+                            setCursos(res.data);
+                            setLoadingModalNovaTrilha(false);
+                          }).catch(err => {
+                            alert("Erro ao buscar Cursos da Trilha.");
+                            setLoadingModalNovaTrilha(false);
+                          });
+                        }}
+                      >
                         <div className="trilha-box-top">
                           <img src={IconBoxTopTrilhas} alt="icon top" />
                         </div>
