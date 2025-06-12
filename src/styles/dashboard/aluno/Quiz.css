@@ -97,7 +97,7 @@
 }
 
 .sidebar-container.expanded {
-  width: 16rem;
+  width: 18rem;
   transform: translateX(0);
 }
 

@@ -148,7 +148,7 @@ const Quiz = () => {
       <button
         onClick={toggleSidebar}
         className={`fixed top-1/2 transform -translate-y-1/2 z-50 bg-red-600 text-white p-2 rounded-r-lg shadow-lg transition-all duration-300 hover:bg-red-700 ${
-          sidebarCollapsed ? 'left-0' : 'left-64'
+          sidebarCollapsed ? 'left-0' : 'left-72'
         }`}
         aria-label={sidebarCollapsed ? "Expandir sidebar" : "Recolher sidebar"}
         title={sidebarCollapsed ? "Expandir sidebar" : "Recolher sidebar"}
@@ -168,7 +168,7 @@ const Quiz = () => {
         fixed lg:relative z-40
         h-full bg-white shadow-lg
         transform transition-all duration-300 ease-in-out
-        ${sidebarCollapsed ? 'w-0 -translate-x-full lg:translate-x-0' : 'w-64'}
+        ${sidebarCollapsed ? 'w-0 -translate-x-full lg:translate-x-0' : 'w-72'}
       `}>
         {/* Header da Sidebar */}
         <div className={`bg-red-600 text-white p-4 mt-16 lg:mt-16 overflow-hidden ${sidebarCollapsed ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
@@ -278,8 +278,7 @@ const Quiz = () => {
             <div className="flex items-center gap-2 text-red-700">
               <span className="w-4 h-4 bg-red-600 rounded-sm"></span>
               <div>
-                <div className="font-medium text-xs sm:text-sm">Quiz - Segurança do Trabalho:</div>
-                <div className="text-xs">Módulo 01</div>
+                <div className="font-medium text-xs sm:text-sm">Quiz - Segurança do Trabalho</div>
               </div>
             </div>
           </div>
@@ -288,10 +287,11 @@ const Quiz = () => {
 
       {/* Main Content */}
       <div className={`flex-1 relative quiz-background transition-all duration-300 ${sidebarCollapsed ? 'lg:ml-0' : 'lg:ml-0'}`}>
-        {/* Close Button */}
+
+        {/* Close Button
         <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold z-10">
           ×
-        </button>
+        </button> */}
 
         {/* Content Area */}
         <div className="p-4 mt-4 sm:p-6 lg:p-8 pt-16 lg:pt-8">
