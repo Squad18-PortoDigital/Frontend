@@ -16,11 +16,16 @@ import Plataforma5 from "./Plataforma5.png";
 import Certificado from "./Certificado.png";
 
 import "../../../../../styles/dashboard/aluno/Trilha.css";
+import ModalCertificado from "./ModelCertificado";
 
 export default function Trilha() {
   const [expandedModules, setExpandedModules] = useState<{[key: string]: boolean}>({});
   const [selectedSection, setSelectedSection] = useState<string>('trilha');
   const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false);
+
+  // Modal
+  const [openCertificado, setOpenCertificado] = useState<boolean>(false);
+  // Modal
 
   const toggleModule = (moduleId: string) => {
     setExpandedModules(prev => ({
@@ -57,6 +62,7 @@ export default function Trilha() {
 
   return (
     <div className="flex min-h-screen bg-gray-100 relative">
+      <ModalCertificado openModal={openCertificado} setOpenModal={setOpenCertificado}/>
       {/* Sidebar Toggle Button */}
       <button
         onClick={toggleSidebar}
@@ -569,7 +575,10 @@ export default function Trilha() {
                       <img 
                         src={Certificado} 
                         alt="Certificado"
-                        className="w-38 h-30 object-contain mb-4"
+                        className="w-38 h-30 object-contain mb-4 img-certificado-trilha"
+                        onClick={() => {
+                          setOpenCertificado(true);
+                        }}
                       />
                       <div className="text-center">
                         <p className="text-base font-medium text-gray-500">Certificado</p>
