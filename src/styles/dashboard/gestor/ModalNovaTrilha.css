@@ -4,6 +4,10 @@
   border-radius: 20px;
 }
 
+.container-novaTrilha:focus-visible {
+  outline: none;
+}
+
 .top-novaTrilha {
 
 }
@@ -98,4 +102,92 @@
   width: 100%;
   height: 100%;
   position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
 }
+
+.subBox-main-conteudoTrilha-left {
+  border: 1px solid #000;
+  /* flex: 1; */
+  width: 17em;
+  padding: 10px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  overflow-y: scroll;
+}
+
+.subBox-main-conteudoTrilha-center {
+  flex: 0;
+  position: relative;
+  top: 50%;
+}
+
+.subBox-main-conteudoTrilha-right {
+  border: 1px solid #000;
+  flex: 1;
+  padding: 10px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.subBox-main-conteudoTrilha-left-line {
+  border: 1px solid #000;
+  width: 100%;
+  /* border-bottom: ; */
+  margin-bottom: 20px;
+}
+
+.subBox-main-conteudoTrilha-left-addCurso {
+  background: #F5F7F8;
+  text-align: center;
+  border: 1px solid #EEE;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.subBox-main-conteudoTrilha-left-listaCursos{
+  /* min-height: 100%; */
+}
+
+.subBox-main-conteudoTrilha-left-curso {
+  /* padding-left: 5px; */
+  padding: 1px 1px 1px 10px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  font-size: 0.8em;
+  height: 2.7em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.input-nome-novoCurso {
+  border: 1px solid #000;
+  width: 20em;
+  height: 2em;
+  margin-bottom: 2em;
+}
+
+.input-nome-Aula {
+  border: 1px solid #000;
+  width: 20em;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
+.input-descricao-Aula {
+  border: 1px solid #000;
+  width: 20em;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
+.input-linkVideo-Aula {
+  border: 1px solid #000;
+  width: 20em;
+  height: 2em;
+  margin-bottom: 1em;
+} 
