@@ -1,10 +1,14 @@
 import { Box, Modal } from "@mui/material";
 import { useEffect, useState } from "react";
+import { CertificateGenerator } from "./CertificateGenerator";
 import "../../../../../styles/dashboard/aluno/ModalCertificado.css";
 
 interface modalCertificado {
   openModal: boolean;
   setOpenModal: Function;
+  nomeAluno?: string;
+  nomeCurso?: string;
+  dataFinalizacao?: string;
 }
 
 const style = {
@@ -12,17 +16,38 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  // width: 400,
-  bgcolor: 'background.paper',
-  // border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
+  bgcolor: 'transparent',
+  boxShadow: 'none',
+  outline: 'none',
 };
 
-export default function ModalCertificado({ openModal, setOpenModal }: modalCertificado) {
+export default function ModalCertificado({ 
+  openModal, 
+  setOpenModal, 
+  nomeAluno = "João Silva",
+  nomeCurso = "Curso de Desenvolvimento Web",
+  dataFinalizacao = "11/06/2025"
+}: modalCertificado) {
   const [open, setOpen] = useState<boolean>(false);
+  const [isDownloading, setIsDownloading] = useState<boolean>(false);
 
   const handleClose = () => setOpenModal(!openModal);
+
+  const handleDownloadCertificate = async () => {
+    setIsDownloading(true);
+    
+    try {
+      await CertificateGenerator.downloadCertificate({
+        nomeAluno,
+        nomeCurso,
+        dataFinalizacao
+      });
+    } catch (error) {
+      alert('Erro ao baixar certificado. Tente novamente.');
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   useEffect(() => {
     setOpen(openModal);
@@ -37,7 +62,30 @@ export default function ModalCertificado({ openModal, setOpenModal }: modalCerti
         aria-describedby="modal-modal-description"
       >
         <Box sx={style} className="container-modalCertificado">
-          <p>Modal Certificado</p>
+          <button className="close-button" onClick={handleClose}>×</button>
+          
+          <div className="coins-container">
+            <div className="coin">💰</div>
+            <div className="coin">💰</div>
+            <div className="coin">💰</div>
+          </div>
+          
+          <h1 className="congratulations-title">Parabéns!!</h1>
+          
+          <p className="congratulations-text">
+            Missão cumprida! Você completou sua jornada de aprendizado e está pronto para aplicar todo o conhecimento adquirido.
+             Baixe seu certificado e celebre essa conquista!
+          </p>
+          
+          
+          <button 
+            className="collect-button" 
+            onClick={handleDownloadCertificate}
+            disabled={isDownloading}
+            title="Baixar Certificado"
+          >
+            Baixar
+          </button>
         </Box>
       </Modal>
     </>

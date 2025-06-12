@@ -174,21 +174,21 @@ export default function Trilha() {
 
             {/* Aulas do Módulo 2 */}
             <div className={`ml-8 space-y-2 overflow-hidden transition-all duration-300 ease-in-out ${expandedModules['modulo2'] ? 'max-h-52 pb-3' : 'max-h-0'}`}>
-              <a href="#" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
+              <Link to="/dashboard/aluno/minhastrilhas/trilha/aula" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
                 • Aula 1: Prevenção de Sinistros
-              </a>
-              <a href="#" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
+              </Link>
+              <Link to="/dashboard/aluno/minhastrilhas/trilha/aula" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
                 • Aula 2: Controle de Riscos
-              </a>
-              <a href="#" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
+              </Link>
+              <Link to="/dashboard/aluno/minhastrilhas/trilha/aula" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
                 • Aula 3: Análise de Acidentes
-              </a>
-              <a href="#" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
+              </Link>
+              <Link to="/dashboard/aluno/minhastrilhas/trilha/aula" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
                 • Aula 4: Medidas Preventivas
-              </a>
-              <a href="#" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
+              </Link>
+              <Link to="/dashboard/aluno/minhastrilhas/trilha/aula" className="block text-xs text-gray-500 hover:text-gray-700 cursor-pointer py-1">
                 • Aula 5: Gestão de Emergências
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -398,16 +398,19 @@ export default function Trilha() {
                 {/* Linha final */}
                 <div className="w-1 h-8 sm:h-12 lg:h-16 bg-gray-300 rounded-full opacity-50"></div>
 
-                {/* Certificado Final */}
+                {/* Certificado no centro inferior */}
                 <div className="flex flex-col items-center opacity-50 blur-sm">
                   <img 
                     src={Certificado} 
                     alt="Certificado"
-                    className="w-18 h-22 sm:w-20 sm:h-24 lg:w-24 lg:h-28 object-contain"
+                    className="w-38 h-30 object-contain mb-4 img-certificado-trilha"
+                    onClick={() => {
+                      setOpenCertificado(true);
+                    }}
                   />
-                  <div className="text-center mt-2">
-                    <p className="text-sm sm:text-base font-medium text-gray-500">Certificado</p>
-                    <p className="text-xs sm:text-sm text-gray-400">🔒 Complete todos os módulos</p>
+                  <div className="text-center">
+                    <p className="text-base font-medium text-gray-500">Certificado</p>
+                    <p className="text-sm text-gray-400">🔒 Complete todos os módulos</p>
                   </div>
                 </div>
               </div>
