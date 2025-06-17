@@ -24,7 +24,7 @@ const style = {
 export default function ModalCertificado({ 
   openModal, 
   setOpenModal, 
-  nomeAluno = "João Silva",
+  nomeAluno = "Luiz Gomes",
   nomeCurso = "Curso de Desenvolvimento Web",
   dataFinalizacao = "11/06/2025"
 }: modalCertificado) {
