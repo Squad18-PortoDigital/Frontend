@@ -20,18 +20,71 @@ interface LoadingState {
   error: string | null;
 }
 
-// Mock data - substitua por dados reais da API
-const mockQuestion: QuizQuestion = {
-  id: 1,
-  question: "Qual é o principal objetivo dos Equipamentos de Proteção Individual (EPIs)?",
-  answers: [
-    { id: 1, text: "Melhorar o conforto do trabalhador" },
-    { id: 2, text: "Proteger a integridade física do trabalhador" },
-    { id: 3, text: "Facilitar a execução das tarefas" },
-    { id: 4, text: "Reduzir os custos da empresa" }
-  ],
-  correctAnswer: 2
-};
+// Novo tipo para o resultado do quiz
+interface QuizResult {
+  isAnswered: boolean;
+  isCorrect: boolean;
+  correctAnswerIndex: number;
+}
+
+// Mock data com múltiplas perguntas - substitua por dados reais da API
+const mockQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Qual é o principal objetivo dos Equipamentos de Proteção Individual (EPIs)?",
+    answers: [
+      { id: 1, text: "Melhorar o conforto do trabalhador" },
+      { id: 2, text: "Proteger a integridade física do trabalhador" },
+      { id: 3, text: "Facilitar a execução das tarefas" },
+      { id: 4, text: "Reduzir os custos da empresa" }
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 2,
+    question: "Qual das alternativas abaixo NÃO é considerada uma Norma Regulamentadora (NR)?",
+    answers: [
+      { id: 1, text: "NR-6 - Equipamento de Proteção Individual" },
+      { id: 2, text: "NR-10 - Segurança em Instalações e Serviços em Eletricidade" },
+      { id: 3, text: "NR-35 - Trabalho em Altura" },
+      { id: 4, text: "NR-50 - Proteção contra Incêndios" }
+    ],
+    correctAnswer: 4
+  },
+  {
+    id: 3,
+    question: "Em caso de acidente de trabalho, qual deve ser a primeira ação a ser tomada?",
+    answers: [
+      { id: 1, text: "Documentar o acidente" },
+      { id: 2, text: "Prestar os primeiros socorros" },
+      { id: 3, text: "Comunicar à chefia" },
+      { id: 4, text: "Limpar o local do acidente" }
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 4,
+    question: "Qual é a altura mínima para ser considerado trabalho em altura segundo a NR-35?",
+    answers: [
+      { id: 1, text: "1,5 metros" },
+      { id: 2, text: "2,0 metros" },
+      { id: 3, text: "2,5 metros" },
+      { id: 4, text: "3,0 metros" }
+    ],
+    correctAnswer: 2
+  },
+  {
+    id: 5,
+    question: "O que significa a sigla CIPA?",
+    answers: [
+      { id: 1, text: "Comissão Interna de Prevenção de Acidentes" },
+      { id: 2, text: "Comitê Interno de Proteção Ambiental" },
+      { id: 3, text: "Central de Informações sobre Prevenção de Acidentes" },
+      { id: 4, text: "Coordenação Interna de Procedimentos de Alerta" }
+    ],
+    correctAnswer: 1
+  }
+];
 
 const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -43,10 +96,85 @@ const Quiz = () => {
   });
   const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion | null>(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false);
+  
+  // Novos estados para controle das perguntas
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+  const [totalQuestions] = useState<number>(mockQuestions.length);
+  const [correctAnswers, setCorrectAnswers] = useState<number>(0);
+  const [isQuizCompleted, setIsQuizCompleted] = useState<boolean>(false);
+  
+  // Novo estado para o resultado do quiz
+  const [quizResult, setQuizResult] = useState<QuizResult>({
+    isAnswered: false,
+    isCorrect: false,
+    correctAnswerIndex: -1
+  });
 
   const handleAnswerClick = (answerIndex: number) => {
-    if (loadingState.isLoading) return;
+    if (loadingState.isLoading || quizResult.isAnswered) return;
     setSelectedAnswer(answerIndex);
+  };
+
+  // Função atualizada para enviar a resposta
+  const handleSubmitAnswer = () => {
+    if (selectedAnswer === null || !currentQuestion || quizResult.isAnswered) return;
+    
+    const isCorrect = selectedAnswer === (currentQuestion.correctAnswer - 1); // -1 porque o array é 0-based
+    
+    setQuizResult({
+      isAnswered: true,
+      isCorrect: isCorrect,
+      correctAnswerIndex: currentQuestion.correctAnswer - 1
+    });
+
+    // Se acertou, incrementa o contador de respostas corretas
+    if (isCorrect) {
+      setCorrectAnswers(prev => prev + 1);
+    }
+  };
+
+  // Função para avançar para a próxima pergunta
+  const handleNextQuestion = () => {
+    const nextIndex = currentQuestionIndex + 1;
+    
+    if (nextIndex < totalQuestions) {
+      // Vai para a próxima pergunta
+      setCurrentQuestionIndex(nextIndex);
+      setCurrentQuestion(mockQuestions[nextIndex]);
+      setSelectedAnswer(null);
+      setQuizResult({
+        isAnswered: false,
+        isCorrect: false,
+        correctAnswerIndex: -1
+      });
+    } else {
+      // Quiz completado
+      setIsQuizCompleted(true);
+    }
+  };
+
+  // Função para reiniciar todo o quiz
+  const handleRestartQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setCurrentQuestion(mockQuestions[0]);
+    setSelectedAnswer(null);
+    setQuizResult({
+      isAnswered: false,
+      isCorrect: false,
+      correctAnswerIndex: -1
+    });
+    setCorrectAnswers(0);
+    setIsQuizCompleted(false);
+  };
+
+  // Função para tentar novamente a pergunta atual (quando erra)
+  const handleRetryQuestion = () => {
+    setSelectedAnswer(null);
+    setQuizResult({
+      isAnswered: false,
+      isCorrect: false,
+      correctAnswerIndex: -1
+    });
   };
 
   const toggleModule = (moduleId: string) => {
@@ -82,7 +210,7 @@ const Quiz = () => {
         //   throw new Error('Falha ao carregar dados do quiz');
         // }
         
-        setCurrentQuestion(mockQuestion);
+        setCurrentQuestion(mockQuestions[0]);
         setLoadingState({ isLoading: false, error: null });
       } catch (error) {
         setLoadingState({ 
@@ -132,6 +260,81 @@ const Quiz = () => {
         >
           Tentar novamente
         </button>
+      </div>
+    </div>
+  );
+
+  // Componente de resultado do quiz
+  const QuizResultDisplay = () => (
+    <div className="mt-6 p-6 rounded-lg border-2 bg-white shadow-lg">
+      <div className={`text-center ${quizResult.isCorrect ? 'text-green-600' : 'text-red-600'}`}>
+        <div className="text-4xl mb-3">
+          {quizResult.isCorrect ? '✅' : '❌'}
+        </div>
+        <h3 className="text-xl font-bold mb-2">
+          {quizResult.isCorrect ? 'Parabéns! Resposta Correta!' : 'Resposta Incorreta'}
+        </h3>
+        <p className="text-gray-700 mb-4">
+          {quizResult.isCorrect 
+            ? 'Você acertou! Vamos para a próxima pergunta.'
+            : `A resposta correta é: "${currentQuestion?.answers[quizResult.correctAnswerIndex]?.text}"`
+          }
+        </p>
+        
+        {quizResult.isCorrect ? (
+          // Se acertou, botão para próxima pergunta
+          <button
+            onClick={handleNextQuestion}
+            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
+          >
+            {currentQuestionIndex + 1 < totalQuestions ? 'Próxima Pergunta' : 'Finalizar Quiz'}
+          </button>
+        ) : (
+          // Se errou, botão para tentar novamente
+          <button
+            onClick={handleRetryQuestion}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Tentar Novamente
+          </button>
+        )}
+      </div>
+    </div>
+  );
+
+  // Componente de quiz completado
+  const QuizCompletedDisplay = () => (
+    <div className="max-w-2xl mx-auto mt-10 p-8 bg-white rounded-lg shadow-lg border-2 border-green-500">
+      <div className="text-center">
+        <div className="text-6xl mb-4">🎉</div>
+        <h2 className="text-3xl font-bold text-green-600 mb-4">
+          Parabéns! Quiz Concluído!
+        </h2>
+        <div className="text-xl text-gray-700 mb-6">
+          <p>Você completou todas as perguntas do quiz sobre Segurança do Trabalho!</p>
+          <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+            <p className="font-semibold text-green-800">
+              Pontuação Final: {correctAnswers}/{totalQuestions}
+            </p>
+            {/* <p className="text-green-700">
+              Taxa de Acerto: {Math.round((correctAnswers / totalQuestions) * 100)}%
+            </p> */}
+          </div>
+        </div>
+        <div className="space-y-3">
+          <button
+            onClick={handleRestartQuiz}
+            className="w-full bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+          >
+            Refazer Quiz
+          </button>
+          <button
+            onClick={() => window.location.href = '/dashboard/aluno/minhastrilhas'}
+            className="w-full bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors font-medium"
+          >
+            Voltar às Trilhas
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -287,12 +490,6 @@ const Quiz = () => {
 
       {/* Main Content */}
       <div className={`flex-1 relative quiz-background transition-all duration-300 ${sidebarCollapsed ? 'lg:ml-0' : 'lg:ml-0'}`}>
-
-        {/* Close Button
-        <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold z-10">
-          ×
-        </button> */}
-
         {/* Content Area */}
         <div className="p-4 mt-4 sm:p-6 lg:p-8 pt-16 lg:pt-8">
           {loadingState.isLoading && <LoadingSpinner />}
@@ -301,7 +498,7 @@ const Quiz = () => {
             <ErrorDisplay error={loadingState.error} onRetry={retryLoading} />
           )}
 
-          {!loadingState.isLoading && !loadingState.error && currentQuestion && (
+          {!loadingState.isLoading && !loadingState.error && !isQuizCompleted && currentQuestion && (
             <>
               {/* Quiz Header */}
               <div className="text-center mb-6 mt-3 lg:mb-8">
@@ -313,6 +510,18 @@ const Quiz = () => {
                   >
                   Quiz
                 </h1>
+                {/* Indicador de progresso */}
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <span className="text-gray-600 font-medium">
+                    Pergunta {currentQuestionIndex + 1} de {totalQuestions}
+                  </span>
+                  <div className="w-32 bg-gray-200 rounded-full h-2">
+                    <div 
+                      className="bg-red-600 h-2 rounded-full transition-all duration-300"
+                      style={{ width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%` }}
+                    ></div>
+                  </div>
+                </div>
               </div>
 
               <div className="max-w-6xl mx-auto mt-10 lg:mt-16">
@@ -335,27 +544,61 @@ const Quiz = () => {
 
                   {/* Answer Options */}
                   <div className="w-full lg:w-80 xl:w-96 space-y-3">
-                    {currentQuestion.answers.map((answer, index) => (
+                    {currentQuestion.answers.map((answer, index) => {
+                      let buttonClass = `w-full p-3 sm:p-4 text-left rounded-lg border-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed `;
+                      
+                      if (quizResult.isAnswered) {
+                        // Se já respondeu, mostrar cores baseadas na correção
+                        if (index === quizResult.correctAnswerIndex) {
+                          buttonClass += 'bg-green-600 text-white border-green-600'; // Resposta correta sempre verde
+                        } else if (selectedAnswer === index) {
+                          buttonClass += 'bg-red-600 text-white border-red-600'; // Resposta selecionada incorreta em vermelho
+                        } else {
+                          buttonClass += 'bg-gray-200 text-gray-500 border-gray-300'; // Outras alternativas acinzentadas
+                        }
+                      } else {
+                        // Antes de responder, comportamento normal
+                        if (selectedAnswer === index) {
+                          buttonClass += 'bg-red-600 text-white border-red-600';
+                        } else {
+                          buttonClass += 'bg-white text-gray-700 border-red-600 hover:bg-red-50';
+                        }
+                      }
+
+                      return (
+                        <button
+                          key={answer.id}
+                          onClick={() => handleAnswerClick(index)}
+                          disabled={loadingState.isLoading || quizResult.isAnswered}
+                          className={buttonClass}
+                        >
+                          <span className="font-medium text-sm sm:text-base">
+                            {answer.id}. {answer.text}
+                          </span>
+                        </button>
+                      );
+                    })}
+
+                    {/* Botão Enviar */}
+                    {selectedAnswer !== null && !quizResult.isAnswered && (
                       <button
-                        key={answer.id}
-                        onClick={() => handleAnswerClick(index)}
-                        disabled={loadingState.isLoading}
-                        className={`w-full p-3 sm:p-4 text-left rounded-lg border-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${
-                          selectedAnswer === index
-                            ? 'bg-red-600 text-white border-red-600'
-                            : 'bg-white text-gray-700 border-red-600 hover:bg-red-50'
-                        }`}
+                        onClick={handleSubmitAnswer}
+                        className="w-full mt-4 p-3 sm:p-4 bg-green-600 text-white rounded-lg border-2 border-green-600 hover:bg-green-700 transition-all duration-200 font-medium text-sm sm:text-base"
                       >
-                        <span className="font-medium text-sm sm:text-base">
-                          {answer.id}. {answer.text}
-                        </span>
+                        Enviar Resposta
                       </button>
-                    ))}
+                    )}
+
+                    {/* Resultado do Quiz */}
+                    {quizResult.isAnswered && <QuizResultDisplay />}
                   </div>
                 </div>
               </div>
             </>
           )}
+
+          {/* Tela de Quiz Completado */}
+          {isQuizCompleted && <QuizCompletedDisplay />}
 
           {/* Decorative Elements - Hidden on small screens */}
           <div className="hidden sm:block absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
